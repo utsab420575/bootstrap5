@@ -1,0 +1,698 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------2. Bootstrap Fundamentals - Part 1------------------------------------------
+
+##################################################1. Containers ##############################################
+<div class="container">container</div>
+Centered automatically.(content গুলো  automatically Centered হবে।)
+
+<div class="container-sm">Small container</div>
+sm: 540px
+Fixed-width container starting at small (sm) breakpoint (≥576px).(screen size 576px এর উপরে গেলে আউটপুট এ content গুলো 546px এ বসবে।content গুলো  automatically Centered হবে। )
+
+<div class="container-md">Medium container</div>
+md: 720px
+Fixed-width container starting at medium (md) breakpoint (≥768px).(screen size 768px এর উপরে গেলে আউটপুট এ content গুলো 720px এ বসবে।content গুলো  automatically Centered হবে। )
+
+<div class="container-lg">Large container</div>
+lg: 960px
+Fixed-width container starting at large (lg) breakpoint (≥992px).(screen size 992px এর উপরে গেলে আউটপুট এ content গুলো 960px এ বসবে।content গুলো  automatically Centered হবে। )
+
+<div class="container-xl">Extra-large container</div>
+xl: 1140px
+Fixed-width container starting at extra-large (xl) breakpoint (≥1200px).(screen size 1200px এর উপরে গেলে আউটপুট এ content গুলো 1140px এ বসবে।content গুলো  automatically Centered হবে। )
+
+<div class="container-xxl">Extra-extra-large container</div>
+xxl: 1320px
+Fixed-width container starting at extra-extra-large (xxl) breakpoint (≥1400px).(screen size 1400px এর উপরে গেলে আউটপুট এ content গুলো 1320px এ বসবে।content গুলো  automatically Centered হবে। )
+
+<div class="container-fluid">Full-width container</div>
+fluid: 100%
+Full-width container spanning the entire width.(পুরো জায়গা নিয়ে নিবে।)
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<h1 class="mb-5">Containers</h1>
+<div class="">
+    <h3>No Style Added</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+
+<div class="container">
+    <h3>Container</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+
+<div class="container-sm">
+    <h3>Container Small</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+
+<div class="container-md">
+    <h3>Container Medium</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+
+<div class="container-lg">
+    <h3>Container Large</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+
+<div class="container-xl">
+    <h3>Container Extra Large</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+
+<div class="container-xxl">
+    <h3>Container Extra Extra Large</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+
+<div class="container-fluid">
+    <h3>Container Fluid</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+        similique porro praesentium quo. Aperiam officiis eos atque iure quo
+        nostrum voluptate laudantium distinctio! Hic pariatur in exercitationem
+        eaque ducimus aperiam.
+    </p>
+</div>
+<script src="assets/js/bootstrap.js">
+</script>
+</body>
+</html>
+
+
+
+##################################################2. Typography ##############################################
+1. Headings and Typography:
+
+h1, h2, h3, h4, h5, h6: Default HTML headings for different text sizes.
+
+.h1 to .h6: Apply heading styles to any element (e.g., <p>).(Bootstrap এর class use করে Bold হবে।)
+
+.display-1 to .display-6: Larger, prominent headings for hero sections.(নরমাল Bold এর চেয়ে বেশী Bold হবে।)
+
+
+2. Text Utilities:
+
+.lead: Styles a paragraph with increased font size and lighter weight for emphasis.
+
+.blockquote: Styles a blockquote with indentation for quotes.
+
+
+
+3. Font Weight & Style:
+
+.fw-bold to .fw-lighter: Adjusts text weight from bold to light.
+.fst-italic: Applies italic style.
+.fst-normal: Resets to normal font style.
+
+
+
+4. Line Height:
+
+.lh-1,.lh-2 .lh-sm, .lh-base, .lh-lg: Controls line height (1x, small, base, large).
+
+
+
+5. Text Transform:
+
+.text-lowercase: Converts text to lowercase.
+.text-uppercase: Converts text to uppercase.
+.text-capitalize: Capitalizes the first letter of each word.
+
+
+6. Text Alignment:(container এ text কোথায় বসবে তা সেট করা যায়।)
+
+.text-start, .text-center, .text-end: Aligns text to the left, center, or right.
+
+
+text-sm-end==>screen size 576px এর উপরে গেলে আউটপুট এ content/text গুলো শেষে বসবে।
+text-md-end==>screen size 768px এর উপরে গেলে আউটপুট এ content/text গুলো শেষে বসবে।
+text-lg-end==>screen size 992px এর উপরে গেলে আউটপুট এ content/text গুলো শেষে বসবে।
+text-xl-end==>screen size 1200px এর উপরে গেলে আউটপুট এ content/text গুলো শেষে বসবে।
+Responsive Alignment: .text-sm-end, .text-md-end, .text-lg-end, .text-xl-end align text based on screen size breakpoints.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Typography</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Typography</h1>
+
+    <!-- Headings -->
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <br /><br />
+
+    <!-- Heading Classes -->
+    <p class="h1">Heading 1 Paragraph</p>
+    <p class="h2">Heading 2 Paragraph</p>
+    <p class="h3">Heading 3 Paragraph</p>
+    <p class="h4">Heading 4 Paragraph</p>
+    <p class="h5">Heading 5 Paragraph</p>
+    <p class="h6">Heading 6 Paragraph</p>
+
+    <br /><br />
+
+    <!-- Display Headings -->
+    <h1 class="display-1">Display 1</h1>
+    <h1 class="display-2">Display 2</h1>
+    <h1 class="display-3">Display 3</h1>
+    <h1 class="display-4">Display 4</h1>
+    <h1 class="display-5">Display 5</h1>
+    <h1 class="display-6">Display 6</h1>
+
+    <br /><br />
+
+
+    <!-- Lead Paragraph -->
+    <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorum,
+        consequuntur aut, ipsam quibusdam rem nostrum maiores asperiores
+        repellendus, explicabo itaque. Iure repellat modi possimus fugit
+        consectetur ullam iusto autem.
+    </p>
+
+    <br /><br />
+
+
+    <!-- Inline Classes -->
+    <p>
+        Lorem, ipsum dolor sit
+        <span class="fw-bold">This is highlighted text</span>amet consectetur
+        adipisicing <span class="">This is strong text</span>Lorem ipsum dolor
+        sit. <span class="">This is strikethrough text</span> Lorem ipsum dolor
+        sit amet. <span class="">This is underlined tect</span> Lorem ipsum
+        dolor sit amet. <span class="">This is italic text</span>
+    </p>
+
+    <br /><br />
+
+    <!-- Blockquote -->
+    <blockquote class="blockquote">
+        <p>This is a blockquote</p>
+    </blockquote>
+
+    <br /><br />
+
+    <!-- Font Weight -->
+    <p class="fw-bold">This is bold text</p>
+    <p class="fw-bolder">This is bolder text (relative to the parent element).</p>
+    <p class="fw-semibold">This is semibold text</p>
+    <p class="fw-medium">This is a medium weight</p>
+    <p class="fw-normal">This is a normal weight</p>
+    <p class="fw-light">This is light weight text</p>
+    <p class="fw-lighter">
+        This is lighter weight text (relative to the parent element).
+    </p>
+    <p class="fst-italic">This is italic text.</p>
+    <p class="fst-normal">This is text with normal font style</p>
+
+    <br /><br />
+
+    <!-- Line Height -->
+    <p class="lh-1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolor
+        sit obcaecati architecto necessitatibus velit? Excepturi culpa ipsa enim
+        eveniet, alias assumenda quas omnis laborum atque ipsam ipsum minima a.
+    </p>
+    <p class="lh-sm">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolor
+        sit obcaecati architecto necessitatibus velit? Excepturi culpa ipsa enim
+        eveniet, alias assumenda quas omnis laborum atque ipsam ipsum minima a.
+    </p>
+    <p class="lh-base">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolor
+        sit obcaecati architecto necessitatibus velit? Excepturi culpa ipsa enim
+        eveniet, alias assumenda quas omnis laborum atque ipsam ipsum minima a.
+    </p>
+    <p class="lh-lg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dolor
+        sit obcaecati architecto necessitatibus velit? Excepturi culpa ipsa enim
+        eveniet, alias assumenda quas omnis laborum atque ipsam ipsum minima a.
+    </p>
+
+    <br /><br />
+
+    <!-- Text Transform -->
+    <p class="text-lowercase">lowercased text</p>
+    <p class="text-uppercase">uppercased text</p>
+    <p class="text-capitalize">capitialized text</p>
+
+    <br /><br />
+
+    <!-- Text Alignment -->
+    <p class="text-start">Start aligned text on all viewport sizes.</p>
+    <p class="text-center">Center aligned text on all viewport sizes.</p>
+    <p class="text-end">End aligned text on all viewport sizes.</p>
+
+    <p class="text-sm-end">
+        Start aligned text on viewports sized SM (small) or wider.
+    </p>
+    <p class="text-md-center">
+        Start aligned text on viewports sized MD (medium) or wider.
+    </p>
+    <p class="text-lg-end">
+        Start aligned text on viewports sized LG (large) or wider.
+    </p>
+    <p class="text-xl-center">
+        Start aligned text on viewports sized XL (extra-large) or wider.
+    </p>
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+################################################## 3. Display & Position ##############################################
+<div class="position-static">...</div>
+Default positioning (no special positioning applied).
+normally যেখানে বসার কথা সেখানে বসবে।
+
+<div class="position-relative">...</div>
+Positioned relative to its normal position. Child elements with absolute positioning use this as their reference.
+(যেখানে বসার কথা সেখানে বসবে তবে child element বসবে relative কে ফলো করে।)
+
+<div class="position-absolute">...</div>
+Positioned relative to the nearest positioned ancestor (relative, absolute, or fixed).
+(এক্ষেত্রে relative parent element এর child হিসেবে absolute ব্যবহার করতে হয়)
+
+<div class="position-fixed">...</div>
+Positioned relative to the viewport and remains in place during scrolling.
+(ফিক্সড পজিশন হিসেবে element বসবে। যেখানে element বসাব সেখানে বসবে।)
+
+		<!-- Relative and Absolute Positioning -->
+        <div class="position-relative bg-primary text-white p-4 mb-4" style="height: 150px;">
+
+            <div class="position-absolute top-0 start-0 bg-danger text-white p-2">
+                I'm positioned absolutely within the relative container.
+            </div>
+        </div>
+
+<div class="position-sticky">...</div>
+(Sticks to a defined offset (top, bottom, etc.) as you scroll but only within its parent container.)
+(page scroll করলে যেখানে সেট করব সেখানে ফিক্সড হবে।)
+(তবে parent element এর viewport full হতে হবে।)
+
+ <!-- Parent -->
+<div class="container-md">
+    <!-- Sticky Positioning -->
+    <div class="position-sticky top-0 bg-warning text-dark p-3" style="z-index: 1020;">
+        <p class="mb-0">I stick to the top when scrolling!</p>
+    </div>
+</div>
+
+
+
+(element কোথায় সেট করব তার পজিশন ফিক্সড করা হয় top,start,bottom,end এর মাধ্যমে।)
+top - for the vertical top position
+start - for the horizontal left position (in LTR)
+bottom - for the vertical bottom position
+end - for the horizontal right position (in LTR)
+Where position is one of:
+
+0 - for 0 edge position
+50 - for 50% edge position
+100 - for 100% edge position
+
+		top-0 end-0(top-right corner element set হবে।)
+		top-0 start-0(top-left corner element set হবে।)
+		bottom-0 start-0(bottom-left corner element set হবে।)
+		bottom-0 end-0(bottom-right corner element set হবে।)
+		
+		<!-- Relative and Absolute Positioning -->
+        <div class="position-relative bg-primary text-white p-4 mb-4" style="height: 150px;">
+
+            <div class="position-absolute top-0 end-0 bg-danger text-white p-2">
+                I'm positioned absolutely within the relative container.
+            </div>
+        </div>
+
+
+
+
+Center elements:
+In addition, you can also center the elements with the transform utility class .translate-middle.
+This class applies the transformations translateX(-50%) and translateY(-50%) to the element which, in combination with the edge positioning utilities, allows you to absolute center an element.
+(translate-middle :
+	top-0 start-0 translate-middle এর মাধ্যমে element বসবে top-left corner এ তবে element centered হবে কারণ এখানে left এ ৫০% ‍যাবে এবং উপরে এর দিকে ৫০% ‍যাবে।
+	top-100 start-100 translate-middle এর মাধ্যমে element বসবে bottom-left corner এ তবে element centered হবে কারণ এখানে left এ ৫০% ‍যাবে এবং উপরে এর দিকে ৫০% ‍যাবে।
+	
+	translate-middle:
+		Applies CSS transformations:
+		translateX(-50%): Moves the element 50% of its width to the left.
+		translateY(-50%): Moves the element 50% of its height upwards.
+
+
+	<div class="position-relative bg-light mt-5 bg-secondary" style="height: 300px;">
+        <div class="position-absolute top-0 start-0 translate-middle p-3 bg-primary">XYZ</div>
+		<div class="position-absolute top-100 start-100 translate-middle p-3 bg-primary">XYZ</div>
+    </div>
+
+
+
+
+By adding .translate-middle-x or .translate-middle-y classes, elements can be positioned only in horizontal or vertical direction.
+(horizontal এবং vertically center করার জন্য element ব্যবহৃত হবে।)
+	
+	 <div class="position-relative bg-light mt-5" style="height: 300px;">
+       
+        <div class="position-absolute top-0 start-50 translate-middle-x  bg-danger p-3">XYZ</div>
+        
+        <div class="position-absolute top-50 start-50 translate-middle bg-danger p-3">XYZ</div>
+        
+        <div class="position-absolute bottom-0 start-50 translate-middle-x bg-danger p-3">XYZ</div>
+        
+     </div>
+	 
+	 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Sticky Fix</title>
+</head>
+<body>
+<div class="container-md">
+    <!-- Sticky Positioning -->
+    <h2 class="mt-4">Sticky Positioning</h2>
+    <div class="position-sticky top-0 bg-warning text-dark p-3" style="z-index: 1020;">
+        <p class="mb-0">I stick to the top when scrolling!</p>
+    </div>
+
+    <!-- Static Positioning -->
+    <h2 class="mt-5">Static Positioning</h2>
+    <div class="bg-secondary text-white p-3 mb-4">
+        <p class="mb-0">This box has static positioning (default behavior).</p>
+    </div>
+
+    <!-- Relative and Absolute Positioning -->
+    <h2 class="mt-5">Relative and Absolute Positioning (1)</h2>
+    <div class="position-relative bg-primary text-white p-4 mb-4" style="height: 150px;">
+        <div class="position-absolute top-0 start-0 bg-danger text-white p-2">
+            I'm positioned absolutely within the relative container.
+        </div>
+    </div>
+
+    <h2 class="mt-5">Relative and Absolute Positioning (2)</h2>
+    <div class="position-relative bg-primary text-white p-4 mb-4" style="height: 150px;">
+        <p class="mb-0">This box is <strong>relative</strong>.</p>
+        <div class="position-absolute top-0 end-0 bg-danger text-white p-2">
+            I'm positioned absolutely within the relative container.
+        </div>
+        <div class="position-absolute bottom-0 start-0 bg-warning text-dark p-2">
+            I'm positioned at the bottom-left corner.
+        </div>
+    </div>
+
+    <!-- Fixed Positioning -->
+    <h2 class="mt-5">Fixed Positioning</h2>
+    <div class="position-fixed bottom-0 start-0 bg-success text-white p-3">
+        <p class="mb-0">Fixed to the top-right corner of the viewport.</p>
+    </div>
+
+    <!-- Centering with Translate -->
+    <h2 class="mt-5">Centering with Translate</h2>
+    <div class="position-relative bg-info text-white p-4" style="height: 200px;">
+        <div class="position-absolute top-50 start-50 translate-middle bg-dark text-white p-3">
+            Centered Element
+        </div>
+    </div>
+
+    <!-- Multiple Elements with Offsets -->
+    <h2 class="mt-5">Multiple Elements with Offsets</h2>
+    <div class="position-relative mt-5 bg-light" style="height: 150px;">
+        <div class="position-absolute top-0 start-0 bg-primary text-white p-2">
+            Top-Left
+        </div>
+        <div class="position-absolute top-0 end-0 bg-danger text-white p-2">
+            Top-Right
+        </div>
+        <div class="position-absolute bottom-0 start-0 bg-success text-white p-2">
+            Bottom-Left
+        </div>
+        <div class="position-absolute bottom-0 end-0 bg-warning text-dark p-2">
+            Bottom-Right
+        </div>
+    </div>
+
+    <!-- Grid of Positioned Elements -->
+    <h2 class="mt-5">Grid of Positioned Elements</h2>
+    <div class="position-relative bg-light mt-5 bg-secondary" style="height: 300px;">
+        <div class="position-absolute top-0 start-0 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-0 start-50 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-0 start-100 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-50 start-0 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-50 start-50 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-50 start-100 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-100 start-0 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-100 start-50 translate-middle p-3 bg-primary">XYZ</div>
+        <div class="position-absolute top-100 start-100 translate-middle p-3 bg-primary">XYZ</div>
+    </div>
+
+    <!-- Nested Positioned Elements -->
+    <h2 class="mt-5">Nested Positioned Elements</h2>
+    <div class="position-relative bg-light mt-5" style="height: 300px;">
+        <div class="position-absolute top-0 start-0 bg-danger p-3">XYZ</div>
+        <div class="position-absolute top-0 start-50 translate-middle-x  bg-danger p-3">XYZ</div>
+        <div class="position-absolute top-0 end-0 bg-danger p-3">XYZ</div>
+        <div class="position-absolute top-50 start-0 translate-middle-y bg-danger p-3">XYZ</div>
+        <div class="position-absolute top-50 start-50 translate-middle bg-danger p-3">XYZ</div>
+        <div class="position-absolute top-50 end-0 translate-middle-y bg-danger p-3">XYZ</div>
+        <div class="position-absolute bottom-0 start-0 bg-danger p-3">XYZ</div>
+        <div class="position-absolute bottom-0 start-50 translate-middle-x bg-danger p-3">XYZ</div>
+        <div class="position-absolute bottom-0 end-0 bg-danger p-3">XYZ</div>
+    </div>
+
+    <!-- Aligned Positioned Elements -->
+    <h2 class="mt-5">Aligned Positioned Elements</h2>
+    <div class="position-relative mt-5" style="height: 300px; width: 100%; border: 1px solid black;">
+        <div class="position-absolute top-50 start-50 translate-middle bg-primary text-white p-3">
+            Centered
+        </div>
+        <div class="position-absolute top-50 start-0 translate-middle-y bg-success text-white p-3">
+            Center Left
+        </div>
+        <div class="position-absolute top-50 end-0 translate-middle-y bg-danger text-white p-3">
+            Center Right
+        </div>
+    </div>
+
+    <!-- Specific Corner Elements -->
+    <h2 class="mt-5">Specific Corner Elements</h2>
+    <div class="position-relative mt-5" style="height: 300px; width: 100%; border: 1px solid black;">
+        <div class="position-absolute top-0 start-0  bg-primary text-white p-3">
+            Top left
+        </div>
+        <div class="position-absolute top-50 start-0 translate-middle-y bg-success text-white p-3">
+            Center
+        </div>
+        <div class="position-absolute bottom-0 start-0 bg-danger text-white p-3">
+            Bottom left
+        </div>
+    </div>
+
+    <!-- Centered Menu Items -->
+    <h2 class="mt-5">Centered Menu Items</h2>
+    <div class="position-relative bg-danger mt-5" style="height: 100px;">
+        <div class="bg-primary text-white text-center rounded-1 position-absolute top-50 translate-middle" style="left: 42%;  padding: 10px 20px;">
+            Menu 1
+        </div>
+        <div class="bg-info text-white text-center rounded-1 position-absolute top-50 translate-middle" style="left: 50%;  padding: 10px 20px;">
+            Menu 2
+        </div>
+        <div class="bg-success text-white text-center rounded-1 position-absolute top-50 translate-middle" style="left: 58%;  padding: 10px 20px;">
+            Menu 3
+        </div>
+    </div>
+
+</div>
+
+<!-- Spacer -->
+<div style="margin-top: 500px"></div>
+
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+################################################################################################
+
+
+
+d-none: Hides the element, making it invisible and removing it from the document flow.
+(d-none দিলে element টি hidden থাকবে।)
+
+d-inline: Makes the element behave like an inline element, allowing other elements to sit on the same line.
+(d-inline দিলে block element হয়ে যাবে inline)
+
+d-block: Converts the element to a block-level element, making it occupy the full width of its container.
+(inline element হয়ে যাবে block element)
+
+d-inline-block: Combines the characteristics of inline and block elements. The element remains inline but allows setting height and width.
+(d-inline-block এর মাধ্যমে element inline হবে তবে এক্ষেত্রে inline element এর size দিতে পারব।)
+
+
+(screen size এর উপর ভিত্তি করে block/none করা যাবে।)
+md: 720px
+screen size 768px এর উপরে গেলে display block/display-none বসবে।
+
+d-md-block: Displays the element as a block starting from the md (medium) breakpoint and above.
+
+d-md-none: Hides the element starting from the md (medium) breakpoint and above.
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Display & Position</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Display & Position</h1>
+
+    <!-- Display None -->
+    <h2>Display None</h2>
+    <p class="d-none">This text is hidden</p>
+
+    <br /><br />
+
+    <!-- Display Inline -->
+    <h2>Display Inline</h2>
+    <div class="d-inline">This text is inline</div>
+    <div class="d-inline">This text is inline</div>
+
+    <br /><br />
+
+    <!-- Display Block -->
+    <h2>Display Block</h2>
+    <span class="d-block">This span is block</span>
+    <span class="d-block">This span is block</span>
+
+    <br /><br />
+
+    <!-- Display Inline Block -->
+    <h2>Display Inline Block</h2>
+    <span class="d-inline-block" style="width: 500px">
+        This span is inline-block
+      </span>
+    <span class="d-inline-block">This span is inline-block</span>
+
+    <br /><br />
+
+    <!-- Hide on Small Screens -->
+    <h2>Hide on Small Screens</h2>
+    <div class="d-none d-md-block">This div is hidden on mobile</div>
+
+    <br /><br />
+
+    <!-- Hide on Medium Screens and Up -->
+    <h2>Hide on Medium Screens and Up</h2>
+    <div class="d-block d-md-none">
+        This div is hidden on medium screens and up
+    </div>
+
+    <br /><br />
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
