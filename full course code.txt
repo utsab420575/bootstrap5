@@ -696,3 +696,857 @@ d-md-none: Hides the element starting from the md (medium) breakpoint and above.
 </html>
 
 
+
+
+#################################################################4. Background & Text Colors######################################################
+
+(Background,Text,Link color সেট করা হয়েছে।)
+
+Background Colors
+Use .bg-* for background colors:
+Example: .bg-primary, .bg-success, .bg-warning, .bg-dark, etc.
+
+Text Colors
+Use .text-* for text colors:
+Example: .text-primary, .text-success, .text-danger, .text-dark, etc.
+
+Link Colors
+Use .link-* for styled links:
+Example: .link-primary, .link-success, .link-danger, .link-warning, etc.
+
+Background Opacity
+Use .bg-opacity-* for background transparency:
+Example: .bg-opacity-75, .bg-opacity-50, .bg-opacity-25, etc.
+
+
+Text Opacity
+Use .text-opacity-* for text transparency:
+Example: .text-opacity-75, .text-opacity-50, .text-opacity-25, etc.
+
+
+Gradient Background
+Use .bg-gradient with .bg-* to apply gradient effects:
+Example: .bg-primary bg-gradient, .bg-info bg-gradient.
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Background & Text Colors</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Background Colors</h1>
+
+    <!--    Background utilities do not set color, so in some cases you’ll want to use .text-* color utilities.-->
+    <!-- Background Colors here text color black-->
+    <div class=" bg-primary ">.bg-primary</div>
+    <div class=" bg-primary-subtle">.bg-primary-subtle</div>
+    <div class=" bg-secondary ">.bg-secondary</div>
+    <div class=" bg-secondary-subtle">.bg-secondary-subtle</div>
+    <div class=" bg-success ">.bg-success</div>
+    <div class=" bg-success-subtle">.bg-success-subtle</div>
+    <div class=" bg-danger ">.bg-danger</div>
+    <div class=" bg-danger-subtle">.bg-danger-subtle</div>
+    <div class=" bg-warning" >.bg-warning</div>
+    <div class=" bg-warning-subtle" >.bg-warning-subtle</div>
+    <div class=" bg-info" >.bg-info</div>
+    <div class=" bg-info-subtle">.bg-info-subtle</div>
+    <div class=" bg-light ">.bg-light</div>
+    <div class=" bg-light-subtle">.bg-light-subtle</div>
+    <div class=" bg-dark ">.bg-dark</div>
+    <div class=" bg-dark-subtle">.bg-dark-subtle</div>
+    <div class=" bg-body-secondary">.bg-body-secondary</div>
+    <div class=" bg-body-tertiary">.bg-body-tertiary</div>
+    <div class=" bg-body">.bg-body</div>
+    <div class=" bg-black">.bg-black</div>
+    <div class=" bg-white">.bg-white</div>
+    <div class=" bg-transparent" >.bg-transparent</div>
+
+    <br /><br />
+    <h1 class="mb-5">Background & Text Colors Combination</h1>
+
+    <!--    Background utilities do not set color, so in some cases you’ll want to use .text-* color utilities.-->
+    <!-- Text Background Colors -->
+    <div class=" bg-primary text-white">.bg-primary</div>
+    <div class=" bg-primary-subtle text-primary-emphasis">.bg-primary-subtle</div>
+    <div class=" bg-secondary text-white">.bg-secondary</div>
+    <div class=" bg-secondary-subtle text-secondary-emphasis">.bg-secondary-subtle</div>
+    <div class=" bg-success text-white">.bg-success</div>
+    <div class=" bg-success-subtle text-success-emphasis">.bg-success-subtle</div>
+    <div class=" bg-danger text-white">.bg-danger</div>
+    <div class=" bg-danger-subtle text-danger-emphasis">.bg-danger-subtle</div>
+    <div class=" bg-warning text-dark">.bg-warning</div>
+    <div class=" bg-warning-subtle text-warning-emphasis">.bg-warning-subtle</div>
+    <div class=" bg-info text-dark">.bg-info</div>
+    <div class=" bg-info-subtle text-info-emphasis">.bg-info-subtle</div>
+    <div class=" bg-light text-dark">.bg-light</div>
+    <div class=" bg-light-subtle text-light-emphasis">.bg-light-subtle</div>
+    <div class=" bg-dark text-white">.bg-dark</div>
+    <div class=" bg-dark-subtle text-dark-emphasis">.bg-dark-subtle</div>
+    <div class=" bg-body-secondary">.bg-body-secondary</div>
+    <div class=" bg-body-tertiary">.bg-body-tertiary</div>
+    <div class=" bg-body text-body">.bg-body</div>
+    <div class=" bg-black text-white">.bg-black</div>
+    <div class=" bg-white text-dark">.bg-white</div>
+    <div class=" bg-transparent text-body">.bg-transparent</div>
+
+    <br /><br />
+
+    <h1 class="mb-5">Text Colors</h1>
+    <!-- Text Colors -->
+    <p class="text-primary">.text-primary</p>
+    <p class="text-primary-emphasis">.text-primary-emphasis</p>
+    <p class="text-secondary">.text-secondary</p>
+    <p class="text-secondary-emphasis">.text-secondary-emphasis</p>
+    <p class="text-success">.text-success</p>
+    <p class="text-success-emphasis">.text-success-emphasis</p>
+    <p class="text-danger">.text-danger</p>
+    <p class="text-danger-emphasis">.text-danger-emphasis</p>
+    <p class="text-warning bg-dark">.text-warning</p>
+    <p class="text-warning-emphasis">.text-warning-emphasis</p>
+    <p class="text-info bg-dark">.text-info</p>
+    <p class="text-info-emphasis">.text-info-emphasis</p>
+    <p class="text-light bg-dark">.text-light</p>
+    <p class="text-light-emphasis">.text-light-emphasis</p>
+    <p class="text-dark bg-white">.text-dark</p>
+    <p class="text-dark-emphasis">.text-dark-emphasis</p>
+
+    <p class="text-body">.text-body</p>
+    <p class="text-body-emphasis">.text-body-emphasis</p>
+    <p class="text-body-secondary">.text-body-secondary</p>
+    <p class="text-body-tertiary">.text-body-tertiary</p>
+
+    <p class="text-black bg-white">.text-black</p>
+    <p class="text-white bg-dark">.text-white</p>
+    <p class="text-black-50 bg-white">.text-black-50</p>
+    <p class="text-white-50 bg-dark">.text-white-50</p>
+
+    <br /><br />
+
+    <h1 class="mb-5">Gradient Background Color</h1>
+    <!-- Gradients -->
+    <div class="bg-primary bg-gradient">.bg-primary</div>
+    <div class="bg-secondary bg-gradient">.bg-secondary</div>
+    <div class="bg-success bg-gradient">.bg-success</div>
+    <div class="bg-danger bg-gradient">.bg-danger</div>
+    <div class="bg-warning bg-gradient">.bg-warning</div>
+    <div class="bg-info bg-gradient">.bg-info</div>
+    <div class="bg-light bg-gradient">.bg-light</div>
+    <div class="bg-dark bg-gradient">.bg-dark</div>
+
+    <br /><br />
+
+    <h1 class="mb-5">Background Opacity</h1>
+    <!-- Background Opacity -->
+    <div class="bg-success  ">This is default success background</div>
+    <div class="bg-success   bg-opacity-75">This is 75% opacity success background</div>
+    <div class="bg-success   bg-opacity-50">This is 50% opacity success background</div>
+    <div class="bg-success   bg-opacity-25">This is 25% opacity success background</div>
+    <div class="bg-success   bg-opacity-10">This is 10% opacity success background</div>
+
+    <br /><br />
+
+    <h1 class="mb-5">Text Color Opacity</h1>
+    <!-- Text Opacity -->
+    <div class="text-success">This is default primary text</div>
+    <div class="text-success text-opacity-75">This is 75% opacity primary text</div>
+    <div class="text-success text-opacity-50">This is 50% opacity primary text</div>
+    <div class="text-success text-opacity-25">This is 25% opacity primary text</div>
+
+    <h1 class="mb-5 mt-3">Link Color</h1>
+    <!-- Link Colors -->
+    <p><a href="#" class="link-primary">Primary link</a></p>
+    <p><a href="#" class="link-secondary">Secondary link</a></p>
+    <p><a href="#" class="link-success">Success link</a></p>
+    <p><a href="#" class="link-danger">Danger link</a></p>
+    <p><a href="#" class="link-warning">Warning link</a></p>
+    <p><a href="#" class="link-info">Info link</a></p>
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+#################################################################5. Spacing######################################################
+
+Where property is one of:(margin ও padding)
+
+m - for set margin
+p - for set padding
+
+Where sides is one of:
+
+t - for set margin-top or padding-top(top থেকে margin/padding হবে )
+b - for set margin-bottom or padding-bottom(bottom থেকে margin/padding হবে)
+s - (start) for  set margin-left or padding-left (left থেকে margin/padding হবে)
+e - (end) for  set margin-right or padding-right (end থেকে margin/padding হবে)
+x - for classes that set both *-left and *-right (left ও right উভয় থেকে margin/padding হবে)
+y - for classes that set both *-top and *-bottom (top ও bottom উভয় থেকে margin/padding হবে)
+blank - for classes that set a margin or padding on all 4 sides of the element (top থেকে margin/padding হবে)
+Where size is one of:
+
+0 - 0
+1 -  .25rem
+2 -  .5rem
+3 -  .1rem
+4 -  1.5rem
+5 -    3rem
+auto - for classes that set the margin to auto
+
+
+margin,padding apply:
+m-1/p-1 (Margin/Padding All(সব দিক(top,end,bottom,start) থেকে margin apply হবে।) 
+my-1/py-1 (Margin/Padding Top & Bottom (my/py দিয়ে margin/padding => Top Bottom এ apply হবে।)
+mx-1/px-1(Margin/Padding Left & Right (mx দিয়ে margin => left right এ apply হবে।))
+mt-1/pt-1(Margin/Padding Top (mt/pt দিয়ে margin/padding => top এ apply হবে।))
+mb-1/pb-1 (Margin/Padding Bottom (mb/pb দিয়ে margin/padding => bottom এ apply হবে।)
+ms-1/ps-1(Margin/Padding Left/Start)
+me-1/pe-1 (Margin/Padding right/end)
+
+(Block/Flex Box এ margin-auto use হয়।)
+m-auto: Automatically centers the element in both vertical and horizontal directions.
+(Block/Flex Box এর মধ্যে content কে horizontally ও vertically center এ নিয়ে আসা যায়।)
+	<div class="text-bg-warning w-50 m-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-warning w-50 m-auto">Lorem, ipsum dolor.</div>
+    </div>
+my-auto: Vertically centers the element within its parent.
+(Block/Flex Box এর মধ্যে content কে  vertically center এ নিয়ে আসা যায়।)
+
+	<div class="text-bg-primary w-50 my-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-primary w-50 my-auto">Lorem, ipsum dolor.</div>
+    </div>	
+
+mx-auto: Horizontally centers the element within its parent.
+(Block/Flex Box এর মধ্যে content কে  horizontally center এ নিয়ে আসা যায়।)
+	<div class="text-bg-info w-50 mx-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-success w-50 mx-auto">Lorem, ipsum dolor.</div>
+    </div>
+	
+
+ms-auto: Pushes the element to the right (in LTR) by setting an automatic margin on the left side.
+(Block/Flex Box এর মধ্যে content কে  right এ নিয়ে যাবে।(Right Align)))
+	<div class="text-bg-danger w-50 ms-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-danger w-50 ms-auto">Lorem, ipsum dolor.</div>
+    </div>
+
+
+me-auto: Pushes the element to the left (in LTR) by setting an automatic margin on the right side.
+(Block/Flex Box এর মধ্যে content কে  left এ নিয়ে যাবে।(Left Align)))
+
+	<div class="text-bg-dark w-50 me-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-dark w-50 me-auto">Lorem, ipsum dolor.</div>
+    </div>
+	
+
+
+******************************************margin , margin auto ,****************************************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Spacing</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Spacing</h1>
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Margin All</h1>
+        <!-- Margin All(সব দিক(top,end,bottom,start) থেকে margin apply হবে।) -->
+        <div class="text-bg-dark m-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark m-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark m-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark m-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark m-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Margin Top & Bottom</h1>
+        <!-- Margin Top & Bottom (my দিয়ে margin => Top Bottom এ apply হবে।) -->
+        <div class="text-bg-success my-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Margin Left & Right</h1>
+        <!-- Margin Left & Right -->
+        <!-- Margin Left & Right (mx দিয়ে margin => left right এ apply হবে।) -->
+        <div class="text-bg-secondary  mx-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-secondary mx-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-secondary mx-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-secondary mx-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-secondary mx-5">Lorem, ipsum dolor.</div>
+    </div>
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Margin Top</h1>
+        <!-- Margin Top (mt দিয়ে margin => top এ apply হবে।) -->
+        <div class="text-bg-danger  mt-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger mt-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger mt-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger mt-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger mt-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Margin Bottom</h1>
+        <!-- Margin Bottom (mb দিয়ে margin => bottom এ apply হবে।)-->
+        <div class="text-bg-warning mb-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning mb-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning mb-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning mb-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning mb-5">Lorem, ipsum dolor.</div>
+    </div>
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Margin Start/Left</h1>
+        <!-- Margin Left/Start -->
+        <div class="text-bg-info  ms-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info ms-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info ms-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info ms-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info ms-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Margin End/Right</h1>
+        <!-- Margin Right/End -->
+        <div class="text-bg-dark me-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark me-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark me-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark me-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark me-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+
+
+
+
+    <h1 class="mb-5">Margin Auto</h1>
+    <!-- Margin Auto m-auto-->
+    <div class="text-bg-warning w-50 m-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-warning w-50 m-auto">Lorem, ipsum dolor.</div>
+    </div>
+
+    <!-- Margin Auto my-auto-->
+    <div class="text-bg-primary w-50 my-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-primary w-50 my-auto">Lorem, ipsum dolor.</div>
+    </div>
+
+    <!-- Margin Auto mx-auto-->
+    <div class="text-bg-info w-50 mx-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-success w-50 mx-auto">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <!-- Margin Auto ms-auto-->
+    <div class="text-bg-danger w-50 ms-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-danger w-50 ms-auto">Lorem, ipsum dolor.</div>
+    </div>
+
+    <!-- Margin Auto me-auto-->
+    <div class="text-bg-dark w-50 me-auto">Lorem, ipsum dolor.</div>
+    <div class="d-flex mb-5" style="height: 200px;border: 1px solid red">
+        <div class="text-bg-dark w-50 me-auto">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <!-- Margin Auto All Example-->
+    <h1 style="text-align: center">Margin Auto Example</h1>
+    <div class="container bg-light mb-5">
+        <div class="card w-50 mx-auto">
+            <div class="card-body">
+                <h5 class="card-title">Centered Card</h5>
+                <p class="card-text">This card is horizontally centered using <code>mx-auto</code>.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="d-flex bg-light mb-5" style="height: 200px;">
+        <div class="text-center my-auto mx-auto">
+            <h1>Welcome</h1>
+            <p>This content is vertically and horizontally centered using <code>my-auto</code> and <code>mx-auto</code>.</p>
+        </div>
+    </div>
+
+    <div class="d-flex bg-light mb-5">
+        <button class="btn btn-primary me-auto">Align Left</button>
+        <button class="btn btn-success ms-auto">Align Right</button>
+    </div>
+
+
+    <div class="d-flex bg-light mb-5" style="height: 100px;">
+        <button class="btn btn-primary me-auto">Align Left</button>
+        <button class="btn btn-success ms-auto">Align Right</button>
+    </div>
+
+
+
+    <div class="d-flex bg-light align-items-center mb-5" style="height: 100px;">
+        <button class="btn btn-primary me-auto">Align Left</button>
+        <button class="btn btn-success mx-auto">Align Center</button>
+        <button class="btn btn-danger ms-auto">Align Right</button>
+    </div>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Coding Festival</a>
+            <div class="ms-auto">
+                <a href="#" class="nav-link d-inline-block me-1">Home</a>
+                <a href="#" class="nav-link d-inline-block me-1">About</a>
+                <a href="#" class="nav-link d-inline-block me-1">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="d-flex flex-column bg-light mb-5" style="height: 200px; ">
+        <header class="p-3 bg-primary text-white">Header</header>
+        <main class="flex-grow-1 p-3">
+            <p>Main content goes here.</p>
+        </main>
+        <footer class="bg-dark text-white py-2 w-100 m-auto text-center">
+            Footer at the bottom
+        </footer>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mb-5" style="height: 200px; background-color: rgba(0,0,0,0.1);">
+        <div class="modal-content w-50 m-auto p-3">
+            <h5 class="modal-title">Centered Modal</h5>
+            <p>This modal is perfectly centered using <code>m-auto</code>.</p>
+            <button class="btn btn-primary">Close</button>
+        </div>
+    </div>
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+*********************************************padding/grid/vstack/hstack**********************************
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Spacing</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Spacing</h1>
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Padding All</h1>
+        <!-- Padding All -->
+        <div class="text-bg-dark my-2  p-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark my-2 p-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark my-2 p-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark my-2 p-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-dark my-2 p-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Padding Top & Bottom</h1>
+        <!-- Padding Top & Bottom -->
+        <div class="text-bg-success my-2  py-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-2 py-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-2 py-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-2 py-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-success my-2 py-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Padding Left & Right</h1>
+        <!-- Padding Left & Right -->
+        <div class="text-bg-danger my-2 px-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger my-2 px-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger my-2 px-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger my-2 px-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-danger my-2 px-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Padding Top</h1>
+        <!-- Padding Top -->
+        <div class="text-bg-info my-2 pt-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info my-2 pt-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info my-2 pt-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info my-2 pt-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-info my-2 pt-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Padding Bottom</h1>
+        <!-- Padding Bottom -->
+        <div class="text-bg-warning my-2  pb-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning my-2 pb-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning my-2 pb-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning my-2 pb-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-warning my-2 pb-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red">
+        <h1 class="mb-5">Padding Left/Start</h1>
+        <!-- Padding Left/Start -->
+        <div class="text-bg-primary my-2 ps-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 ps-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 ps-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 ps-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 ps-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red; text-align: right">
+        <h1 class="mb-5">Padding End/Right</h1>
+        <!-- Padding Right/End -->
+        <div class="text-bg-primary my-2  pe-1">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 pe-2">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 pe-3">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 pe-4">Lorem, ipsum dolor.</div>
+        <div class="text-bg-primary my-2 pe-5">Lorem, ipsum dolor.</div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red;">
+        <h1 class="mb-5">VSTACK & GAP</h1>
+        <!-- Stacks -->
+        <div class="vstack gap-3 mb-5">
+            <div class="p-2 bg-info">First item</div>
+            <div class="p-2 bg-info">Second item</div>
+            <div class="p-2 bg-info">Third item</div>
+        </div>
+    </div>
+
+
+    <div class="row mb-5" style="border: 1px solid red;">
+        <h1 class="mb-5">HSTACK & GAP</h1>
+        <div class="hstack gap-5">
+            <div class="p-2 text-bg-success">First item</div>
+            <div class="p-2 text-bg-success">Second item</div>
+            <div class="p-2 text-bg-success">Third item</div>
+        </div>
+    </div>
+
+    <div class="row mb-5" style="border: 1px solid red;">
+        <h1 class="mb-5">GRID & GAP</h1>
+        <div class="row g-3">
+            <div class="col-6">
+                <div class="p-2 bg-primary text-white">Grid item 1</div>
+            </div>
+            <div class="col-6">
+                <div class="p-2 bg-primary text-white">Grid item 2</div>
+            </div>
+            <div class="col-6">
+                <div class="p-2 bg-primary text-white">Grid item 3</div>
+            </div>
+            <div class="col-6">
+                <div class="p-2 bg-primary text-white">Grid item 4</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+#################################################################06-sizing-borders-shadows######################################################
+Border Classes:
+border: Adds a border to all sides.
+	<div class="p-3 mb-2 bg-light border">Regular</div>
+	
+border-{color}: Sets the border color (e.g., border-primary, border-secondary, border-success, etc.).
+	<div class="p-3 mb-2 bg-light border border-primary">Primary</div>
+    <div class="p-3 mb-2 bg-light border border-primary-subtle">Primary Subtle</div>
+	
+border-{size}: Sets the border thickness (e.g., border-1, border-2, border-3, border-5).
+	<div class="border border-1">Border size 1</div>
+    <div class="border border-2">Border size 2</div>
+	
+border-{side}: Adds a border to a specific side (e.g., border-top, border-end, border-bottom, border-start).
+	<div class="p-3 mb-2 bg-light border-top">Border Top</div>
+    <div class="p-3 mb-2 bg-light border-bottom">Border Bottom</div>
+    <div class="p-3 mb-2 bg-light border-end">Border Right</div>
+    <div class="p-3 mb-2 bg-light border-start">Border Left</div>
+border-{side}-0: Removes the border from a specific side (e.g., border-top-0, border-end-0).
+	<div class="border  bg-light  border-0 mb-1">No border</div>
+    <div class="border bg-light  border-top-0 mb-1">No top border</div>
+    <div class="border  bg-light border-end-0 mb-1">No right border</div>
+    <div class="border bg-light  border-bottom-0 mb-1">No bottom border</div>
+    <div class="border  bg-light border-start-0 mb-1">No left border</div>
+
+
+Rounded Border Classes:
+rounded: Adds default rounded corners to all sides.
+	<div class="p-3 mb-2 bg-light border rounded">Rounded Default</div>
+	
+rounded-{size}: Adjusts the roundness of the corners (e.g., rounded-0, rounded-1, rounded-2, rounded-3, rounded-4, rounded-5).
+	<div class="p-3 mb-2 bg-light border rounded-0">Rounded 0</div>
+    <div class="p-3 mb-2 bg-light border rounded-1">Rounded 1</div>
+    <div class="p-3 mb-2 bg-light border rounded-2">Rounded 2</div>
+	
+rounded-{side}: Rounds specific sides (e.g., rounded-top, rounded-end, rounded-bottom, rounded-start).
+	<div class="p-3 mb-2 bg-light border rounded">Rounded Default</div>
+    <div class="p-3 mb-2 bg-light border rounded-top">Rounded Top</div>
+    <div class="p-3 mb-2 bg-light border rounded-bottom">Rounded Bottom</div>
+    <div class="p-3 mb-2 bg-light border rounded-end">Rounded Right</div>
+    <div class="p-3 mb-2 bg-light border rounded-start">Rounded Left</div>
+	
+rounded-circle: Creates a circular border.
+	<div class="p-3 mb-2 bg-light w-25 border rounded-circle">Rounded Circle</div>
+rounded-pill: Creates a pill-shaped border.
+	<div class="p-3 mb-2 bg-light w-25 border rounded-pill">Rounded Circle</div>
+
+Special Combined Classes:
+	<div class="w-25 p-5 rounded-bottom-1 bg-primary mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-start-2 bg-danger mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-end-circle bg-info mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-start-circle bg-info mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-start-pill bg-success mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-top-0 rounded-5 bg-success mb-3">75*75</div>
+
+Shadow:
+    <div class="p-3 mb-5 shadow-none">No shadow</div>
+    <div class="p-3 mb-5 shadow-sm">Small shadow</div>
+    <div class="p-3 mb-5 shadow">Regular shadow</div>
+    <div class="p-3 mb-5 shadow-lg">Larger shadow</div>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Sizing, Borders & Shadows</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Sizing, Borders & Shadows</h1>
+
+    <!-- Width -->
+    <div class="bg-success text-white p-3 w-25">Width 25%</div>
+    <div class="bg-success text-white p-3 w-50">Width 50%</div>
+    <div class="bg-success text-white p-3 w-75">Width 75%</div>
+    <div class="bg-success text-white p-3 w-100">Width 100%</div>
+    <div class="bg-success text-white p-3 w-auto">Width Auto</div>
+
+    <br /><br />
+
+    <!-- Height -->
+    <div style="height: 300px; border: 1px solid #333">
+        <div class="bg-secondary text-white d-inline-block  h-25">Height 25%</div>
+        <div class="bg-secondary text-white d-inline-block h-50">Height 50%</div>
+        <div class="bg-secondary text-white d-inline-block h-75">Height 75%</div>
+        <div class="bg-secondary text-white d-inline-block h-100">Height 100%</div>
+        <div class="bg-secondary text-white d-inline-block h-auto">Height Auto</div>
+    </div>
+
+    <br /><br />
+
+
+
+    <h1>Border Color: Use border-{color} to change border colors</h1>
+    <!-- Border Colors -->
+    <div class="p-3 mb-2 bg-light border border-primary">Primary</div>
+    <div class="p-3 mb-2 bg-light border border-primary-subtle">Primary Subtle</div>
+    <div class="p-3 mb-2 bg-light border border-secondary">Secondary</div>
+    <div class="p-3 mb-2 bg-light border border-secondary-subtle">Secondary Subtle</div>
+    <div class="p-3 mb-2 bg-light border border border-success">Success</div>
+    <div class="p-3 mb-2 bg-light border border border-success-subtle">Success Subtle</div>
+    <div class="p-3 mb-2 bg-light border border-info">Info</div>
+    <div class="p-3 mb-2 bg-light border border-info-subtle">Info Subtle</div>
+    <div class="p-3 mb-2 bg-light border border-warning">Warning</div>
+    <div class="p-3 mb-2 bg-light border border-warning-subtle">Warning Subtle</div>
+    <div class="p-3 mb-2 bg-light border border-danger">Danger</div>
+    <div class="p-3 mb-2 bg-light border border-danger-subtle">Danger Subtle</div>
+    <div class="p-3 mb-2 bg-light border border-light">Light</div>
+    <div class="p-3 mb-2 bg-light border border-light-subtle">Light Subtle</div>
+    <div class="p-3 mb-2 bg-light border border-dark">Dark</div>
+    <div class="p-3 mb-2 bg-light border border-black">Black</div>
+    <div class="p-3 mb-2 bg-light border border-white">White</div>
+
+    <br /><br />
+
+    <h1 class="mt-5">Border Sizes: Adjust the border thickness using border-{size}</h1>
+    <!--    Border Sizes: Adjust the border thickness using border-{size}-->
+    <div class="border border-1">Border size 1</div>
+    <div class="border border-2">Border size 2</div>
+    <div class="border border-3">Border size 3</div>
+    <div class="border border-5">Border size 5</div>
+
+    <br /><br />
+
+    <h1>Border Sides: Apply borders to specific sides</h1>
+    <!-- Borders -->
+    <div class="p-3 mb-2 bg-light border">Regular</div>
+    <div class="p-3 mb-2 bg-light border-top">Border Top</div>
+    <div class="p-3 mb-2 bg-light border-bottom">Border Bottom</div>
+    <div class="p-3 mb-2 bg-light border-end">Border Right</div>
+    <div class="p-3 mb-2 bg-light border-start">Border Left</div>
+
+
+
+
+    <br /><br />
+
+    <h1>Remove Borders : Remove all borders with border-0 or specific sides with border-{side}-0</h1>
+    <!--    Remove Borders: Remove all borders with border-0 or specific sides with border-{side}-0-->
+    <!--    border-top-0, border-end-0, border-bottom-0, border-start-0-->
+    <div class="border  bg-light  border-0 mb-1">No border</div>
+    <div class="border bg-light  border-top-0 mb-1">No top border</div>
+    <div class="border  bg-light border-end-0 mb-1">No right border</div>
+    <div class="border bg-light  border-bottom-0 mb-1">No bottom border</div>
+    <div class="border  bg-light border-start-0 mb-1">No left border</div>
+
+    <br /><br />
+
+
+
+    <h1>Rounded Borders : Fully Rounded Corners; rounded, rounded-0, or size-specific rounding</h1>
+    <!--Fully Rounded Corners-->
+    <!--    Rounded Borders : Fully Rounded Corners-->
+    <!--    Use rounded, rounded-0, or size-specific rounding-->
+    <div class="p-3 mb-2 bg-light border rounded">Rounded Default</div>
+    <div class="p-3 mb-2 bg-light border rounded-0">Rounded 0</div>
+    <div class="p-3 mb-2 bg-light border rounded-1">Rounded 1</div>
+    <div class="p-3 mb-2 bg-light border rounded-2">Rounded 2</div>
+    <div class="p-3 mb-2 bg-light border rounded-3">Rounded 3</div>
+    <div class="p-3 mb-2 bg-light border rounded-4">Rounded 4</div>
+    <div class="p-3 mb-2 bg-light border rounded-5">Rounded 5</div>
+
+    <br /><br />
+
+    <h1>Rounded Specific Sides :  rounded-top, rounded-end, rounded-bottom, rounded-start</h1>
+    <!--Rounded Specific Sides:Add rounded corners to specific sides :
+    rounded-top, rounded-end, rounded-bottom, rounded-start-->
+    <!-- Border Radius -->
+
+    <div class="p-3 mb-2 bg-light border rounded">Rounded Default</div>
+    <div class="p-3 mb-2 bg-light border rounded-top">Rounded Top</div>
+    <div class="p-3 mb-2 bg-light border rounded-bottom">Rounded Bottom</div>
+    <div class="p-3 mb-2 bg-light border rounded-end">Rounded Right</div>
+    <div class="p-3 mb-2 bg-light border rounded-start">Rounded Left</div>
+
+
+    <br /><br />
+
+    <h1>Special Shapes : Create circle or pill shapes:</h1>
+    <!--    Special Shapes : Create circle or pill shapes:-->
+    <div class="p-3 mb-2 bg-light w-25 border rounded-circle">Rounded Circle</div>
+    <div class="p-3 mb-2 bg-light w-25 border rounded-pill">Rounded Circle</div>
+
+
+
+    <h1>Combine more class</h1>
+    <div class="w-25 p-5 rounded-bottom-1 bg-primary mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-start-2 bg-danger mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-end-circle bg-info mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-start-circle bg-info mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-start-pill bg-success mb-3">75*75</div>
+    <div class="w-25 p-5 rounded-top-0 rounded-5 bg-success mb-3">75*75</div>
+
+    <!-- Shadows -->
+    <div class="p-3 mb-5 shadow-none">No shadow</div>
+    <div class="p-3 mb-5 shadow-sm">Small shadow</div>
+    <div class="p-3 mb-5 shadow">Regular shadow</div>
+    <div class="p-3 mb-5 shadow-lg">Larger shadow</div>
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+	
+
+
+
+
+
+
+
