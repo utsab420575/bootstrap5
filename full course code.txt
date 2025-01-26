@@ -1589,6 +1589,401 @@ Shadow:
 
 
 #################################################################(2.7.2) 7. Breakpoints######################################################
+Media Queries are CSS rules that allow styles to be applied conditionally, based on the device's screen size, orientation, or resolution.
+device's screen size, orientation, or resolution এর condition উপর ভিত্তি করে css apply করতে চাইলে @media(condition) ব্যবহৃত হয়।
+ 
+If @media (min-width: 576px) is defined, the styles inside this media query will apply to screens 576px or wider.
+(screen size 576px এর উপরে / সমান হলে css apply হবে।)
+
+		/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+		(576px এর সমান/উপরে হলে background red হয়ে যাবে।)
+        @media(min-width: 576px) {
+            body{
+                background: red;
+            }
+        }
+		
+		 /* `md` applies to small devices (landscape phones, less than 768px) */
+		 (768px এর সমান/উপরে হলে background blue হয়ে যাবে।)
+        @media (min-width: 768px) {
+            body {
+                background: blue;
+            }
+        }
+        /* `lg` applies to medium devices (tablets, less than 992px) */
+		 (992px এর সমান/উপরে হলে background green হয়ে যাবে।)
+        @media (min-width: 992px) {
+            body {
+                background: green;
+            }
+        }
+        /* `xl` applies to large devices (desktops, less than 1200px) */
+		 (1200px এর সমান/উপরে হলে background yellow হয়ে যাবে।)
+        @media (min-width: 1200px) {
+            body {
+                background: yellow;
+            }
+        }
+        /* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+		 (1400px এর সমান/উপরে হলে background purple হয়ে যাবে।)
+        @media (min-width: 1400px) {
+            body {
+                background: purple;
+            }
+        }
+		
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <style>
+        /*  X-Small devices (portrait phones, less than 576px) */
+        body {
+            background: gray;
+        }
+
+        /* `sm` applies to x-small devices (portrait phones, less than 576px) */
+        @media(min-width: 576px) {
+            body{
+                background: red;
+            }
+        }
+
+        /* `md` applies to small devices (landscape phones, less than 768px) */
+        @media (min-width: 768px) {
+            body {
+                background: blue;
+            }
+        }
+        /* `lg` applies to medium devices (tablets, less than 992px) */
+        @media (min-width: 992px) {
+            body {
+                background: green;
+            }
+        }
+        /* `xl` applies to large devices (desktops, less than 1200px) */
+
+        @media (min-width: 1200px) {
+            body {
+                background: yellow;
+            }
+        }
+        /* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+        @media (min-width: 1400px) {
+            body {
+                background: purple;
+            }
+        }
+    </style>
+    <title>Bootstrap Sandbox | Breakpoints</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Breakpoints</h1>
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+#################################################################(2.8) 8. Buttons######################################################
+button,button color,link to button,button type =submit,reset  ,button group,button dropdown,radio button group(input type=radio button)
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Buttons</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Buttons</h1>
+
+    <h1 class="mb-5">Different type of button</h1>
+    <!-- Styles -->
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-success">Success</button>
+    <button class="btn btn-danger">Danger</button>
+    <button class="btn btn-warning">Warning</button>
+    <button class="btn btn-info">Info</button>
+    <button class="btn btn-light">Light</button>
+    <button class="btn btn-dark">Dark</button>
+    <button class="btn btn-link">Link</button>
+
+    <br /><br />
+    <hr>
+
+    <h1 class="mb-5">Button Tags(type=submit,reset,button)</h1>
+
+    <!--    Button Element:Use Case: For form submission or general button functionality with JavaScript.-->
+    <h3>Button tag with type=submit</h3>
+    <button class="btn btn-primary" type="submit">Button</button>
+
+    <!--  Use Case: When you want a button to act as a link, navigating to another page or anchor.-->
+    <h3>Link Formatted As Button</h3>
+    <a href="#" class="btn btn-primary">Click Me</a>
+
+    <h3>Input tag as submit button</h3>
+    <!--    Submit Button :Use Case: Automatically submits the form when clicked.-->
+    <input class="btn btn-primary" type="submit" value="Submit Form">
+
+    <h3>Input tag as reset button</h3>
+    <!--    Reset Button: Use Case: Resets all form fields to their default values.-->
+    <input class="btn btn-primary" type="submit" value="Reset All">
+
+    <h3>Input tag as button</h3>
+    <!--    Input Button: Use Case: Acts as a clickable button, often tied to JavaScript events.-->
+    <input class="btn btn-primary" type="submit" value="Action Performed">
+
+    <br /><br />
+    <hr>
+
+    <h1>Sizes: Large Small Custom</h1>
+    <!-- Button Sizes -->
+    <button class="btn btn-primary btn-lg">Regular</button>
+    <button class="btn btn-secondary btn-sm">Small</button>
+    <button class="btn btn-danger btn-lg">Large</button>
+    <button type="button" class="btn btn-success"
+            style="--bs-btn-padding-y: 40px; --bs-btn-padding-x: 100px; --bs-btn-font-size: 30px;">
+        Custom button
+    </button>
+
+
+    <br /><br />
+    <hr>
+
+    <h1>Button States(Active , Disable)</h1>
+    <!-- Button States -->
+    <button class="btn btn-primary">Regular</button>
+    <button class="btn btn-primary disabled">Disabled</button>
+    <button class="btn btn-primary active">Active</button>
+
+    <br /><br />
+    <hr>
+
+    <h1>Outline buttons</h1>
+    <!-- Outline Buttons -->
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-outline-info">Info</button>
+    <button type="button" class="btn btn-outline-light">Light</button>
+    <button type="button" class="btn btn-outline-dark">Dark</button>
+
+    <br /><br />
+    <hr>
+
+    <h1>Vertically Button</h1>
+    <!-- Block Buttons -->
+    <div class="d-grid vstack gap-3">
+        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-danger">Cancel</button>
+    </div>
+    <hr>
+
+    <h1>Block Button</h1>
+    <!-- Block Buttons -->
+    <div class="d-grid gap-2 mb-4">
+        <button class="btn btn-primary" type="button">Button</button>
+        <button class="btn btn-primary" type="button">Button</button>
+    </div>
+
+    <div class="d-grid gap-2 col-6 mx-auto mb-5">
+        <button class="btn btn-secondary" type="button">Button</button>
+        <button class="btn btn-secondary" type="button">Button</button>
+    </div>
+
+    <h1>Button In Left Right</h1>
+    <div class="d-flex">
+        <button class="btn btn-primary me-auto">Left Button</button>
+        <button class="btn btn-secondary ms-auto">Right Button</button>
+    </div>
+    <hr>
+
+    <h1>Button In Right</h1>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-primary me-2">Left Button</button>
+        <button class="btn btn-secondary">Right Button</button>
+    </div>
+    <hr>
+
+    <h1>Button In Left</h1>
+    <div class="d-flex justify-content-start">
+        <button class="btn btn-primary me-2">Left Button</button>
+        <button class="btn btn-secondary">Right Button</button>
+    </div>
+    <hr>
+
+
+    <h1>Button In Left&Right</h1>
+    <div class="d-flex justify-content-between">
+        <!-- Left Buttons -->
+        <div>
+            <button class="btn btn-primary me-2">Left Button 1</button>
+            <button class="btn btn-secondary">Left Button 2</button>
+        </div>
+
+        <!-- Right Buttons -->
+        <div>
+            <button class="btn btn-primary me-2">Right Button 1</button>
+            <button class="btn btn-secondary">Right Button 2</button>
+        </div>
+    </div>
+
+
+    <br /><br />
+    <hr>
+
+    <h1>Wrap a series of buttons with .btn in .btn-group.</h1>
+    <!-- Button Group -->
+    <div class="btn-group" role="group">
+        <button class="btn btn-primary">Left</button>
+        <button class="btn btn-primary">Middle</button>
+        <button class="btn btn-primary">Right</button>
+    </div>
+    <br /><br />
+    <hr>
+
+
+    <h1> groups of links </h1>
+    <div class="btn-group">
+        <a href="#" class="btn btn-primary active" aria-current="page">Active link</a>
+        <a href="#" class="btn btn-primary">Link</a>
+        <a href="#" class="btn btn-primary">Link</a>
+    </div>
+
+    <br /><br />
+    <hr>
+
+
+    <h1>Toolbar: Making Multiple Group Of Button</h1>
+    <!-- Button Toolbar -->
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-primary">1</button>
+            <button type="button" class="btn btn-primary">2</button>
+            <button type="button" class="btn btn-primary">3</button>
+            <button type="button" class="btn btn-primary">4</button>
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Second group">
+            <button type="button" class="btn btn-secondary">5</button>
+            <button type="button" class="btn btn-secondary">6</button>
+            <button type="button" class="btn btn-secondary">7</button>
+        </div>
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button type="button" class="btn btn-info">8</button>
+        </div>
+    </div>
+
+    <br /><br />
+    <hr>
+
+
+    <h1>Toolbar Sizing: Making Multiple Group Of Button</h1>
+
+    <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+        <button type="button" class="btn btn-outline-primary">Left</button>
+        <button type="button" class="btn btn-outline-primary">Middle</button>
+        <button type="button" class="btn btn-outline-primary">Right</button>
+    </div>
+    <br>
+    <div class="btn-group" role="group" aria-label="Default button group">
+        <button type="button" class="btn btn-outline-primary">Left</button>
+        <button type="button" class="btn btn-outline-primary">Middle</button>
+        <button type="button" class="btn btn-outline-primary">Right</button>
+    </div>
+    <br>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+        <button type="button" class="btn btn-outline-primary">Left</button>
+        <button type="button" class="btn btn-outline-primary">Middle</button>
+        <button type="button" class="btn btn-outline-primary">Right</button>
+    </div>
+    <br /><br />
+    <hr>
+
+
+    <h1>Dropdown Button</h1>
+    <!-- Dropdown Button -->
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+            Dropdown Button
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Link 1</a></li>
+            <li><a href="#" class="dropdown-item">Link 2</a></li>
+            <li><a href="#" class="dropdown-item">Link 3</a></li>
+        </ul>
+    </div>
+
+    <br /><br />
+    <hr>
+    <h1>Dropdown Button Nesting</h1>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <button type="button" class="btn btn-primary">1</button>
+        <button type="button" class="btn btn-primary">2</button>
+
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+            </ul>
+        </div>
+    </div>
+    <br /><br />
+    <hr>
+
+
+
+    
+
+    <h1>Radio Button Group</h1>
+    <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+        <label class="btn btn-outline-danger" for="vbtn-radio1">Radio 1</label>
+        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+        <label class="btn btn-outline-danger" for="vbtn-radio2">Radio 2</label>
+        <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+        <label class="btn btn-outline-danger" for="vbtn-radio3">Radio 3</label>
+    </div>
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 
 
 
