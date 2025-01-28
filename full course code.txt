@@ -1,3 +1,8 @@
+==============================================================================2. Bootstrap Fundamentals - Part 1===============================================================================================
+
+
+
+
 -------------------------------------------1. Getting Started---------------------------------------
 
 ##########################################Bootstrap install#########################################
@@ -387,8 +392,8 @@ Responsive Alignment: .text-sm-end, .text-md-end, .text-lg-end, .text-xl-end ali
 </html>
 
 
+-------------------------------------------3. Display & Position---------------------------------------
 
-################################################## 3. Display & Position ##############################################
 <div class="position-static">...</div>
 Default positioning (no special positioning applied).
 normally যেখানে বসার কথা সেখানে বসবে।
@@ -741,7 +746,7 @@ d-md-none: Hides the element starting from the md (medium) breakpoint and above.
 
 
 
-#################################################################4. Background & Text Colors######################################################
+---------------------------------------------------4. Background & Text Colors-----------------------------------------------------
 
 (Background,Text,Link color সেট করা হয়েছে।)
 
@@ -932,7 +937,7 @@ Example: .bg-primary bg-gradient, .bg-info bg-gradient.
 
 
 
-#################################################################5. Spacing######################################################
+-------------------------------------------------5. Spacing (maring padding)-------------------------------------------------------
 
 Where property is one of:( margin ও padding )
 
@@ -1363,7 +1368,7 @@ me-auto: Pushes the element to the left (in LTR) by setting an automatic margin 
 
 
 
-#################################################################06-sizing-borders-shadows######################################################
+-------------------------------------------------------06-sizing-borders-shadows--------------------------------------------------------------------
 Border Classes:
 border: Adds a border to all sides.
 	<div class="p-3 mb-2 bg-light border">Regular</div>
@@ -1588,7 +1593,8 @@ Shadow:
 
 
 
-#################################################################(2.7.2) 7. Breakpoints######################################################
+---------------------------------------------------------------(2.7.2) 7. Breakpoints---------------------------------------------------------
+
 Media Queries are CSS rules that allow styles to be applied conditionally, based on the device's screen size, orientation, or resolution.
 device's screen size, orientation, or resolution এর condition উপর ভিত্তি করে css apply করতে চাইলে @media(condition) ব্যবহৃত হয়।
  
@@ -1697,7 +1703,8 @@ If @media (min-width: 576px) is defined, the styles inside this media query will
 
 
 
-#################################################################(2.8) 8. Buttons######################################################
+---------------------------------------------------------(2.8) 8. Buttons ----------------------------------------------------------------
+
 button,button color,link to button,button type =submit,reset  ,button group,button dropdown,radio button group(input type=radio button)
 
 
@@ -1850,6 +1857,7 @@ button,button color,link to button,button type =submit,reset  ,button group,butt
     </div>
 
 
+
     <br /><br />
     <hr>
 
@@ -1975,6 +1983,1024 @@ button,button color,link to button,button type =submit,reset  ,button group,butt
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------(2.9) 9. Navbar -------------------------------------------------------------------------------
+
+https://getbootstrap.com/docs/5.3/components/navbar/
+( Bootstrap এর Built-in navbar use করব।)
+
+**************************************(navbar কখন expand হবে)******************************************************************
+<!--
+navbar: A Bootstrap utility class for creating a responsive navigation bar.
+(navbar এর জন্য এই tag use করব।)
+sticky-top: Makes the navigation bar stick to the top of the page when scrolling. It stays visible as you scroll down.
+(sticky-top দিয়ে navbar উপরে থাকবে।)
+navbar-expand-sm: Specifies that the navbar should be collapsed (stacked vertically) on smaller screens and expanded (horizontal layout) on screen widths small (sm) and above (≥576px).
+(navbar-expand-sm দিয়ে screen size 576px এর উপরে(>=576px) হলে navbar expand হবে  576px এর নীচে হলে collapse থাকবে।)
+bg-primary-subtle: Adds a subtle background color variation based on the primary theme color (available in Bootstrap 5.3+). The primary theme color is defined by your Bootstrap configuration.-->
+(navbar এর background color পরিবর্তন করে দিব।)
+
+<nav class="navbar sticky-top navbar-expand-sm bg-primary-subtle ">
+
+********************************************(navbar full screen হবে।)************************************************************
+
+<div class="container-fluid">
+A `container-fluid` creates a full-width, responsive container that spans 100% of the viewport width.
+(navbar এর width 100% হবে।)
+
+
+**********************************************(navbar এ image/text show হবে।)**********************************************************
+
+navbar-brand: A Bootstrap class used to style branding/logo links in a navbar.
+(navbar এ image/text দেয়ার জন্য navbar-brand use হয়।)
+
+mt-0: A margin utility class that sets the top margin to 0.
+d-inline-block: Displays the element as an inline block (useful for aligning inline elements with some block-like behavior).
+
+align-text-top: Aligns the image's top with the top of the text next to it.
+
+<a class="navbar-brand" href="#">
+	<img class="mt-0" src="public/image/app-store.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+	Bootstrap
+</a>
+
+**********************************************(button(three horizontal lines) style এখান থেকে পরিবর্তন করা যাবে। )**********************************************************
+*********************( এই button দেখাবে যদি ‍screen size <576px হয় কারণ navbar-expand-sm দেয়া। এবং data-bs-toggle="collapse" দেয়ায় menu item hidden হবে। )**************************************
+
+navbar-toggler: A Bootstrap class for styling the button used to toggle (show/hide) the navbar menu on smaller screens.
+
+navbar-toggler-icon (inside <span>): A Bootstrap class that adds a hamburger icon (three horizontal lines) inside the toggle button.
+(icon পরিবর্তন করা যাবে।)
+
+Additional Attributes:
+data-bs-toggle="collapse": Enables the toggle functionality for collapsing or expanding the targeted element.
+data-bs-target="#navbarSupportedContent": Specifies the ID of the element (e.g., a collapsible menu) to toggle.
+aria-controls="navbarSupportedContent": Improves accessibility by specifying the ID of the collapsible element the button controls.
+aria-expanded="false": Indicates the current state of the collapsible element (false = collapsed).
+aria-label="Toggle navigation": Provides an accessible label for screen readers.
+
+		/* এটা দিয়ে তিনটা horizontal line এর color change করা যাবে। color change: stroke="rgba%28255, 255, 255, 0.8 ===>means: rgba(255,255,255,0.8) stroke-width="2" line এর width : 2*/
+		 .navbar-toggler .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.8%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+
+        /* Change the background and border color of the button */
+		/*button এর border color , background-color এখান থেকে পরিবর্তন করা যাবে।*/
+        .navbar-toggler {
+            border-color: #ffffff; /* Button border color */
+            background-color: #007bff; /* Button background color */
+        }
+
+
+        /* Optional: Add hover styles */
+        /*  যখন button এ ক্লিক করা হয় তখন  background,border-color,border-shadow তা ঠিক করা হয়।*/
+		/*box shadow width 10px;*/
+        .navbar-toggler:hover {
+            background-color: #0056b3; /* Darker shade of blue */
+            border-color: #0056b3;
+            box-shadow: 0 0 10px rgba(179, 0, 164, 1); /* Blue shadow around the button */
+            /*box-shadow: none;*/
+        }
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+</button>
+
+**********************************************( xsm(screen size <576px এর জন্য navbar-collapse item গুলো hidden থাকবে যখন ক্লিক করবে তখন menuitem show হবে।) )**********************************************************
+<!--   collapse work for small screen size(<576px;)-->
+<!-- Collapsible menu -->
+<!--On small screens (xsm), the navbar menu is collapsed and hidden by default. Clicking the toggle button will display the menu items.
+    On larger screens (sm, md, etc.), the menu is always visible.-->
+		
+text-center: button এ ক্লিক করলে collapse menu-item গুলো  center এ  দেখাবে।
+
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+
+
+**********************************************( <ul class="navbar-nav m-auto m-md-0 ms-md-auto mb-2 mb-md-0 gap-1 gap-md-4"> )**********************************************************
+ <!--  navbar কে left এ নিতে হলে  me-md-auto দিতে হবে:      <ul class="navbar-nav m-auto m-md-0 me-md-auto mb-2 mb-md-0 gap-1 gap-md-4">-->
+**********************************************( এখানে navbar কে right এ নিয়ে যাওয়া হয়েছে।)**********************************************************
+
+<!-- navbar in right  write regarding to your need ; make navbar responsive-->
+<!--
+m-auto: for Small screens (< md): <ul> place in center
+m-md-0: clear all margin; Overrides the m-auto class starting from the medium (md) breakpoint (≥ 768px), removing all margins.
+ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+mb-2 : margin bottom for all screen size (here : for small screen(>=576px and <768px))
+mb-md-0 : for md screen(>=768px) margin bottom 0
+gap-1 : for all screen (here : for small screen(>=576px and <768px))
+gap-md-4 : for md screen(>=768px) gap-4-->
+
+
+ <ul class="navbar-nav m-auto m-md-0 ms-md-auto mb-2 mb-md-0 gap-1 gap-md-4">
+ 
+ 
+ 
+ **********************************************( navbar এর item গুলো)**********************************************************
+				<li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+				
+				
+ ********************************************** dropdown item **********************************************************
+		/* Custom hover effect for dropdown items */
+        .dropdown-item:hover {
+            /*background-color: rgba(248, 249, 250, 1);*/
+            background-color: rgb(237, 239, 241);
+            /*background-color: rgba(255 , 255, 255, 1);*/
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-item:focus {
+            background-color: #218838;
+            color: #fff;
+        }
+
+        .dropdown-divider {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+
+		/*dropdown item*/
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Dropdown
+			</a>
+			<ul class="dropdown-menu dropdown-menu-end bg-white">
+				<li><a class="dropdown-item text-dark" href="#">Action</a></li>
+				<li><a class="dropdown-item text-dark" href="#">Another action</a></li>
+				<li><hr class="dropdown-divider bg-dark"></li>
+				<li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+			</ul>
+		</li>
+		
+
+ ********************************************** button **********************************************************
+
+
+ <!-- Responsive Buttons -->
+            <!--Class Explanation
+            d-flex:
+
+            Applies the flexbox layout to the container, making its children (e.g., buttons) flexible and aligned using flexbox rules.
+            By default, this means the children are laid out horizontally.
+            flex-column:
+
+            On extra small screens (<576px), the children are stacked vertically.
+            d-sm-flex:
+
+            From small screens (≥576px) and larger, the container switches back to a flexbox layout (horizontal by default).
+            flex-sm-row:
+
+            From small screens (≥576px), the children are laid out horizontally in a row.
+            mt-3 mt-sm-0:
+
+            mt-3: Adds a top margin of 1rem (16px) to the container on extra small screens (<576px).
+            mt-sm-0: Removes the top margin on small screens (≥576px) and larger.
+            gap-3 gap-sm-1 gap-md-2:
+
+            Controls the spacing (gap) between the children based on screen size:
+            gap-3: On extra small screens (<576px), the gap between children is 1rem (16px).
+            gap-sm-1: On small screens (≥576px), the gap between children is reduced to 0.25rem (4px).
+            gap-md-2: On medium screens (≥768px), the gap between children is slightly increased to 0.5rem (8px).-->
+            <div class="d-flex flex-column d-sm-flex flex-sm-row mt-3 mt-sm-0 gap-3 gap-sm-1 gap-md-2 ms-md-2">
+                <button type="button" class="btn btn-primary py-sm-2 px-sm-0 px-md-4">Sign up</button>
+                <button type="button" class="btn btn-danger py-sm-2 px-sm-0 px-md-4">Login</button>
+            </div>
+
+		
+
+
+
+
+
+
+
+
+
+
+########################################### login signup navbar ########################################################
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* Custom hover effect for dropdown items */
+        .dropdown-item:hover {
+            /*background-color: rgba(248, 249, 250, 1);*/
+            background-color: rgb(237, 239, 241);
+            /*background-color: rgba(255 , 255, 255, 1);*/
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-item:focus {
+            background-color: #218838;
+            color: #fff;
+        }
+
+        .dropdown-divider {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+
+        /* Change the navbar-toggler icon color */
+        .navbar-toggler .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.8%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+
+        /* Change the background and border color of the button */
+        .navbar-toggler {
+            border-color: #ffffff; /* Button border color */
+            background-color: #007bff; /* Button background color */
+        }
+
+        /* Optional: Add hover styles */
+        .navbar-toggler:hover {
+            background-color: #0056b3; /* Darker shade of blue */
+            border-color: #0056b3;
+            box-shadow: 0 0 10px rgba(179, 0, 164, 1); /* Blue shadow around the button */
+            /*box-shadow: none;*/
+        }
+
+    </style>
+
+</head>
+<body>
+<!--navbar: A Bootstrap utility class for creating a responsive navigation bar.
+
+sticky-top: Makes the navigation bar stick to the top of the page when scrolling. It stays visible as you scroll down.
+
+navbar-expand-sm: Specifies that the navbar should be collapsed (stacked vertically) on smaller screens and expanded (horizontal layout) on screen widths small (sm) and above (≥576px).
+
+bg-primary-subtle: Adds a subtle background color variation based on the primary theme color (available in Bootstrap 5.3+). The primary theme color is defined by your Bootstrap configuration.-->
+<!--when navbar expand from collapse;here we mention when screen is small(>=576px) than expand->all menu showing -->
+<nav class="navbar sticky-top navbar-expand-sm bg-primary-subtle ">
+<!--    navbar screening like container/container-fluid-->
+    <div class="container-fluid">
+<!--        left icon like image with icon-->
+        <a class="navbar-brand" href="#">
+            <img class="mt-0" src="public/image/app-store.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Bootstrap
+        </a>
+
+        <!-- when collapse in extra small screen(<576px) than  this button showing-->
+
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--   collapse work for small screen size(<576px;)-->
+        <!-- Collapsible menu -->
+        <!--On small screens (xsm), the navbar menu is collapsed and hidden by default. Clicking the toggle button will display the menu items.
+        On larger screens (sm, md, etc.), the menu is always visible.-->
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+
+            <!--   for navbar in left         <ul class="navbar-nav m-auto m-md-0 me-md-auto mb-2 mb-md-0 gap-1 gap-md-4">-->
+
+            <!-- navbar in right  write regarding to your need ; make navbar responsive-->
+            <!--
+            m-auto: for Small screens (< md): <ul> place in center
+            m-md-0: clear all margin; Overrides the m-auto class starting from the medium (md) breakpoint (≥ 768px), removing all margins.
+            ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+            ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+            mb-2 : margin bottom for all screen size (here : for small screen(>=576px and <768px))
+            mb-md-0 : for md screen(>=768px) margin bottom 0
+            gap-1 : for all screen (here : for small screen(>=576px and <768px))
+            gap-md-4 : for md screen(>=768px) gap-4-->
+
+            <ul class="navbar-nav m-auto m-md-0 ms-md-auto mb-2 mb-md-0 gap-1 gap-md-4">
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end bg-white">
+                        <li><a class="dropdown-item text-dark" href="#">Action</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider bg-dark"></li>
+                        <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+
+            <!-- according to screen size here i make button responsive-->
+            <!--<button type="button" class="btn btn-primary py-sm-2 px-sm-0  px-md-4 me-2 ms-0 ms-md-2" type="">Sign up</button>
+            <button type="button" class="btn btn-danger py-sm-2 px-sm-0  px-md-4 " type="">Login</button>-->
+
+
+            <!-- Responsive Buttons -->
+            <!--Class Explanation
+            d-flex:
+
+            Applies the flexbox layout to the container, making its children (e.g., buttons) flexible and aligned using flexbox rules.
+            By default, this means the children are laid out horizontally.
+            flex-column:
+
+            On extra small screens (<576px), the children are stacked vertically.
+            d-sm-flex:
+
+            From small screens (≥576px) and larger, the container switches back to a flexbox layout (horizontal by default).
+            flex-sm-row:
+
+            From small screens (≥576px), the children are laid out horizontally in a row.
+            mt-3 mt-sm-0:
+
+            mt-3: Adds a top margin of 1rem (16px) to the container on extra small screens (<576px).
+            mt-sm-0: Removes the top margin on small screens (≥576px) and larger.
+            gap-3 gap-sm-1 gap-md-2:
+
+            Controls the spacing (gap) between the children based on screen size:
+            gap-3: On extra small screens (<576px), the gap between children is 1rem (16px).
+            gap-sm-1: On small screens (≥576px), the gap between children is reduced to 0.25rem (4px).
+            gap-md-2: On medium screens (≥768px), the gap between children is slightly increased to 0.5rem (8px).-->
+            <div class="d-flex flex-column d-sm-flex flex-sm-row mt-3 mt-sm-0 gap-3 gap-sm-1 gap-md-2 ms-md-2">
+                <button type="button" class="btn btn-primary py-sm-2 px-sm-0 px-md-4">Sign up</button>
+                <button type="button" class="btn btn-danger py-sm-2 px-sm-0 px-md-4">Login</button>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+</div>
+
+
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+######################################################## logged in navbar ###################################################################
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css" rel="stylesheet">
+
+
+
+    <style>
+        /* Custom hover effect for dropdown items */
+        .dropdown-item:hover {
+
+            background-color: rgba(255 , 255, 255, 1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-item:focus {
+            background-color: #218838;
+            color: #fff;
+        }
+
+        .dropdown-item i {
+            margin-right: 0.5rem; /* Add spacing between icons and text */
+            vertical-align: middle; /* Align icons with text */
+        }
+
+        .dropdown-item .badge {
+            font-size: 0.75rem; /* Smaller badge size for consistency */
+        }
+
+        .dropdown-divider {
+            border-color: rgba(255, 255, 255, 0.2); /* Divider color to match the dropdown */
+        }
+    </style>
+
+</head>
+<body>
+<!--when navbar expand from collapse;here we mention when screen is small(>=576px) than expand->all menu showing -->
+<nav class="navbar sticky-top navbar-expand-sm bg-primary-subtle ">
+<!--    navbar screening like container/container-fluid-->
+    <div class="container-fluid">
+<!--        left icon like image with icon-->
+        <a class="navbar-brand" href="#">
+            <img class="mt-0" src="public/image/app-store.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Bootstrap
+        </a>
+        <!--        when collapse in extra small screen(<576px) than  this button showing-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--   collapse work for small screen size(<576px;)-->
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+
+            <!--   for navbar in left         <ul class="navbar-nav m-auto m-md-0 me-md-auto mb-2 mb-md-0 gap-1 gap-md-4">-->
+
+            <!-- navbar in right  write regarding to your need ; make navbar responsive-->
+            <!--
+            m-auto: for Small screens (< md): <ul> place in center
+            m-md-0: clear all margin; Overrides the m-auto class starting from the medium (md) breakpoint (≥ 768px), removing all margins.
+            ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+            ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+            mb-2 : margin bottom for all screen size (here : for small screen(>=576px and <768px))
+            mb-md-0 : for md screen(>=768px) margin bottom 0
+            gap-1 : for all screen (here : for small screen(>=576px and <768px))
+            gap-md-4 : for md screen(>=768px) gap-4-->
+
+            <ul class="navbar-nav m-auto m-sm-0 ms-sm-auto mb-2 mb-md-0 gap-1 gap-sm-4">
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end bg-light">
+                        <!-- Menu Items -->
+                        <li>
+                            <a class="dropdown-item text-dark" href="#">
+                                <i class="ri-user-line align-middle me-1"></i> Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-dark" href="#">
+                                <i class="ri-wallet-2-line align-middle me-1"></i> My Wallet
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-dark d-block" href="#">
+                                <span class="badge bg-success float-end mt-1">11</span>
+                                <i class="ri-settings-2-line align-middle me-1"></i> Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-dark" href="#">
+                                <i class="ri-lock-unlock-line align-middle me-1"></i> Lock screen
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider bg-light">
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">
+                                <i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+-----------------------------------------------------(2.10) 10. Dark Mode & Variables -------------------------------------------------------------------------------
+ data-bs-theme="dark"  দিয়ে যে কোন element/component/body এর উপর theme apply করা যাবে।
+ https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
+ 
+ 
+######################################theme apply#############################################
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        /*we can change color by own*/
+        /*this color we get from bootstrap: https://getbootstrap.com/docs/5.3/customize/css-variables/#root-variables*/
+        body{
+            background: var( --bs-success);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card mt-5" style="width: 500px;">
+        <div class="card-header">Dark Mode Card</div>
+        <div class="card-body">
+            Utsab Roy Utsab Roy Utsab Roy Utsab Roy
+        </div>
+    </div>
+
+    <div class="card mt-5" style="width: 500px;" data-bs-theme="light">
+        <div class="card-header">Light Mode Card</div>
+        <div class="card-body">
+            Utsab Roy Utsab Roy Utsab Roy Utsab Roy
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+###################################### toogle button for theme #############################################
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        /* Optional: Define additional styles for dark and light themes */
+    </style>
+</head>
+<body>
+<div class="container">
+    <button id="theme-toggle" class="btn btn-primary mt-5">Toggle Theme</button>
+
+    <div class="card mt-5" style="width: 500px;">
+        <div class="card-header">Dark Mode Card</div>
+        <div class="card-body">
+            Utsab Roy Utsab Roy Utsab Roy Utsab Roy
+        </div>
+    </div>
+
+    <div class="card mt-5" style="width: 500px;" data-bs-theme="light">
+        <div class="card-header">Light Mode Card</div>
+        <div class="card-body">
+            Utsab Roy Utsab Roy Utsab Roy Utsab Roy
+        </div>
+    </div>
+</div>
+
+<script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-bs-theme', newTheme);
+    });
+</script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+==============================================================================3. Bootstrap Fundamentals - Part Two===============================================================================================
+
+----------------------------------------------------------------------------(3.1) 1. Bootstrap Grid & Columns--------------------------------------------------------------------------------------
+Container: The grid system is contained within a <div class="container"> or <div class="container-fluid">.
+		   It wraps your rows and columns.
+
+Rows and Columns: Inside the container, you create rows (<div class="row">), and within those rows, you create columns (<div class="col">). 
+                  Columns are where your content goes.
+
+
+Extra Small (XS)			col-	 			None (default for all devices)				for extra small devices (portrait phones)
+Small (SM)					col-sm-	 			≥ 576px										for small devices (landscape phones)
+Medium (MD)					col-md-	 			≥ 768px										for medium devices (tablets)
+Large (LG)					col-lg-	 			≥ 992px										for large devices (desktops)
+Extra Large (XL)			col-xl-	 			≥ 1200px									for extra large devices (large desktops)
+XXL							col-xxl- 			≥ 1400px									for exxtra extra large devices (large desktops)
+
+
+1. col: শুধু col available space equally distributed হবে।
+(সমস্যা: item গুলো ছোট হয়ে যাবে কিন্তু column সংখ্যা একই থাকবে।)
+		<h1 class="mb-5">If you don’t define a column width, columns will share the available space equally.</h1>
+        <div class="row bg-success">
+            <div class="col bg-light text-dark border p-2">1 of 2</div>
+            <div class="col bg-light text-dark  border p-2">2 of 2</div>
+        </div>
+
+
+
+2.col-size:You can specify how many of these 12 columns a single element should take up.
+        (Bootsrap এ Total 12 column; কোন div কত col নিবে তা col-size(col-6) দিয়ে specify করে দিতে পারি।)
+		<div class="row bg-success">
+            <div class="col-6 bg-light text-dark border p-2">1 of 2</div>
+            <div class="col-6 bg-light text-dark  border p-2">2 of 2</div>
+        </div>
+		
+
+3. col-screen size-size:(কোন screen এ div গুলো কত column নিবে /একটা row তে কতগুলো div দেখাবে তা ‍specify করা যায়।)
+
+			<div class="col-12 col-sm-6 col-md-4 col-lg-3  col-xl-2   bg-light text-dark border px-5 py-3">
+              
+            </div>
+			
+			col-12(মূলত সবার জন্য এটা।):(extra small screen(<576px এর জন্য 12 column নিবে div টি।))
+			This specifies that the column will take up all 12 grid columns (full width) on extra small screens (less than 576px).
+
+			col-sm-6:(small screen(>=576px এর জন্য 6 column নিবে div টি।।))
+			On small screens (≥576px), the column will take up 6 grid columns (half the width).
+
+			col-md-4:(medium screen(≥768px এর জন্য 4 column নিবে div টি।))
+			On medium screens (≥768px), the column will take up 4 grid columns (one-third of the row width).
+
+			col-lg-3:(large screen(<576px এর জন্য 3 column নিবে div টি।))
+			On large screens (≥992px), the column will take up 3 grid columns (one-quarter of the row width).
+
+			col-xl-2:(extra-large screen(≥1200px এর জন্য 2 column নিবে div টি।))
+			On extra-large screens (≥1200px), the column will take up 2 grid columns (one-sixth of the row width)
+			
+
+4. row-cols-number :  Use the responsive .row-cols-* classes to quickly set the number of columns
+                      (এর মাধ্যেমে দ্রুত একটা div গুলো column নিতে তা ‍specify করা যায়।)
+					  (এখানে প্রতি row তে দুটি column থাকবে(col-6 করে নিবে প্রতি div)।)
+			<div class="row row-cols-2">
+				<div class=" col  bg-light text-dark border px-5 py-3">
+					1 of 7
+				</div>
+			</div>
+			
+			(চাইলে screen size ও ‍specify করে দিতে পারি।)
+			<div class="row row-cols-1 row-cols-sm-2  row-cols-md-3  row-cols-lg-4  row-cols-xxl-5" >
+
+
+5.nesting: columnn এর ভিতরে row দিতে পারি।
+		<div class="row">
+            <div class="col-sm-3 bg-danger p-4">
+                <div class="col-8 col-sm-6 border border-success-subtle text-center py-3"> Level 2: .col-8 .col-sm-6</div>
+                <div class="col-4 col-sm-6 border border-success-subtle text-center py-3"> Level 2: .col-4 .col-sm-6</div>
+            </div>
+            <div class="col-sm-9 bg-success py-4">
+                <div class="row">
+                    <div class="col-8 col-sm-6 border border-success-subtle text-center py-3"> Level 2: .col-8 .col-sm-6</div>
+                    <div class="col-4 col-sm-6 border border-success-subtle text-center py-3"> Level 2: .col-4 .col-sm-6</div>
+                </div>
+            </div>
+        </div>
+
+
+
+6.	g-size:column গুলোর মধ্যে space তৈরি করবে, row গুলোর মধ্যে space তৈরি করবে
+
+	gx-size:column গুলোর মধ্যে space তৈরি করবে
+
+	gy-size:row গুলোর মধ্যে space তৈরি করবে
+	
+	
+
+7. Offset is used to add empty space (or margin) to the left of a column, effectively shifting it horizontally
+(Offset দিয়ে left থেকে space তৈরি করবে এর ফলে div shift হয়ে right এ যাবে।)
+
+		
+		এখানে extra-small-screen এ left-margin-0
+		এখানে small-screen এ left-margin-2
+		এখানে medium-screen এ left-margin-3
+		এখানে large-screen এ left-margin-4
+		এখানে extra-large-screen এ left-margin-5
+		এখানে extra-extra-small-screen এ left-margin-6
+		
+		<div class="row">
+            <div class="col-6 offset-0 offset-sm-2 offset-md-3 offset-lg-4 offset-xl-5 offset-xxl-6 bg-light text-dark border p-3 text-center">Shift Me</div>
+        </div>
+
+
+8.order: order দিয়ে চাইলে ডাটাবেস থেকে dynamically col/div গুলো যে কোন order এ বসাতে পারব।
+		<div class="row">
+            <div class="col bg-light text-dark border px-5 py-3 order-2">Column 1</div>
+            <div class="col bg-light text-dark border px-5 py-3 order-4">Column 2</div>
+            <div class="col bg-light text-dark border px-5 py-3 order-1">Column 3</div>
+            <div class="col bg-light text-dark border px-5 py-3r order-3">Column 4</div>
+        </div>
+
+
+
+
+###################################################code###########################################
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid border border-1 border-danger">
+
+        <!--        If you don’t define a column width, columns will share the available space equally.-->
+        <h1 class="mb-5">If you don’t define a column width, columns will share the available space equally.</h1>
+        <div class="row bg-success">
+            <div class="col bg-light text-dark border p-2">1 of 2</div>
+            <div class="col bg-light text-dark  border p-2">2 of 2</div>
+        </div>
+
+        <div class="row bg-success">
+            <div class="col bg-light text-dark border p-2">1 of 2</div>
+            <div class="col bg-light text-dark  border p-2">2 of 2</div>
+            <div class="col bg-light text-dark  border p-2">3 of 2</div>
+        </div>
+
+        <!--        col-size:You can specify how many of these 12 columns a single element should take up.-->
+        <h1 class="mb-5 mt-5">Specify Column Size</h1>
+        <div class="row bg-success">
+            <div class="col-6 bg-light text-dark border p-2">1 of 2</div>
+            <div class="col-6 bg-light text-dark  border p-2">2 of 2</div>
+        </div>
+
+        <div class="row bg-success">
+            <div class="col-4 bg-light text-dark border p-2">1 of 2</div>
+            <div class="col-8 bg-light text-dark  border p-2">2 of 2</div>
+        </div>
+
+
+        <!--        col-screen size-size:You can specify which screen show how many column in single row-->
+        <h1 class="mb-5 mt-5">Responsive column</h1>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3  col-xl-2   bg-light text-dark border px-5 py-3">
+                1 of 7
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2  bg-light text-dark border px-4 py-3">
+                2 of 7
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2  bg-light text-dark border px-4 py-3">
+                3 of 7
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2  bg-light text-dark border px-4 py-3">
+                4 of 7
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2  bg-light text-dark border px-4 py-3">
+                5 of 7
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2  bg-light text-dark border px-4 py-3">
+                6 of 7
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2  bg-light text-dark border px-4 py-3">
+                7 of 7
+            </div>
+        </div>
+
+
+        <!-- row-cols-number :  Use the responsive .row-cols-* classes to quickly set the number of columns-->
+        <h1 class="mb-5 mt-5">row-cols-number</h1>
+        <div class="row row-cols-2">
+            <div class=" col  bg-light text-dark border px-5 py-3">
+                1 of 7
+            </div>
+            <div class=" col bg-light text-dark border px-4 py-3">
+                2 of 7
+            </div>
+            <div class=" col bg-light text-dark border px-4 py-3">
+                3 of 7
+            </div>
+            <div class=" col bg-light text-dark border px-4 py-3">
+                4 of 7
+            </div>
+            <div class=" col bg-light text-dark border px-4 py-3">
+                5 of 7
+            </div>
+            <div class=" col bg-light text-dark border px-4 py-3">
+                6 of 7
+            </div>
+            <div class=" col bg-light text-dark border px-4 py-3">
+                7 of 7
+            </div>
+        </div>
+
+
+        <!-- Nesting: we can put row inside col-->
+        <h1 class="mb-5 mt-5">Nesting(Example 1)</h1>
+        <!-- Parent Row -->
+        <div class="row">
+            <!-- First Main Column -->
+            <div class="col-12 col-md-6 bg-light text-dark p-3 border">
+                <h5>Main Column 1</h5>
+                <p>This is the first main column with a nested row inside:</p>
+
+                <!-- Nested Row -->
+                <div class="row">
+                    <div class="col-6 border border-success text-center py-2">Nested Col 1</div>
+                    <div class="col-6 border border-success text-center py-2">Nested Col 2</div>
+                    <div class="col-6 border border-success text-center py-2">Nested Col 3</div>
+                    <div class="col-6 border border-success text-center py-2">Nested Col 4</div>
+                </div>
+            </div>
+
+            <!-- Second Main Column -->
+            <div class="col-12 col-md-6 bg-light text-dark p-3 border">
+                <h5>Main Column 2</h5>
+                <p>This is the second main column with a nested row inside:</p>
+
+                <!-- Nested Row -->
+                <div class="row">
+                    <div class="col-4 border border-primary text-center py-2">Nested Col 1</div>
+                    <div class="col-8 border border-primary text-center py-2">Nested Col 2</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Nesting: we can put row inside col-->
+        <h1 class="mb-5 mt-5">Nesting(Example 2)</h1>
+        <div class="row">
+            <div class="col-sm-3 bg-danger p-4">
+                Level 1: .col-sm-3
+            </div>
+            <div class="col-sm-9 bg-success py-4">
+                <div class="row">
+                    <div class="col-8 col-sm-6 border border-success-subtle text-center py-3"> Level 2: .col-8 .col-sm-6</div>
+                    <div class="col-4 col-sm-6 border border-success-subtle text-center py-3"> Level 2: .col-4 .col-sm-6</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Gutter is the space (margin or padding) between columns in the grid system.
+        Gutters are used to control the spacing between columns and rows to ensure a clean and structured layout.-->
+        <h1 class="mb-5 mt-5">Gutter (make column space and row space)</h1>
+        <div class="row g-5">
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+        </div>
+
+
+        <h1 class="mb-5 mt-5">gx(gx-4: make column space) gy (g-2: make row space)</h1>
+        <div class="row gx-4 gy-2">
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+            <div class=" col-md-4">
+                <div class="bg-light text-dark border px-5 py-3"> 1 of 4</div>
+            </div>
+        </div>
+
+        <!-- In Bootstrap, an offset is used to add empty space (or margin) to the left of a column, effectively shifting it horizontally-->
+        <h1 class="mb-5 mt-5">offset is used to add empty space in left</h1>
+        <div class="row">
+            <div class="col-6 offset-0 offset-sm-2 offset-md-3 offset-lg-4 offset-xl-5 offset-xxl-6 bg-light text-dark border p-3 text-center">Shift Me</div>
+        </div>
+
+
+        <!-- Ordering -->
+        <h1 class="mb-5 mt-5">Ordering</h1>
+        <div class="row">
+            <div class="col bg-light text-dark border px-5 py-3 order-2">Column 1</div>
+            <div class="col bg-light text-dark border px-5 py-3 order-4">Column 2</div>
+            <div class="col bg-light text-dark border px-5 py-3 order-1">Column 3</div>
+            <div class="col bg-light text-dark border px-5 py-3r order-3">Column 4</div>
+        </div>
+
+
+
+
+    </div>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+----------------------------------------------------------------------------(3.1) 2. Flexbox Classes--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
