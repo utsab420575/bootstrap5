@@ -5099,6 +5099,243 @@ floating label(label কে floating করা যায়।)
 
 
 
+------------------------------------- 7. Alerts & Progress Bars-------------------------------------
+
+Base Alert: .alert, .alert-* (e.g., .alert-success)
+alert:দিলে div টি alert box হবে , ‍alert-success দিলে alert color change হবে।
+
+Links: .alert-link
+(link এর color পরিবর্তন করা যাবে।)
+
+Headings: .alert-heading
+(এটা দিয়ে alert box এর মধ্যে Heading add করা যাবে।)
+
+Icons: .d-flex, .align-items-center, .ms-*
+(image icon add করার জন্য d-flex করা হয়েছে।)
+
+Dismissible: .alert-dismissible, .fade, .show, .btn-close, data-bs-dismiss="alert"
+(alert box dismiss/কাটা যাবে।)
+
++++++++++++++++++++++++++++++++alert code++++++++++++++++++++++++++
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>-----------------All alert message showing---------------------</h1>
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        A simple secondary alert—check it out!
+    </div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+    <div class="alert alert-warning" role="alert">
+        A simple warning alert—check it out!
+    </div>
+    <div class="alert alert-info" role="alert">
+        A simple info alert—check it out!
+    </div>
+    <div class="alert alert-light" role="alert">
+        A simple light alert—check it out!
+    </div>
+    <div class="alert alert-dark" role="alert">
+        A simple dark alert—check it out!
+    </div>
+
+    <h1>-----------------Link color---------------------</h1>
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-light" role="alert">
+        A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+    <div class="alert alert-dark" role="alert">
+        A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>
+
+
+    <h1>-----------------Additional Content Making---------------------</h1>
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    </div>
+
+    <h1>-----------------Image Icon In DIV---------------------</h1>
+    <div class="alert alert-success d-flex align-items-center">
+        <i class="fa-solid fa-check"></i>
+        <div class="ms-1">
+            An example alert with an icon
+        </div>
+    </div>
+
+    <h1>-----------------Alert Showing Which is Dismissable---------------------</h1>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+Base Classes: .progress, .progress-bar
+
+Width: .w-* (e.g., .w-25, .w-50)
+
+Colors: .bg-* (e.g., .bg-success, .bg-danger)
+
+	Class Name				Description
+	.progress				Base class for the progress bar container.(container)
+	.progress-bar			Base class for the progress bar itself (the filled part).(color part)
+	.w-*					Sets the width of the progress bar (e.g., .w-25 for 25% width).
+	.bg-*					Sets the background color of the progress bar (e.g., .bg-success).
+	.text-dark				Sets the text color to dark (useful for light backgrounds).
+	.overflow-visible		Ensures text inside the progress bar is visible (prevents clipping).(text এর লেখা visible করা)
+
+Stripes: .progress-bar-striped
+
+Animation: .progress-bar-animated
+
+Height: style="height: *px;" or .h-*
+
+Labels: .text-dark, .overflow-visible
+
+Accessibility: role="progressbar", aria-valuenow, aria-valuemin, aria-valuemax
++++++++++++++++++++++++++++++++progress code++++++++++++++++++++++++++
+
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>-----------------All alert message showing---------------------</h1>
+    <div class="progress mb-2" role="progressbar"  aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: 0%"></div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: 25%"></div>
+    </div>
+
+
+    <h1>-----------------All alert message showing---------------------</h1>
+    <div class="progress" role="progressbar"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar w-75"></div>
+    </div>
+
+    <h1>-----------------Height of progress bar---------------------</h1>
+    <div class="progress mb-2" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 1px">
+        <div class="progress-bar" style="width: 25%"></div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+        <div class="progress-bar" style="width: 25%"></div>
+    </div>
+
+    <h1>-----------------Add labels to your progress bars---------------------</h1>
+    <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: 25%">25%</div>
+    </div>
+
+    <div class="progress mt-2" role="progressbar"  aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar overflow-visible text-dark" style="width: 10%">Long label text for the progress bar, set to a dark color</div>
+    </div>
+
+    <h1>-----------------Color of progress bar---------------------</h1>
+    <div class="progress" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar bg-success" style="width: 25%">25%</div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar bg-info text-dark" style="width: 50%">50%</div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar bg-warning text-dark" style="width: 75%">75%</div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar bg-danger" style="width: 100%">100%</div>
+    </div>
+
+    <h1>-----------------Stripped Progress Bar---------------------</h1>
+    <div class="progress" role="progressbar"  aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped" style="width: 10%"></div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped bg-success" style="width: 25%"></div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped bg-info" style="width: 50%"></div>
+    </div>
+    <div class="progress" role="progressbar"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped bg-warning" style="width: 75%"></div>
+    </div>
+    <div class="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped bg-danger" style="width: 100%"></div>
+    </div>
+
+    <h1>-----------------Animated Progress Bar---------------------</h1>
+    <div class="progress" role="progressbar"  aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+    </div>
+</div>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
 
 
 
