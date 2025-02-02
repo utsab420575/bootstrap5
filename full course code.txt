@@ -937,7 +937,7 @@ Example: .bg-primary bg-gradient, .bg-info bg-gradient.
 
 
 
--------------------------------------------------5. Spacing (maring padding)-------------------------------------------------------
+-------------------------------------------------5. Spacing (margin padding)-------------------------------------------------------
 
 Where property is one of:( margin ও padding )
 
@@ -1703,7 +1703,7 @@ If @media (min-width: 576px) is defined, the styles inside this media query will
 
 
 
----------------------------------------------------------(2.8) 8. Buttons ----------------------------------------------------------------
+---------------------------------------------------------(2.8) 8. Buttons----------------------------------------------------------------
 
 button,button color,link to button,button type =submit,reset  ,button group,button dropdown,radio button group(input type=radio button)
 
@@ -1993,7 +1993,7 @@ button,button color,link to button,button type =submit,reset  ,button group,butt
 
 
 
------------------------------------------------------(2.9) 9. Navbar -------------------------------------------------------------------------------
+-----------------------------------------------------(2.9) 9. Navbar , gap used here -------------------------------------------------------------------------------
 
 https://getbootstrap.com/docs/5.3/components/navbar/
 ( Bootstrap এর Built-in navbar use করব।)
@@ -2612,7 +2612,7 @@ bg-primary-subtle: Adds a subtle background color variation based on the primary
 
 ==============================================================================3. Bootstrap Fundamentals - Part Two===============================================================================================
 
-----------------------------------------------------------------------------(3.1) 1. Bootstrap Grid & Columns--------------------------------------------------------------------------------------
+----------------------------------------------------------------------------(3.1) 1. Bootstrap Grid & Columns (gutter/gap/g-)--------------------------------------------------------------------------------------
 Container: The grid system is contained within a <div class="container"> or <div class="container-fluid">.
 		   It wraps your rows and columns.
 
@@ -2941,6 +2941,491 @@ XXL							col-xxl- 			≥ 1400px									for exxtra extra large devices (large d
 
 ----------------------------------------------------------------------------(3.1) 2. Flexbox Classes--------------------------------------------------------------------------------------
 
+.d-flex: (which is a block-level flex container and takes up the full width of its parent)(block level container যা parent এর full width নিবে।)
+
+	Purpose: This class applies display: flex to an element, turning it into a flex container.
+
+	Behavior: The element becomes a block-level flex container, 
+	meaning it will take up the full width of its parent by default, 
+	and its children (flex items) will be laid out according to the flexbox rules.
+
+	Use Case: Use .d-flex when you want to create a flex container that behaves like a block-level element.
+	(d-flex দিয়ে element/div কে ব্লক লেভেল(পুরো row জায়গা নিবে) এ নেয়া হয় তবে এটা ‍parent এর full width নিবে।)
+
+		***এখানে d-flex-container , parent col-md-12 কে inherit করবে এবং পুরো width(col-12) নিয়ে নিবে।
+		The .d-flex container inherits the width of its parent (.col-md-12), 
+		so it will take up the full 12-column width.
+
+		***এখানে d-flex-container এর child গুলো equal space নিবে content অনুযায়ী। সম্পূর্ণ free space নিতে চাইলে flex-grow/flex-fill use করতে হয়।
+		The flex items inside the .d-flex container will not automatically take up equal space 
+		unless you use additional flex utilities like .flex-grow-1 or .flex-fill.
+		
+		<div class="col-md-12">   
+			<div class="d-flex p-3 bg-secondary text-white">
+				<div class="p-3 bg-info">My Flex Item One</div>
+				<div class="p-3 bg-danger">My Flex Item Two</div>
+				<div class="p-3 bg-primary">My Flex Item Three</div>
+			</div>
+		</div>
+	
+	
+
+.d-inline-flex:. only takes up as much space as its content requires.(block level container না এটা যতটুকু content ততটুকু space নিবে।)
+
+	Purpose: This class applies display: inline-flex to an element, turning it into an inline-level flex container.
+	(d-inline-flex দিয়ে element/div কে inline বানানো যাবে। যতটুকু কনটেন্ট ততটুকু spce নিবে div টি।)
+	
+	Use Case: Use .d-inline-flex when you want a flex container that behaves like an inline element (e.g., for buttons, icons, or other inline components).
+			
+			<div class="col-md-12">   
+				<div class="d-inline-flex p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+			</div>
+
+
+flex-row: Aligns flex items horizontally in the normal direction (left to right).
+
+flex-row-reverse: Aligns flex items horizontally in the reverse direction (right to left).
+
+flex-col: Aligns flex items vertically in the normal direction (top to bottom).
+
+flex-col-reverse: Aligns flex items vertically in the reverse direction (bottom to top).
+
+খুবই গুরুত্বপূর্ণ:
+flex-row তে main axis->Left to Right, cross axis->top to bottom
+flex-row (default):
+Main Axis: Horizontal (left to right)
+Cross Axis: Vertical (top to bottom)
+
+flex-column তে main axis->top to bottom, cross axis->left to right
+flex-column:
+Main Axis: Vertical (top to bottom)
+Cross Axis: Horizontal (left to right)
+
++++++++++++++++++++justify-content কাজ করে Main Axis এ+++++++++++++++++++++++
+flex-row এর জন্য justify-content:(Main Axis: Horizontal (left to right))
+.justify-content-start: Aligns items to the start of the main axis.(Horizontal Row এর left এ থাকবে)
+
+.justify-content-end: Aligns items to the end of the main axis.(Horizontal Row এর right এ থাকবে)
+
+.justify-content-center: Aligns items at the center of the main axis.(Horizontal Row এর center এ থাকবে)
+
+.justify-content-between: Distributes items evenly, with the first item at the start and the last item at the end.(Horizontal Row এর left এ first item , right এ last item থাকবে।)
+
+.justify-content-around: Distributes items evenly with equal space around them.(Horizontal Row এর left এ ফাকা থাকবে এরপর first item , right এ ফাকা থাকবে এরপর last item থাকবে।)
+
+.justify-content-evenly: Distributes items evenly with equal space between and around them.
+
+
+
+
+flex-col এর জন্য justify-content: Main Axis: Vertical (top to bottom)
+.justify-content-start: Aligns items to the start of the main axis.( Vertical column এর top এ থাকবে)
+
+.justify-content-end: Aligns items to the end of the main axis.(Vertical column এর bottom এ থাকবে)
+
+.justify-content-center: Aligns items at the center of the main axis.(Vertical column এর center এ থাকবে)
+
+.justify-content-between: Distributes items evenly, with the first item at the start and the last item at the end.(Vertical column এর top এ first item , bottom এ last item থাকবে।)
+
+.justify-content-around: Distributes items evenly with equal space around them.Vertical column এর top এ ফাকা থাকবে এরপর first item , bottom এ ফাকা থাকবে এরপর last item থাকবে।)
+
+.justify-content-evenly: Distributes items evenly with equal space between and around them.
+
+
+
+
+++++++++++++++++++align-itmes কাজ করে Cross Axis এ+++++++++++++++++++++
+খুবই গুরুত্বপূর্ণ:
+
+flex-row এর জন্য align-items:(Cross Axis: vertical (top to bottom))
+1.flex-row:
+Main Axis: Horizontal (left to right).
+Cross Axis: Vertical (top to bottom).
+align-items: Controls the vertical alignment of flex items.(flex row তে ‍align-items কাজ করে vertically/cross axis এ)
+
+flex-col এর জন্য align-items:(Cross Axis: horizontal (left to right))
+2..flex-col:
+Main Axis: Vertical (top to bottom).
+Cross Axis: Horizontal (left to right).
+align-items: Controls the horizontal alignment of flex items.(flex col তে ‍align-items কাজ করে horizontally/cross axis এ)
+
+
+
+
+
+
+for flex-row, align-items:
+align-items-start: Aligns items to the top of the container.( Vertical column এর top এ থাকবে)
+
+align-items-end: Aligns items to the bottom of the container.(Vertical column এর bottom এ থাকবে)
+
+align-items-center: Centers items vertically.(Vertical column এর center এ থাকবে)
+
+align-items-baseline: Aligns items to their baselines.
+
+align-items-stretch: Stretches items to fill the container vertically.(div/element সম্পূর্ণ জায়গা নিয়ে নিবে vertically)
+
+
+
+for flex-col, align-items:
+align-items-start: Aligns items to the left of the container.(Horizontal Row এর left এ থাকবে)
+
+align-items-end: Aligns items to the right of the container.(Horizontal Row এর right এ থাকবে)
+
+align-items-center: Centers items horizontally.(Horizontal Row এর center এ থাকবে)
+
+align-items-baseline: Not commonly used in .flex-col (works on text baselines).
+
+align-items-stretch: Stretches items to fill the container horizontally.(div/element সম্পূর্ণ জায়গা নিয়ে নিবে horizontally)
+
+
+Flex Direction	  Main Axis			     Cross Axis			   align-items Controls
+.flex-row		 Horizontal				 Vertical			   Vertical alignment
+.flex-col	     Vertical				 Horizontal			   Horizontal alignment
+
+
+
+
+
+
+++++++++++++++++align-self ও cross direction এ কাজ করে,তবে এক্ষেত্রে single item এর উপর এটা ব্যবহার করা যায়+++++++++++++++
+The align-self utility in Bootstrap is used to individually align a flex item along the cross axis,
+
+flex-row এর জন্য:
+align-self-start: Aligns the item to the top.
+
+align-self-center: Centers the item vertically.
+
+align-self-end: Aligns the item to the bottom.
+
+
+flex-col এর জন্য:
+align-self-start: Aligns the item to the left.
+
+align-self-center: Centers the item horizontally.
+
+align-self-end: Aligns the item to the right.
+
+
+
+<div class="d-flex flex-row bg-secondary p-3" style="height: 150px;">
+  <div class="p-2 bg-info align-self-start">Top</div>
+  <div class="p-2 bg-danger align-self-center">Middle</div>
+  <div class="p-2 bg-primary align-self-end">Bottom</div>
+  <div class="p-2 bg-warning align-self-stretch">Stretch</div>
+</div>
+
+The first item is aligned to the top.
+
+The second item is centered vertically.
+
+The third item is aligned to the bottom.
+
+The fourth item stretches to fill the height of the container.
+
+
+<div class="d-flex flex-column bg-secondary p-3" style="height: 300px;">
+  <div class="p-2 bg-info align-self-start">Start</div>
+  <div class="p-2 bg-danger align-self-center">Center</div>
+  <div class="p-2 bg-primary align-self-end">End</div>
+</div>
+
+align-self-start: Aligns the item to the top.
+
+align-self-center: Centers the item vertically.
+
+align-self-end: Aligns the item to the bottom.
+
+
+++++++++++++++++flex-fill কাজ করে main axis এ +++++++++++++++
+The flex item will expand to fill the remaining space in the container.
+( সম্পূর্ণ avialable space  div দ্বারা allocate করা যায়।)
+
+for: flex-row
+<div class="d-flex">
+  <div class="p-3 bg-info">Fixed Width</div>
+  <div class="p-3 bg-danger flex-fill">Fill Remaining Space</div>
+  <div class="p-3 bg-primary">Fixed Width</div>
+</div>
+
+The middle item (.flex-fill) will expand to fill the remaining space, while the other items retain their fixed width.
+
+
+<div class="d-flex">
+  <div class="p-3 bg-info flex-fill">Item 1</div>
+  <div class="p-3 bg-danger flex-fill">Item 2</div>
+  <div class="p-3 bg-primary flex-fill">Item 3</div>
+</div>
+
+Each item will take up equal space within the container.
+
+
+
+for: flex-col
+<div class="d-flex flex-column" style="height: 200px;">
+  <div class="p-3 bg-info flex-fill">Item 1</div>
+  <div class="p-3 bg-danger flex-fill">Item 2</div>
+  <div class="p-3 bg-primary flex-fill">Item 3</div>
+</div>
+
+In a vertical flex container (.flex-column), .flex-fill makes each item take up equal height.
+
+
+
+
+++++++++++++++++flex-grow: flex-fill: +++++++++++++++
+flex-grow: Use when you want an item to expand and fill available space.
+.flex-grow-0: Prevents the item from growing.
+
+.flex-grow-1: Allows the item to grow.(item টি available space পর‌্যন্ত grow করবে।)
+
+flex-shrink:(shrink-0 মানে item shrink হবে না।)
+
+Purpose: Controls how much a flex item can shrink if there is not enough space in the container.
+
+flex-shrink-0: Prevents the item from shrinking.
+
+.flex-shrink-1: Allows the item to shrink (default behavior).
+
+
+++++++++flex-wrap , flex-nowrap++++++
+flex-wrap: default
+flex-nowrap: wrap হবে না/নতুন লাইন যাবে সব একটা row তে। 
+
+
+
+
+
+
+
+
+
+
+
++++++++++++ code ++++++++
+
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!--
+            row =12 column width
+            div class=col-6 means this div take 6 colulmn  width from row
+            div class=col-12 means this div take 12 colulmn width from row
+
+            if we not give col-12 above d-flex:
+            Not take up the full width of the row by default.
+            Instead, its width will depend on its content-->
+            <div class="col-md-12">
+                <!--    d-flex container take full space(col-12)-->
+                <h1>d-flex take full space (col-12)</h1>
+                <div class="d-flex p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!--    d-flex container take only space which it need -->
+                <h1>d-flex take depend on content</h1>
+                <div class="d-inline-flex p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+
+
+
+                <!--    flex-Row(by default) Direction:left to right-->
+                <h1>flex-row: Items in a row (default).</h1>
+                <div class="d-flex flex-row p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!--    flex-Row(by default) Direction:right to left(reverse)-->
+                <h1> flex-row-reverse: Items in a reversed row.</h1>
+                <div class="d-flex flex-row-reverse p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!--    flex-column: Items in a column.-->
+                <h1>flex-column Direction:top to bottom</h1>
+                <div class="d-flex flex-column p-3 bg-secondary text-white h-25">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!--    flex-column-reverse: Items in a reversed column. -->
+                <h1>flex-column Direction:bottom to top</h1>
+                <div class="d-flex flex-column-reverse p-3 bg-secondary text-white h-25">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Justify Content Utilities for row-->
+                <!-- Control alignment along the main axis:-->
+                <!-- justify-content-start: Items align at the start (default).-->
+                <h1>Row: justify-content-start: Items align at the start (default).</h1>
+                <div class="d-flex justify-content-start p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-center: Items align at the center.-->
+                <h1>Row: justify-content-center: Items align at the center.</h1>
+                <div class="d-flex justify-content-center p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-end: Items align at the end.-->
+                <h1>Row: justify-content-end: Items align at the end.</h1>
+                <div class="d-flex justify-content-end p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-between: Space between items.-->
+                <h1>Row: justify-content-between: Space between items.</h1>
+                <div class="d-flex justify-content-between p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-around: Equal space around items.-->
+                <h1>Row: justify-content-around: Equal space around items.</h1>
+                <div class="d-flex justify-content-around p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+
+
+                <!-- Justify Content Utilities for column-->
+                <!-- Control alignment along the main axis:-->
+                <!-- justify-content-start: Items align at the start (default).-->
+                <h1>Column: justify-content-start: Items align at the start (default).</h1>
+                <div class="d-flex flex-column justify-content-start p-3 bg-secondary text-white"  style="height: 300px;">
+                    <div class="p-3  bg-info">My Flex Item One</div>
+                    <div class="p-3  bg-danger">My Flex Item Two</div>
+                    <div class="p-3  bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-center: Items align at the center.-->
+                <h1>Column: justify-content-center: Items align at the center.</h1>
+                <div class="d-flex   flex-column   justify-content-center p-3 bg-secondary text-white" style="height: 300px;">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-end: Items align at the end.-->
+                <h1>Column: justify-content-end: Items align at the end.</h1>
+                <div class="d-flex  flex-column   justify-content-end p-3 bg-secondary text-white" style="height: 300px;">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-between: Space between items.-->
+                <h1>Column:  justify-content-between: Space between items.</h1>
+                <div class="d-flex flex-column   justify-content-between p-3 bg-secondary text-white" style="height: 300px;">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- justify-content-around: Equal space around items.-->
+                <h1>Column:  justify-content-around: Equal space around items.</h1>
+                <div class="d-flex flex-column  justify-content-around p-3 bg-secondary text-white" style="height: 300px;">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
 
 
 
@@ -2970,6 +3455,1079 @@ XXL							col-xxl- 			≥ 1400px									for exxtra extra large devices (large d
 
 
 
+                <!-- Align Items Utilities -->
+                <!-- Control alignment along the cross axis:(Y-AXIS)-->
+                <!-- align-items-start: Aligns items at the start of the cross axis.-->
+                <h1>align-items-start: Aligns items at the start(top) of the cross axis(Y-axis).</h1>
+                <div class="d-flex align-items-start p-3 bg-secondary text-white" style="height:300px">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- align-items-center: Aligns items at the center of the cross axis.-->
+                <h1>align-items-center: Aligns items at the center of the cross axis.</h1>
+                <div class="d-flex align-items-center p-3 bg-secondary text-white" style="height:300px">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+
+                <!-- align-items-end: Aligns items at the end of the cross axis.-->
+                <h1>align-items-end: Aligns items at the end of the cross axis.</h1>
+                <div class="d-flex align-items-end p-3 bg-secondary text-white" style="height:300px">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+
+                <!-- align-items-stretch: Stretches items to fill the cross axis (default).-->
+                <h1>align-items-stretch: Stretches items to fill the cross axis (default).</h1>
+                <div class="d-flex align-items-stretch p-3 bg-secondary text-white" style="height:300px">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+
+
+
+                <!-- Align Self Utilities -->
+                <!-- Override the cross-axis(Y-axis) alignment for specific items:-->
+                <!-- align-self-start: Aligns items at the start of the cross axis.-->
+                <h1>align-self-start: Aligns items at the start(top) of the cross axis(Y-axis).</h1>
+                <div class="d-flex align-items-stretch p-3 bg-secondary text-white" style="height: 400px;">
+                    <div class="p-3 bg-info align-self-start">My Flex Item One</div>
+                    <div class="p-3 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- align-self-center: Aligns  single items at the center of the cross axis.-->
+                <h1>align-self-center: Aligns items at the start(top) of the cross axis(Y-axis).</h1>
+                <div class="d-flex align-items-start p-3 bg-secondary text-white" style="height: 400px;">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger align-self-center">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- align-self-end: Aligns  single items at the end of the cross axis.-->
+                <h1>align-self-end: Aligns items at the end(bottom) of the cross axis(Y-axis).</h1>
+                <div class="d-flex align-items-start p-3 bg-secondary text-white" style="height: 400px;">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger ">My Flex Item Two</div>
+                    <div class="p-3 bg-primary align-self-end">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+                <!-- align-self-stretch:  single items streetch d of the cross axis.-->
+                <h1>align-self-stretch: Aligns items stretch of the cross axis(Y-axis).</h1>
+                <div class="d-flex align-items-start p-3 bg-secondary text-white" style="height: 400px;">
+                    <div class="p-3 bg-info">My Flex Item One</div>
+                    <div class="p-3 bg-danger align-self-stretch">My Flex Item Two</div>
+                    <div class="p-3 bg-primary ">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+
+               <!-- To use flex-fill, ensure the parent element has the d-flex class
+                 then apply flex-fill to the child elements you want to stretch.-->
+                <!--Item one take width according to content
+                Item three take width according to content
+                Item two and four take remaining space-->
+                <h1>flex-fill take available space</h1>
+                <div class="d-flex p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info ">My Flex Item One</div>
+                    <div class="p-3 bg-danger flex-fill">My Flex Item Two</div>
+                    <div class="p-3 bg-primary">My Flex Item Three</div>
+                    <div class="p-3 bg-success flex-fill">My Flex Item Four</div>
+                </div>
+
+                <hr>
+
+
+                <!--    space distributed among those children -->
+                <h1>d-flex take depend on content</h1>
+                <div class="d-flex p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info flex-fill">My Flex Item One</div>
+                    <div class="p-3 bg-danger flex-fill">My Flex Item Two</div>
+                    <div class="p-3 bg-primary flex-fill">My Flex Item Three</div>
+                </div>
+
+                <hr>
+
+               <!-- Wrapping Utilities
+                Control whether items wrap or not:
+
+                flex-wrap: Items wrap to the next line (default).
+                flex-nowrap: Items stay in a single line.
+                flex-wrap-reverse: Items wrap in reverse.-->
+                <h1>flex-wrap : wrapping into next line</h1>
+                <div class="d-flex flex-nowrap p-3 bg-secondary text-white">
+                    <div class="p-3 col-6 bg-info ">My Flex Item One</div>
+                    <div class="p-3 col-6 bg-danger">My Flex Item Two</div>
+                    <div class="p-3 col-3 bg-primary">My Flex Item Three</div>
+                    <div class="p-3 col-3 bg-success">My Flex Item Four</div>
+                </div>
+
+                <hr>
+
+
+                <!-- Grow and shrink 
+                Control how items grow or shrink using:
+                Grow: like as flex-fill
+                flex-grow-0: Disable growing.
+                flex-grow-1: Enable growing.
+                flex item one : take available space
+                flex item two,three,four : take  space as content
+               -->
+                <h1> flex item one : take available space</h1>
+                <div class="d-flex p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info flex-grow-1">My Flex Item One</div>
+                    <div class="p-3  bg-danger">My Flex Item Two</div>
+                    <div class="p-3  bg-primary">My Flex Item Three</div>
+                    <div class="p-3  bg-success">My Flex Item Four</div>
+                </div>
+
+                <hr>
+                
+
+                <!--Use .flex-shrink-* utilities to toggle a flex item’s ability to shrink if necessary.
+                In the example below, the second flex item with .flex-shrink-1 is forced to wrap its contents
+                to a new line, “shrinking” to allow more space for the previous flex item with .w-100.-->
+
+                <!--flex-shrink-0: Disable shrinking.
+                flex-shrink-1: Enable shrinking.-->
+                <h1> flex item two : try to shrink for giving space to item one</h1>
+                <div class="d-flex p-3 bg-secondary text-white">
+                    <div class="p-3 bg-info w-100">My Flex Item One</div>
+                    <div class="p-3  bg-danger">My Flex Item Two</div>
+                </div>
+
+                <hr>
+
+            </div>
+        </div>
+    </div>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+----------------------------------------------------------------------------(3.3) 3. Cards--------------------------------------------------------------------------------------
+
+card
+	Purpose: The main container for a card.
+
+	Usage: Wraps all card content.
+	
+	<div class="card">
+		<!-- Card content goes here -->
+	</div>
+
+card-body
+	Purpose: The main content area of the card. It typically contains text, titles, subtitles, links, etc.
+
+	Usage: Place inside the .card to structure the main content.
+	
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Title</h5>
+			<p class="card-text">Some text here.</p>
+		</div>
+	</div>
+
+card-title
+	Purpose: Used for the title of the card.
+
+	Usage: Typically placed inside .card-body.
+	
+	<div class="card-body">
+		<h5 class="card-title">Card Title</h5>
+	</div>
+
+card-subtitle
+	Purpose: Used for the subtitle of the card.
+
+	Usage: Typically placed inside .card-body, below the .card-title.
+	
+	<div class="card-body">
+		<h5 class="card-title">Card Title</h5>
+	</div>
+
+card-text
+	Purpose: Used for the main text content of the card.
+
+	Usage: Typically placed inside .card-body.
+	
+	<div class="card-body">
+		<p class="card-text">This is the main content of the card.</p>
+	</div>
+
+card-link
+	Purpose: Used for links inside the card.
+
+	Usage: Typically placed inside .card-body.
+	
+	<div class="card-body">
+		<a href="#" class="card-link">Link 1</a>
+		<a href="#" class="card-link">Link 2</a>
+	</div>
+
+card-img-top
+	Purpose: Places an image at the top of the card.
+
+	Usage: Place directly inside .card, above .card-body.
+	
+	<div class="card">
+		<img src="image.jpg" class="card-img-top" alt="Image">
+		<div class="card-body">
+			<h5 class="card-title">Card Title</h5>
+			<p class="card-text">Some text here.</p>
+		</div>
+	</div>
+
+
+card-img-bottom
+	Purpose: Places an image at the bottom of the card.
+
+	Usage: Place directly inside .card, below .card-body.
+	
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Card Title</h5>
+			<p class="card-text">Some text here.</p>
+		</div>
+		<img src="image.jpg" class="card-img-bottom" alt="Image">
+	</div>
+
+card-header
+	Purpose: Adds a header section to the card.
+
+	Usage: Place directly inside .card, above .card-body.
+	
+	<div class="card">
+		<div class="card-header">
+			Featured
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">Card Title</h5>
+			<p class="card-text">Some text here.</p>
+		</div>
+	</div>
+
+
+card-footer
+	Purpose: Adds a footer section to the card.
+
+	Usage: Place directly inside .card, below .card-body.
+	
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Card Title</h5>
+			<p class="card-text">Some text here.</p>
+		</div>
+		<div class="card-footer">
+			Footer Content
+		</div>
+	</div>
+
+card-group
+	Equal Height and Width:
+		(সকল card এর width,height একই থাকবে। কোন gutter/gap থাকবে না card এর মধ্যে।)
+		All cards in the group will have the same height and width.
+
+		This ensures a consistent and visually appealing layout.
+
+	No Gutter (Spacing) Between Cards:
+
+		By default, there is no spacing between cards in a group.
+
+		If you want spacing, you can use .card-deck or .row with .col.
+
+	Responsive Behavior:
+		On smaller screens, the cards will stack vertically.
+	
+	(col এর সাইজ দিয়ে কোন কাজ হবে না।)
+	div class="row">
+        <div class="col">
+            <div class="card-group">
+                <div class="card">
+                    <img src="public/image/background.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional
+                            content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="public/image/environment.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="public/image/background.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional
+                            content. This card has even longer content than the first to show that equal height
+                            action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+Card Grid Layout
+row-cols-1 row-cols-md-2 g-4
+	row-cols-2 মানে একটা row তে ২ টা column থাকবে।
+	এজন্য col এর size দিতে হবে না।
+	<div class="row row-cols-1 row-cols-md-2 g-4">
+        <!--for row-col-2 we mention how many grid we can place.
+        so, we don't need to mention col-size-->
+        <div class="col">
+            <div class="card">
+                <img src="public/image/background.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="public/image/desk.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+	</div>
+	
+	
+Card Grid Layout(All card & picture same size)
+	
+	এখানে card এর size সবার সমান = h-100 এবং  picture এর size একই করা হয়েছে। 
+
+
+Card Navigation with tab
+	 Card Structure:
+		<div class="card text-center">
+		This creates a Bootstrap card with centered text.
+	Card Header with Tabs:
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+		
+		The .card-header contains the tab navigation.
+
+		The .nav and .nav-tabs classes create a tabbed navigation bar.
+
+		The id="myTab" is used to associate the tabs with their content.
+	
+	Tab Buttons:
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" id="tab-1" data-bs-toggle="tab" data-bs-target="#tab1-content" type="button" role="tab" aria-controls="tab1-content" aria-selected="true">Tab 1</button>
+		</li>
+		
+		Each <li> represents a tab button.
+
+		The class="nav-link" makes the button look like a tab.
+
+		The data-bs-toggle="tab" attribute enables the tab functionality.
+
+		The data-bs-target="#tab1-content" links the button to the corresponding content panel.
+
+		The aria-controls="tab1-content" and aria-selected="true" are for accessibility.
+		
+	Tab Content Panels:
+		<div class="card-body tab-content">
+			<div class="tab-pane fade show active" id="tab1-content" role="tabpanel" aria-labelledby="tab-1">
+				<h5 class="card-title">Tab 1 Content</h5>
+				<p class="card-text">This is content for Tab 1.</p>
+			</div>
+		The .tab-content container holds all the tab panels.
+
+		Each .tab-pane represents the content for a specific tab.
+
+		The id="tab1-content" matches the data-bs-target of the corresponding tab button.
+
+		The fade class adds a smooth fade transition when switching tabs.
+
+		The show active class makes this tab visible by default.
+		
+	<div class="row">
+        <div class="col-12">
+            <div class="card text-center mb-5">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="tab-1" data-bs-toggle="tab"
+                                    data-bs-target="#tab1-content"
+                                    type="button" role="tab" aria-controls="tab1-content" aria-selected="true">Tab 1
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-2" data-bs-toggle="tab" data-bs-target="#tab2-content"
+                                    type="button" role="tab" aria-controls="tab2-content" aria-selected="false">Tab 2
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-3" data-bs-toggle="tab" data-bs-target="#tab3-content"
+                                    type="button" role="tab" aria-controls="tab3-content" aria-selected="false">Tab 3
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body tab-content">
+                    <div class="tab-pane fade show active" id="tab1-content" role="tabpanel" aria-labelledby="tab-1">
+                        <h5 class="card-title">Tab 1 Content</h5>
+                        <p class="card-text">This is content for Tab 1.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere1</a>
+                    </div>
+                    <div class="tab-pane fade" id="tab2-content" role="tabpanel" aria-labelledby="tab-2">
+                        <h5 class="card-title">Tab 2 Content</h5>
+                        <p class="card-text">This is content for Tab 2.</p>
+                        <a href="#" class="btn btn-primary">Go somewher2</a>
+                    </div>
+                    <div class="tab-pane fade" id="tab3-content" role="tabpanel" aria-labelledby="tab-3">
+                        <h5 class="card-title">Tab 3 Content</h5>
+                        <p class="card-text">This is content for Tab 3.</p>
+                        <a href="#" class="btn btn-primary">Go somewher3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+Card Navigation with pills
+	
+
+
+Card Sizing
+
+	<div class="row">
+        <div class="col-12">
+            <div class="card w-25 d-inline-block">
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque ducimus eaque hic
+                    non porro
+                    quasi quisquam sint, sunt totam!
+                </div>
+            </div>
+            <div class="card w-25 d-inline-block">
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque ducimus eaque hic
+                    non porro
+                    quasi quisquam sint, sunt totam!
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+Card Alignment(card এর text easily align করা যাবে text-start,end,center দিয়ে।)
+
+	text-start
+
+	text-end 
+
+	text-center
+
+
+
+Card Overlay:(image এর উপর text লিখা যবে।)
+	
+	card-img-overlay
+	
+	 <div class="card text-bg-dark">
+        <img src="public/image/environment.webp" class="card-img fixed-image-height" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+
+
+
+Horizontal Card
+
+
+Card Color
+	card text-bg-primary mb-3
+
+Card border color
+	card border-primary
+
+Placeholders(Card Placeholder for giving time to data loading)
+	ডাটা লোড হওয়া দেখাবে।
+	placeholder
+
+
++++++++++++++++++code+++++++++++++++++++++++
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        .fixed-image-height {
+            height: 200px; /* Set a fixed height for all images */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            width: 100%; /* Ensures the image stretches to the full width of the card */
+        }
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--
+    Basic Card Structure:
+    card is block level element
+     A card is created using the .card class.
+     Inside the card, you can use .card-body for the main content.-->
+
+    <!--.card-body. Use it whenever you need a padded section within a card.-->
+
+    <h1 class="mt-3 text-bg-light"> Basic Card Structure</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit.
+                    Aliquam cum deleniti excepturi facilis fugit
+                    magnam modi, odio officia tenetur voluptates?
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Card Titles, Text, and Links
+    Use .card-title for titles and .card-text for text content.
+
+    Links can be styled with .card-link.-->
+    <!--.card-body. Use it whenever you need a padded section within a card.-->
+    <h1 class="mt-3 text-bg-light"> Card Titles, Text, and Links </h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card Title</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                    <p class="card-text">Some example text for the card.Some example text for the card.</p>
+                    <a href="#" class="card-link">Card Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Card Images
+    Add images to cards using .card-img-top or .card-img-bottom. .card-img-top-->
+
+    <!--.card-body. Use it whenever you need a padded section within a card.-->
+    <h1 class="mt-3 text-bg-light"> Add images to cards using .card-img-bottom. .card-img-top</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="public/image/background.jpg" class="card-img-top" alt="No Image">
+                <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi delectus
+                        error fuga incidunt laudantium maiores praesentium quisquam veniam voluptatem!</p>
+                </div>
+                <img src="public/image/environment.webp" class="card-img-bottom" alt="No Image">
+            </div>
+        </div>
+    </div>
+    <!-- Use .card-header and .card-footer for headers and footers.-->
+    <!-- Header & Footer -->
+    <h1 class="mt-3 text-bg-light">Use .card-header and .card-footer for headers and footers.</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">Card Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Card Title</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Repudiandae, molestias dolor minus architecto vel nemo laboriosam
+                        aut temporibus ratione optio.
+                    </p>
+                </div>
+                <div class="card-footer">Card Footer</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Cards can be grouped together using-->
+    <!-- .card-group is designed to display cards in a single row with equal height and width. It does not work well with .col-*-->
+    <!-- Card Layouts -->
+    <h1 class="mt-3 text-bg-light">Use .card-group for grouping Card</h1>
+    <div class="row">
+        <div class="col">
+            <div class="card-group">
+                <div class="card">
+                    <img src="public/image/background.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional
+                            content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="public/image/environment.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="public/image/background.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional
+                            content. This card has even longer content than the first to show that equal height
+                            action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Card Grid Layout(All card not same size)
+    Use Bootstrap's grid system to create responsive card layouts.-->
+    <h1 class="mt-3 text-bg-light">Card Grid Layout(Card size not same and picture size not same)</h1>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!--for row-col-2 we mention how many grid we can place.
+        so, we don't need to mention col-size-->
+        <div class="col">
+            <div class="card">
+                <img src="public/image/background.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="public/image/desk.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="public/image/environment.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="public/image/food.avif" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Card Grid Layout(All card & picture same size)
+         Use Bootstrap's grid system to create responsive card layouts.-->
+    <h1 class="mt-3 text-bg-light">Card Grid Layout</h1>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card  h-100">
+                <img src="public/image/background.jpg" class="card-img-top  fixed-image-height" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="public/image/desk.avif" class="card-img-top fixed-image-height" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card  h-100">
+                <img src="public/image/environment.webp" class="card-img-top fixed-image-height" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card  h-100">
+                <img src="public/image/food.avif" class="card-img-top fixed-image-height" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Card Navigation
+    Use cards with navigation tabs-->
+    <h1 class="mt-3 text-bg-light">Card Navigation using tabs(Navbar)</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="card text-center mb-5">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="tab-1" data-bs-toggle="tab"
+                                    data-bs-target="#tab1-content"
+                                    type="button" role="tab" aria-controls="tab1-content" aria-selected="true">Tab 1
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-2" data-bs-toggle="tab" data-bs-target="#tab2-content"
+                                    type="button" role="tab" aria-controls="tab2-content" aria-selected="false">Tab 2
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-3" data-bs-toggle="tab" data-bs-target="#tab3-content"
+                                    type="button" role="tab" aria-controls="tab3-content" aria-selected="false">Tab 3
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body tab-content">
+                    <div class="tab-pane fade show active" id="tab1-content" role="tabpanel" aria-labelledby="tab-1">
+                        <h5 class="card-title">Tab 1 Content</h5>
+                        <p class="card-text">This is content for Tab 1.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere1</a>
+                    </div>
+                    <div class="tab-pane fade" id="tab2-content" role="tabpanel" aria-labelledby="tab-2">
+                        <h5 class="card-title">Tab 2 Content</h5>
+                        <p class="card-text">This is content for Tab 2.</p>
+                        <a href="#" class="btn btn-primary">Go somewher2</a>
+                    </div>
+                    <div class="tab-pane fade" id="tab3-content" role="tabpanel" aria-labelledby="tab-3">
+                        <h5 class="card-title">Tab 3 Content</h5>
+                        <p class="card-text">This is content for Tab 3.</p>
+                        <a href="#" class="btn btn-primary">Go somewher3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Card Navigation
+   Use cards with navigation pills(button).-->
+    <h1 class="mt-3 text-bg-light">Card Navigation using pills(Navbar)</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="card text-center mb-5">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills" id="myTab-button" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="tab-1-pills" data-bs-toggle="tab"
+                                    data-bs-target="#tab1-content-pills" type="button" role="tab"
+                                    aria-controls="tab1-content-pills" aria-selected="true">Tab 1
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-2-pills" data-bs-toggle="tab"
+                                    data-bs-target="#tab2-content-pills"
+                                    type="button" role="tab" aria-controls="tab2-content-pills" aria-selected="false">
+                                Tab 2
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tab-3-pills" data-bs-toggle="tab"
+                                    data-bs-target="#tab3-content-pills"
+                                    type="button" role="tab" aria-controls="tab3-content-pills" aria-selected="false">
+                                Tab 3
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body tab-content">
+                    <div class="tab-pane fade show active" id="tab1-content-pills" role="tabpanel"
+                         aria-labelledby="tab-1-pills">
+                        <h5 class="card-title">Tab 1 Content</h5>
+                        <p class="card-text">This is content for Tab 1.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere1</a>
+                    </div>
+                    <div class="tab-pane fade" id="tab2-content-pills" role="tabpanel" aria-labelledby="tab-2-pills">
+                        <h5 class="card-title">Tab 2 Content</h5>
+                        <p class="card-text">This is content for Tab 2.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere2</a>
+                    </div>
+                    <div class="tab-pane fade" id="tab3-content-pills" role="tabpanel" aria-labelledby="tab-3-pills">
+                        <h5 class="card-title">Tab 3 Content</h5>
+                        <p class="card-text">This is content for Tab 3.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Card Sizing
+    Cards can be sized using Bootstrap's grid system or custom CSS.-->
+    <h1 class="mt-3 text-bg-light">Card Sizing</h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="card w-25 d-inline-block">
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque ducimus eaque hic
+                        non porro
+                        quasi quisquam sint, sunt totam!
+                    </div>
+                </div>
+                <div class="card w-25 d-inline-block">
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque ducimus eaque hic
+                        non porro
+                        quasi quisquam sint, sunt totam!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Card Alignment
+   Align text within cards using .text-start, .text-center, or .text-end.-->
+    <h1 class="mt-3 text-bg-light">Card Text Alignment</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="card text-start mb-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+    <div class="card text-end" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+
+    <!-- Card Overlay:
+    Create an image overlay effect using .card-img-overlay.-->
+    <h1 class="mt-3 text-bg-light">Card Overlay</h1>
+    <div class="card text-bg-dark">
+        <img src="public/image/environment.webp" class="card-img fixed-image-height" alt="...">
+        <div class="card-img-overlay">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+
+    <!-- Horizontal Card: Example-->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="public/image/background.jpg" class="img-fluid rounded-start" alt="..."
+                             style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Card Color:
+    Card Background and Text Color
+       -->
+    <h1 class="mt-3 text-bg-light">Card Background and Text Color</h1>
+    <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+
+
+    <!-- Card Color:
+    Card Border color
+       -->
+    <h1 class="mt-3 text-bg-light">Card Border and Text Color</h1>
+    <div class="card border-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body text-primary">
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+    </div>
+
+    <!-- Placeholders -->
+    <h1 class="mt-3 text-bg-light">Card Placeholder for giving time to data loading
+
+    </h1>
+    <div class="card" style="width: 18rem">
+        <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+            </h5>
+            <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+            </p>
+            <a href="" class="btn btn-primary disabled placeholder col-6"></a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
 
 
@@ -2978,6 +4536,557 @@ XXL							col-xxl- 			≥ 1400px									for exxtra extra large devices (large d
 
 
 
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------(3.4) 4. List Groups & Badges --------------------------------------------------------------------------------------
+(list-group তৈরি করা যায় item গুলোর।)
+.list-group
+	Applied to the container (e.g., <ul> or <div>) to create a list group.
+
+	Styles the container to display a list of items with borders, padding, and spacing.
+	
+	<ul class="list-group">
+	  <li class="list-group-item">Item 1</li>
+	  <li class="list-group-item">Item 2</li>
+	</ul>
+
+.list-group-item
+	Applied to individual list items (e.g., <li> or <div>).
+
+	Styles each item with padding, borders, and hover effects.
+	
+	<li class="list-group-item">Item 1</li>
+
+.list-group-flush(borders and rounded corners দূর করা যায়।)
+	Removes borders and rounded corners from the list group, making it flush with its container.
+	
+	<ul class="list-group list-group-flush">
+	  <li class="list-group-item">Item 1</li>
+	  <li class="list-group-item">Item 2</li>
+	</ul>
+
+.list-group-horizontal(list-group এর item গুলো horizontally করা যায়।)
+	Displays list items horizontally instead of vertically.
+	
+	<ul class="list-group list-group-horizontal">
+	  <li class="list-group-item">Item 1</li>
+	  <li class="list-group-item">Item 2</li>
+	</ul>
+
+.list-group-item-action(list-group এর item হিসেবে link add করা যায়।)
+	Makes list items clickable (e.g., for links or buttons).
+
+	Adds hover and active states.
+	<a href="#" class="list-group-item list-group-item-action">Clickable Item</a>
+
+
+
+Badge Classes
+
+.badge
+	Base class for creating badges.
+
+	Styles the element as a small, rounded label.
+	
+	<span class="badge bg-primary">New</span>
+	
+.bg-*
+	Adds background colors to badges.
+
+	Examples: .bg-primary, .bg-success, .bg-danger.
+	
+	<span class="badge bg-success">Success</span>
+
+
+.rounded-pill
+	Makes the badge more rounded (pill-shaped).
+	<span class="badge rounded-pill bg-warning">Warning</span>
+
+.text-*
+	Changes the text color of the badge for better contrast.
+
+	Example: .text-white.
+	
+	<span class="badge bg-dark text-white">Dark</span>
+	
+	
+	
+	
++++++++++code++++++++++++++
+
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        .fixed-image-height {
+            height: 200px; /* Set a fixed height for all images */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            width: 100%; /* Ensures the image stretches to the full width of the card */
+        }
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--
+    ( un-order list এর item )
+    list group is an unordered list.
+    -->
+    <h1 class="mt-2">Make un-order list as group list</h1>
+    <ul class="list-group">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <!--Add .active  indicate the current active selection.-->
+    <h1 class="mt-2">.active indicate the current active selection</h1>
+    <ul class="list-group">
+        <li class="list-group-item active" aria-current="true">An active item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+
+    <!-- Replace <li> with <a> or <button> to make list items clickable. -->
+    <h1 class="mt-2">we can add link in list-group</h1>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            The current link item
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+        <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+        <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+        <a class="list-group-item list-group-item-action disabled" aria-disabled="true">A disabled link item</a>
+    </div>
+
+    <!-- Replace <li> with <a> or <button> to make button items clickable. -->
+    <h1 class="mt-2">we can add button in list-group</h1>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+            The current button
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
+    </div>
+
+    <!--    flush can remove border from list-group-->
+    <!-- Add .list-group-flush to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards). -->
+    <h1 class="mt-2">List group using flush</h1>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+
+    <!--    Add the .list-group-numbered modifier class (and optionally use an <ol> element) to opt into numbered list group items.-->
+    <!--    we can add number in list automatically-->
+    <h1 class="mt-2">List group with number</h1>
+    <ol class="list-group list-group-numbered">
+        <li class="list-group-item">A list item</li>
+        <li class="list-group-item">A list item</li>
+        <li class="list-group-item">A list item</li>
+    </ol>
+
+    <!--    We can make list group as horizontal-->
+    <!--    Add .list-group-horizontal to change the layout of list group items from vertical to horizontal across all breakpoints.-->
+    <h1 class="mt-2">Horizontal List group</h1>
+    <!-- First Horizontal List Group -->
+    <ul class="list-group list-group-horizontal d-flex justify-content-between col-12 mb-3">
+        <li class="list-group-item flex-fill text-center">An item</li>
+        <li class="list-group-item flex-fill text-center">A second item</li>
+        <li class="list-group-item flex-fill text-center">A third item</li>
+    </ul>
+
+    <!-- Second Horizontal List Group -->
+    <ul class="list-group list-group-horizontal d-flex justify-content-between col-12">
+        <li class="list-group-item flex-fill text-center">An item</li>
+        <li class="list-group-item flex-fill text-center">A second item</li>
+        <li class="list-group-item flex-fill text-center">A third item</li>
+    </ul>
+
+
+    <h1 class="mt-2">List group Background Color</h1>
+    <ul class="list-group">
+        <li class="list-group-item">A simple default list group item</li>
+
+        <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
+        <li class="list-group-item list-group-item-secondary">A simple secondary list group item</li>
+        <li class="list-group-item list-group-item-success">A simple success list group item</li>
+        <li class="list-group-item list-group-item-danger">A simple danger list group item</li>
+        <li class="list-group-item list-group-item-warning">A simple warning list group item</li>
+        <li class="list-group-item list-group-item-info">A simple info list group item</li>
+        <li class="list-group-item list-group-item-light">A simple light list group item</li>
+        <li class="list-group-item list-group-item-dark">A simple dark list group item</li>
+    </ul>
+
+
+    <h1 class="mt-2">List group Link Color</h1>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">A simple default list group item</a>
+
+        <a href="#" class="list-group-item list-group-item-action list-group-item-primary">A simple primary list group
+            item</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">A simple secondary list
+            group item</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-success">A simple success list group
+            item</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-danger">A simple danger list group
+            item</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-warning">A simple warning list group
+            item</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-info">A simple info list group
+            item</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-light">A simple light list group
+            item</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">A simple dark list group
+            item</a>
+    </div>
+
+
+
+    <h1 class="mt-2">Badges Example</h1>
+    <div class="col-md-6">
+        <h3>Badges Examples</h3>
+        <p>
+            Default Badge: <span class="badge bg-primary">Primary</span>
+        </p>
+        <p>
+            Pill Badge: <span class="badge rounded-pill bg-success">Success</span>
+        </p>
+        <p>
+            Badge in Button:
+            <button type="button" class="btn btn-warning">
+                Messages <span class="badge bg-dark">5</span>
+            </button>
+        </p>
+        <p>
+            Badge in List Group:
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Tasks
+                <span class="badge bg-danger rounded-pill">3</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Completed
+                <span class="badge bg-success rounded-pill">10</span>
+            </li>
+        </ul>
+        </p>
+    </div>
+
+
+    <h1 class="mt-2">Badges Example In List Group</h1>
+    <!-- Badges in List Group -->
+    <ul class="list-group">
+        <!--justify-content-between
+        Distributes the space between the child elements. The first child (the <div>) will align to the left, and the last child (the <span>) will align to the right.
+        me-auto:
+        Adds a right margin (margin-end) that automatically pushes the <span> (badge) to the far right. This ensures the <div> stays aligned to the left.-->
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Electronics</div>
+                Content for this item
+            </div>
+            <span class="badge bg-primary rounded-pill">20</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Fashion</div>
+                Content for this item
+            </div>
+            <span class="badge bg-danger rounded-pill">10</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Sports</div>
+                Content for this item
+            </div>
+            <span class="badge bg-success rounded-pill">30</span>
+        </li>
+    </ul>
+
+</div>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------(3.5 )5. Forms & Input----------------------------------------------------------
+.form-control(input,textarea,select এ বিভিন্ন styling করতে ব্যবহৃত হয়।)
+	when to use:
+	The .form-control class is used for the following form elements:
+	
+	Features:
+		Adds consistent padding, border, and font size.
+
+		Makes inputs responsive and visually appealing.
+
+	<input> (e.g., type="text", type="email", type="password", etc.)
+
+	<textarea>
+
+	<select> (dropdowns)
+	example:
+	<input type="text" class="form-control" placeholder="Enter your name">
+
+form-label:(label গুলো styling/designing এর জন্য form-level ব্যবহৃত হয়।)
+	Purpose: Styles labels for form controls.
+
+	Features:
+		Improves accessibility by associating labels with inputs.
+
+		Adds proper spacing and alignment.
+		
+	<input type="text" class="form-control" placeholder="Enter your name">
+
+.form-text:(input field এর নীচে text/hint view করার জন্য এটা ব্যবহৃত হয়।)
+
+	Used for adding helper text below form controls.
+	
+	Purpose: Styles helper text below form controls.
+
+	Features:
+
+		Used for additional instructions or validation messages.
+
+
+<label>:
+		Ensure the for attribute matches the id of the associated form control.(label এর for এবং input এর id match হতে হবে।)
+		<div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email">
+        </div>
+
+Properties for <input>:
+	a. type
+		Purpose: Defines the type of input.
+
+		Common Types:
+
+		text: Single-line text input.
+
+		password: Masked input for passwords.
+
+		email: Input for email addresses (validates format).
+
+		number: Input for numeric values.
+
+		date: Input for selecting a date.
+
+		file: Input for file uploads.
+
+		checkbox: For toggling options.
+
+		radio: For selecting one option from a group.
+		
+	b. id
+		Purpose: Uniquely identifies the input for association with <label>.
+		
+		<input type="text" id="username" name="username" class="form-control">
+	
+	c. name
+		Purpose: Identifies the input when the form is submitted.
+		
+	d. placeholder
+		Purpose: Provides a hint or example for the input.
+	
+	e. required
+		Purpose: Marks the input as mandatory.
+		
+	f.min, max, and step
+		Purpose: Used for numeric or date inputs to set constraints.
+	
+	g. pattern
+		Purpose: Specifies a regex pattern for validation.
+		
+	h. aria-* Attributes
+		Purpose: Enhances accessibility.
+
+form-select:
+
+			<select class="form-select" id="selectDefault">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+checkbox and radio:
+
+form-check:
+
+	Always wrap checkboxes and radio buttons in a .form-check container for proper alignment and spacing.
+
+.form-check-input:
+
+	Applied to the <input> element to style it according to Bootstrap's design.
+
+.form-check-label:
+
+	Applied to the <label> element to ensure it aligns properly with the input.
+
+.name Attribute for Radio Buttons:
+
+	All radio buttons in the same group must share the same name attribute to ensure only one can be selected at a time.
+	
+	
+
+form-check form-switch : ( checkbox কে toogle button বানালাম। )
+	<div class="form-check form-switch">:
+
+	The form-check class creates a container for the checkbox and label.
+
+	The form-switch class modifies the container to display a toggle switch instead of a regular checkbox.
+
+range(range select করা যায়।)
+
+input group(label ও input field কে combine করা যায়।)
+
+floating label(label কে floating করা যায়।)
+
+
++++++++++++++++++code++++++++++++++++++++
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>FORM Control Example</h2>
+    <form>
+        <!-- Email Input -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email">
+        </div>
+
+        <!-- Textarea -->
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your message"></textarea>
+        </div>
+
+        <!-- Password Input with Help Text -->
+        <div class="mb-3">
+            <label for="inputPassword5" class="form-label">Password</label>
+            <input type="password" id="inputPassword5" class="form-control" placeholder="Enter your password" aria-describedby="passwordHelpBlock">
+            <div id="passwordHelpBlock" class="form-text">
+                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            </div>
+        </div>
+
+        <!-- Readonly Input -->
+        <div class="mb-3">
+            <label for="readonlyInput" class="form-label">Readonly Input</label>
+            <input class="form-control" type="text" value="Readonly input here..." id="readonlyInput" aria-label="readonly input example" readonly>
+        </div>
+
+        <!-- Readonly Plain Text Email -->
+        <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+            </div>
+        </div>
+
+        <!-- File Input (Single File) -->
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <!-- File Input (Multiple Files) -->
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple>
+        </div>
+
+        <!-- Color Picker -->
+        <div class="mb-3">
+            <label for="exampleColorInput" class="form-label">Color picker</label>
+            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+        </div>
+
+        <!-- Datalist Input -->
+        <div class="mb-3">
+            <label for="exampleDataList" class="form-label">Datalist example</label>
+            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+                <option value="San Francisco">
+                <option value="New York">
+                <option value="Seattle">
+                <option value="Los Angeles">
+                <option value="Chicago">
+            </datalist>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
 
 
