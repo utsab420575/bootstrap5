@@ -5350,6 +5350,934 @@ Accessibility: role="progressbar", aria-valuenow, aria-valuemin, aria-valuemax
 
 
 
+-----------------------------------------------(3.8) 8. Tables------------------------------------------------------------
+
+<!-- Defines the table structure -->
+<table>
+
+<!-- Groups the header content of the table -->
+<thead>
+
+<!-- Defines a table row -->
+<tr>
+
+<!-- Defines a header cell -->
+<th>
+
+<!-- Defines a standard data cell -->
+<td>
+
+.table:(bootstrap table apply করার জন্য table ব্যবহার করব।)
+
+	Base class for Bootstrap tables.
+
+	Adds default styling (padding, alignment, etc.).
+
+.table-striped:(alternating row color এর জন্য table-striped ব্যবহার হয়।)
+
+	Adds zebra-striping (alternating row colors) for better readability.
+
+.table-bordered:(table এ bordere দেয়া যায়।)
+
+	Adds borders to the table and its cells.
+
+.table-borderless:
+
+	Removes all borders from the table and its cells.
+
+.table-dark:(table/tr/td তে বিভিন্ন color ব্যবহার করা যায়।)
+
+	Inverts the table colors (dark background with light text).
+
+.table-hover:
+
+	Adds a hover effect to table rows (changes background color on hover).
+
+.table-sm/md/lg/xl/xxl:
+
+	Reduces padding, making the table more compact.
+
+.table-responsive:(table কে responsive করতে চাইলে div এর ভিতরে table ব্যবহার করতে হবে।)
+
+	Makes the table horizontally scrollable on smaller screens.
+
+	Applied to a <div> wrapper around the table.
+
+Contextual Classes:
+
+.table-primary, .table-success, .table-danger, .table-warning, .table-info, .table-light, .table-dark.
+
+	Used to color rows, cells, or headers based on their state or meaning.
+
+Vertical Alignment Classes:(table এর ভিতরের cell data গুলো align করতে চাইলে align-top/middle/center ব্যবহার করতে হয়)
+
+	.align-top: Aligns content to the top of the cell.
+
+	.align-middle: Aligns content to the middle of the cell.
+
+	.align-bottom: Aligns content to the bottom of the cell.
+
+Width Utilities:(column এর width দেয়া যায়।)
+
+	.w-25, .w-50, .w-75, .w-100: Sets the width of table columns.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-1">Basic Table With table class</h1>
+    <!-- Basic Tables -->
+    <table class="table"> <!-- Table structure with Bootstrap styling -->
+        <thead> <!-- Table header section -->
+            <tr> <!-- Header row -->
+                <th>#</th> <!-- Header cell for column 1 -->
+                <th>Name</th> <!-- Header cell for column 2 -->
+                <th>Email</th> <!-- Header cell for column 3 -->
+                <th>Position</th> <!-- Header cell for column 4 -->
+            </tr>
+        </thead>
+        <tbody> <!-- Table body section -->
+            <tr> <!-- First row of data -->
+                <th>1</th> <!-- Row header cell (labels the row) -->
+                <td>Tony Stark</td> <!-- Data cell for Name -->
+                <td>ironman@gmail.com</td> <!-- Data cell for Email -->
+                <td>Senior Web Developer</td> <!-- Data cell for Position -->
+            </tr>
+            <tr> <!-- Second row of data -->
+                <th>2</th> <!-- Row header cell -->
+                <td>Steve Rogers</td> <!-- Data cell for Name -->
+                <td>captain@gmail.com</td> <!-- Data cell for Email -->
+                <td>UI Designer</td> <!-- Data cell for Position -->
+            </tr>
+            <tr> <!-- Third row of data -->
+                <th>3</th> <!-- Row header cell -->
+                <td>Bruce Banner</td> <!-- Data cell for Name -->
+                <td>hulk@gmail.com</td> <!-- Data cell for Email -->
+                <td>Junior Web Developer</td> <!-- Data cell for Position -->
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Variants -->
+    <h1 class="mb-1">In Table/Tr/Td we can add different types of color</h1>
+
+    <!-- table/tr/td we can add classes like table-primary, table-striped, table-bordered, etc. -->
+    <!-- Table with dark theme -->
+    <table class="table table-dark">
+        <thead> <!-- Table header section -->
+            <tr> <!-- Header row -->
+                <th>#</th> <!-- Header cell for column 1 -->
+                <th>Name</th> <!-- Header cell for column 2 -->
+                <th>Email</th> <!-- Header cell for column 3 -->
+                <th>Position</th> <!-- Header cell for column 4 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body section -->
+            <!-- Row 1 with danger background -->
+            <!-- Here, we can add classes like table-success, table-warning, table-info, etc. -->
+            <tr class="table-danger">
+                <th>1</th> <!-- Row header cell (labels the row) -->
+                <td>Tony Stark</td> <!-- Data cell for Name -->
+                <!-- Here, we can add classes like table-primary, table-success, etc. -->
+                <td class="table-warning">ironman@gmail.com</td>
+                <td>Senior Web Developer</td> <!-- Data cell for Position -->
+            </tr>
+            <!-- Row 2 -->
+            <tr> <!-- Here, we can add classes like table-primary, table-success, table-warning, etc. -->
+                <th>2</th> <!-- Row header cell -->
+                <td>Steve Rogers</td> <!-- Data cell for Name -->
+                <td>captain@gmail.com</td> <!-- Here, we can add classes like table-primary, table-success, etc. -->
+                <td>UI Designer</td> <!-- Data cell for Position -->
+            </tr>
+            <!-- Row 3 -->
+            <tr> <!-- Here, we can add classes like table-primary, table-success, table-warning, etc. -->
+                <th>3</th> <!-- Row header cell -->
+                <td>Bruce Banner</td> <!-- Data cell for Name -->
+                <td>hulk@gmail.com</td> <!-- Here, we can add classes like table-primary, table-success, etc. -->
+                <td>Junior Web Developer</td> <!-- Data cell for Position -->
+            </tr>
+        </tbody>
+    </table>
+
+    <br /><br />
+
+
+
+    <!-- Striped -->
+    <h1 class="mb-1">Stripped table(Stripped Row)</h1>
+    <!-- Striped Table: Adds alternating background colors to rows for better readability -->
+    <!-- The 'table-striped' class adds zebra-striping to the table rows -->
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <td>Tony Stark</td>
+            <td>ironman@gmail.com</td>
+            <td>Senior Web Developer</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>Steve Rogers</td>
+            <td>captain@gmail.com</td>
+            <td>UI Designer</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Bruce Banner</td>
+            <td>hulk@gmail.com</td>
+            <td>Junior Web Developer</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Striped -->
+    <h1 class="mb-1">Stripped table(Stripped Column)</h1>
+    <!-- Striped Table: Adds alternating background colors to rows for better readability -->
+    <!-- The 'table-striped' class adds zebra-striping to the table rows -->
+    <table class="table table-striped-columns">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <td>Tony Stark</td>
+            <td>ironman@gmail.com</td>
+            <td>Senior Web Developer</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>Steve Rogers</td>
+            <td>captain@gmail.com</td>
+            <td>UI Designer</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Bruce Banner</td>
+            <td>hulk@gmail.com</td>
+            <td>Junior Web Developer</td>
+        </tr>
+        </tbody>
+    </table>
+    <br /><br />
+
+
+
+
+    <!-- Bordered Table: Adds borders to all sides of the table and its cells -->
+    <!-- The 'table-bordered' class adds borders to the table and cells -->
+    <h1 class="mb-1">Bordered Table</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <td>Tony Stark</td>
+            <td>ironman@gmail.com</td>
+            <td>Senior Web Developer</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>Steve Rogers</td>
+            <td>captain@gmail.com</td>
+            <td>UI Designer</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Bruce Banner</td>
+            <td>hulk@gmail.com</td>
+            <td>Junior Web Developer</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br /><br />
+
+    <h1 class="mb-1">Borderless Table</h1>
+    <!-- Bootstrap table without borders -->
+    <table class="table table-borderless">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <td>Tony Stark</td>
+            <td>ironman@gmail.com</td>
+            <td>Senior Web Developer</td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <td>Steve Rogers</td>
+            <td>captain@gmail.com</td>
+            <td>UI Designer</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Bruce Banner</td>
+            <td>hulk@gmail.com</td>
+            <td>Junior Web Developer</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <h1 class="mb-1">Table Header</h1>
+    <!-- We can give any color to table header -->
+    <table class="table">
+       <thead class="table-danger">
+            <th>sl no</th>
+            <th>name</th>
+       </thead>
+        <tbody>
+            <td>1</td>
+            <td>utsab</td>
+        </tbody>
+    </table>
+
+    <!--Always responsive: we can table as reponsive by table inside div-->
+    <!--Breakpoint specific :
+    <div class="table-responsive-sm/md/lg/xxl">
+        <table class="table">
+            ...
+        </table>
+    </div>-->
+    <h1 class="mb-1">Vertical Alignment</h1>
+    <!-- We can change table alignment -->
+    <div class="table-responsive"> <!-- Makes the table horizontally scrollable on smaller screens -->
+        <table class="table align-middle"> <!-- Applies Bootstrap table styling and sets vertical alignment to middle -->
+            <thead> <!-- Table header section -->
+            <tr> <!-- Header row -->
+                <th scope="col" class="w-25">Heading 1</th> <!-- Header cell with 25% width -->
+                <th scope="col" class="w-25">Heading 2</th>
+                <th scope="col" class="w-25">Heading 3</th>
+                <th scope="col" class="w-25">Heading 4</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Row 1: Inherits vertical-align: middle from the table -->
+            <tr> <!-- Table row -->
+                <td>This cell inherits <code>vertical-align: middle;</code> from the table</td> <!-- Data cell -->
+                <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+                <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+                <td>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
+            </tr>
+
+            <!-- Row 2: Overrides vertical alignment to bottom -->
+            <tr class="align-bottom"> <!-- Table row with bottom alignment -->
+                <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td> <!-- Data cell -->
+                <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
+                <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
+                <td>This here is some placeholder text, intended to take up quite a bit of vertical space,
+                    to demonstrate how the vertical alignment works in the preceding cells.</td>
+            </tr>
+
+            <!-- Row 3: Mixed vertical alignment -->
+            <tr> <!-- Table row -->
+                <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+                <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
+                <td class="align-top">This cell is aligned to the top.</td> <!-- Data cell with top alignment -->
+                <td>This here is some placeholder text, intended to take up quite a bit of vertical space,
+                    to demonstrate how the vertical alignment works in the preceding cells.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h1 class="mb-1">Nested Table</h1>
+    <!--    Nested Table-->
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Fruits</td>
+            <td>
+                <!-- Nested table inside the row -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Fruit Name</th>
+                        <th>Color</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Apple</td>
+                        <td>Red</td>
+                    </tr>
+                    <tr>
+                        <td>Banana</td>
+                        <td>Yellow</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>Vegetables</td>
+            <td>
+                <!-- Another nested table -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Vegetable Name</th>
+                        <th>Color</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Carrot</td>
+                        <td>Orange</td>
+                    </tr>
+                    <tr>
+                        <td>Broccoli</td>
+                        <td>Green</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <h1>here full table under in one row that's why colspan used
+    
+    </h1>
+    <!--    here full table under in one row-->
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <table class="table mb-0">
+                    <thead>
+                    <tr>
+                        <th scope="col">Header</th>
+                        <th scope="col">Header</th>
+                        <th scope="col">Header</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">A</th>
+                        <td>First</td>
+                        <td>Last</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">B</th>
+                        <td>First</td>
+                        <td>Last</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C</th>
+                        <td>First</td>
+                        <td>Last</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+-------------------------------------------------(4.1) 1. Dropdowns------------------------------------------------------------
+
+
+.dropdown: Wrapper class for creating a dropdown component.
+
+.dropdown-toggle: Class for the button that toggles the dropdown menu.
+
+.dropdown-menu: Class for the container of dropdown items.
+
+.dropdown-item: Class for individual items inside the dropdown menu.
+
+.btn-group: Class for grouping buttons, used in split dropdowns.
+
+.dropdown-toggle-split: Class for the split button's dropdown arrow.
+
+.dropdown-menu-dark: Class for applying a dark theme to the dropdown menu.
+
+.dropup: Class for making the dropdown open upwards instead of downwards.
+
+.visually-hidden: Class for hiding text visually while keeping it accessible to screen readers.
+
+.btn: Base class for styling buttons (e.g., primary, danger, dark).
+
+Single Button Dropdown: A basic dropdown with a single button that toggles the dropdown menu.
+
+Split Button Dropdown: A dropdown with a split button, where one part is the primary action and the other part toggles the dropdown.
+
+Dark Theme Dropdown: A dropdown with a dark-themed menu.
+
+Dropup: A dropdown that opens upwards instead of downwards.
+
+Bootstrap JavaScript bundle: The script that enables Bootstrap's interactive components, including dropdowns.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Dropdowns</title>
+</head>
+<body>
+
+<!--Explanation of Comments:
+Single Button Dropdown: A basic dropdown with a single button that toggles the dropdown menu.
+
+Split Button Dropdown: A dropdown with a split button, where one part is the primary action and the other part toggles the dropdown.
+
+Dark Theme Dropdown: A dropdown with a dark-themed menu.
+
+Dropup: A dropdown that opens upwards instead of downwards.
+
+Bootstrap JavaScript bundle: The script that enables Bootstrap's interactive components, including dropdowns.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Dropdowns</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Dropdowns</h1>
+
+    <!-- Single Button Dropdown -->
+    <div class="dropdown">
+        <!-- Dropdown toggle button -->
+        <button
+                class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+        >
+            Dropdown
+        </button>
+        <!-- Dropdown menu with items -->
+        <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Item 1</a></li>
+            <li><a href="#" class="dropdown-item">Item 2</a></li>
+            <li><a href="#" class="dropdown-item">Item 3</a></li>
+        </ul>
+    </div>
+
+    <br /><br />
+
+    <!-- Split Button Dropdown -->
+    <div class="btn-group">
+        <!-- Primary action button -->
+        <button class="btn btn-danger">Action</button>
+        <!-- Dropdown toggle button (split) -->
+        <button
+                class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                data-bs-toggle="dropdown"
+        >
+            <!-- Visually hidden text for accessibility -->
+            <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <!-- Dropdown menu with items -->
+        <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Item 1</a></li>
+            <li><a href="#" class="dropdown-item">Item 2</a></li>
+            <li><a href="#" class="dropdown-item">Item 3</a></li>
+        </ul>
+    </div>
+
+    <br /><br />
+
+    <!-- Dark Theme Dropdown -->
+    <div class="dropdown">
+        <!-- Dropdown toggle button -->
+        <button
+                class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+        >
+            Dropdown
+        </button>
+        <!-- Dropdown menu with dark theme -->
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a href="#" class="dropdown-item">Item 1</a></li>
+            <li><a href="#" class="dropdown-item">Item 2</a></li>
+            <li><a href="#" class="dropdown-item">Item 3</a></li>
+        </ul>
+    </div>
+
+    <br /><br />
+
+    <!-- Dropup (Dropdown that opens upwards) -->
+    <div class="btn-group dropup">
+        <!-- Dropup toggle button -->
+        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
+            Dropup
+        </button>
+        <!-- Dropup menu with dark theme -->
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a href="#" class="dropdown-item">Item 1</a></li>
+            <li><a href="#" class="dropdown-item">Item 2</a></li>
+            <li><a href="#" class="dropdown-item">Item 3</a></li>
+        </ul>
+    </div>
+
+    <br /><br />
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<!-- Bootstrap JavaScript bundle -->
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<div style="margin-top: 350px"></div>
+
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------(4.2)  2. Accordions & Collapse-----------------------------------------------------
+Main Accordion Container:(এটাই parent container , এর মধ্যে মূলত সব ডাটা থাকবে।)
+
+	The .accordion class is the wrapper for the entire accordion component.
+
+	The id="accordionExample" is used to group the accordion items together.
+
+Accordion Item:(এটা দিয়ে individual item গুলো নিয়ে কাজ করা হয়।)
+
+	Each .accordion-item represents a single section of the accordion.
+
+Accordion Header:(individual item এর header যেখানে button থাকে )
+
+	The .accordion-header contains the toggle button (.accordion-button) for expanding/collapsing the content.
+
+Toggle Button:(এর মাধ্যমে collapse/expand enable হয় এবং data-bs-target দ্বারা কি document show হবে তা select করা যায়।)
+
+	The .accordion-button is the clickable button that toggles the visibility of the associated .accordion-collapse element.
+
+	The data-bs-toggle="collapse" enables the collapse/expand functionality.
+
+	The data-bs-target links the button to the specific collapsible element (e.g., #collapseOne).
+
+Collapsible Content Area:(যে ডাটাগুলো show হবে তার container। .show class ব্যবহার করলে show/expanded থাকবে ।)
+
+	The .accordion-collapse class is used for the collapsible content area.
+
+	The .collapse class hides the content by default, and .show makes it visible (used for the first item in this example).
+
+	The data-bs-parent ensures only one accordion item is open at a time (optional).
+
+Accordion Body:(যেখানে ডাটা show হবে।)
+
+	The .accordion-body class is used for the content inside the collapsible area.
+
+কিভাবে accordion গুলো expanded রাখা যায় চাইলে।
+<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"> 
+এখান থেকে data-bs-parent উঠায় দিব।
+<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"> 
+where multiple items can stay open simultaneously), you need to remove the data-bs-parent attribute from the .accordion-collapse elements.
+
+
+
+
+
+++++++++++++++++++++++++code++++++++++++++++++++++++++++++
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <title>Bootstrap Sandbox | Accordion & Collapse</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="mb-5">Accordion & Collapse</h1>
+    <!-- Main Accordion Container -->
+    <div class="accordion" id="accordionExample">
+
+        <!-- First Accordion Item -->
+        <div class="accordion-item">
+            <!-- Accordion Header (contains the toggle button) -->
+            <h2 class="accordion-header" id="headingOne">
+                <!-- Toggle Button for the first item -->
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <!-- Collapsible Content Area for the first item -->
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <!-- Content inside the collapsible area -->
+                <div class="accordion-body">
+                    Content for the first accordion item.
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Accordion Item -->
+        <div class="accordion-item">
+            <!-- Accordion Header (contains the toggle button) -->
+            <h2 class="accordion-header" id="headingTwo">
+                <!-- Toggle Button for the second item (initially collapsed) -->
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    Accordion Item #2
+                </button>
+            </h2>
+            <!-- Collapsible Content Area for the second item -->
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <!-- Content inside the collapsible area -->
+                <div class="accordion-body">
+                    Content for the second accordion item.
+                </div>
+            </div>
+        </div>
+        <!-- Third Accordion Item -->
+        <div class="accordion-item">
+            <!-- Accordion Header (contains the toggle button) -->
+            <h2 class="accordion-header" id="headingThree">
+                <!-- Toggle Button for the second item (initially collapsed) -->
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                    Accordion Item #2
+                </button>
+            </h2>
+            <!-- Collapsible Content Area for the second item -->
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <!-- Content inside the collapsible area -->
+                <div class="accordion-body">
+                    Content for the third accordion item.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <h1 class="mb-5">Always-Open Accordion</h1>
+    <!-- Main Accordion Container -->
+    <div class="accordion" id="accordionExampleAlwaysShow">
+
+        <!-- First Accordion Item -->
+        <div class="accordion-item">
+            <!-- Accordion Header (contains the toggle button) -->
+            <h2 class="accordion-header" id="heading_1">
+                <!-- Toggle Button for the first item -->
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <!-- Collapsible Content Area for the first item -->
+            <div id="collapse_1" class="accordion-collapse collapse show">
+                <!-- Content inside the collapsible area -->
+                <div class="accordion-body">
+                    Content for the first accordion item.
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Accordion Item -->
+        <div class="accordion-item">
+            <!-- Accordion Header (contains the toggle button) -->
+            <h2 class="accordion-header" id="heading_2">
+                <!-- Toggle Button for the second item (initially collapsed) -->
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_2">
+                    Accordion Item #3
+                </button>
+            </h2>
+            <!-- Collapsible Content Area for the second item -->
+            <div id="collapse_2" class="accordion-collapse collapse">
+                <!-- Content inside the collapsible area -->
+                <div class="accordion-body">
+                    Content for the third accordion item.
+                </div>
+            </div>
+        </div>
+        <!-- Third Accordion Item -->
+        <div class="accordion-item">
+            <!-- Accordion Header (contains the toggle button) -->
+            <h2 class="accordion-header" id="heading_3">
+                <!-- Toggle Button for the second item (initially collapsed) -->
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_3">
+                    Accordion Item #3
+                </button>
+            </h2>
+            <!-- Collapsible Content Area for the second item -->
+            <div id="collapse_3" class="accordion-collapse collapse">
+                <!-- Content inside the collapsible area -->
+                <div class="accordion-body">
+                    Content for the third accordion item.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Don't go past here -->
+</div>
+<div style="margin-top: 350px"></div>
+
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
