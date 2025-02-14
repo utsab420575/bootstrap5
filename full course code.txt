@@ -7576,6 +7576,371 @@ html file
 
 
 
+----------------------------------------------(6.2) 2. SaaS Install & Setup Sass------------------------------------------------
+1.download and install npm(only for first time)
+
+https://nodejs.org/en
+
+Download Node.js(LTS)
+
+2.create folder 
+
+ C:\xampp\htdocs\foldername
+
+3.open this folder into phpstrome
+
+4.now open terminal using gitbash
+
+
+5.initialization
+
+	$ npm init
+	This utility will walk you through creating a package.json file.
+	It only covers the most common items, and tries to guess sensible defaults.
+
+	See `npm help init` for definitive documentation on these fields
+	and exactly what they do.
+
+	Use `npm install <pkg>` afterwards to install a package and
+	save it as a dependency in the package.json file.
+
+	Press ^C at any time to quit.
+
+	package name: (bs5-simple-starter)   [press enter]
+	version: (1.0.0)        [press enter]
+																						
+	description: template for bootstrap website [write own description]
+
+	entry point: (index.js)       [press enter]        
+																		  
+	test command:        [press enter]
+																						   
+	git repository:        [press enter]
+																						 
+	keywords:                    [press enter]
+																				   
+	author: utsab roy 	[write own description]
+
+	license: (ISC) MIT
+
+	About to write to C:\xampp\htdocs\bs5-simple-starter\package.json:
+
+	{
+	  "name": "bs5-simple-starter",
+	  "version": "1.0.0",
+	  "description": "template for bootstrap website",
+	  "main": "index.js",
+	  "scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "author": "utsab roy",
+	  "license": "MIT"
+	}
+
+
+	Is this OK? (yes)   [press enter]
+
+	After this --->package.json file will be created inside project
+	{
+	  "name": "temp_folder",
+	  "version": "1.0.0",
+	  "description": "template for bootstrap",
+	  "main": "index.js",
+	  "scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "author": "utsab roy",
+	  "license": "ISC"
+	}
+
+
+
+
++++++++++++++++++++++++++++++++++++++++saas install+++++++++++++++++++++++++++++++++++++++
+
+	User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/temp_folder
+	$ npm install sass
+
+	added 17 packages, and audited 18 packages in 3s
+
+	5 packages are looking for funding
+	  run `npm fund` for details
+
+	found 0 vulnerabilities
+
+	***After this command node_modules folder will be created***
+	in package.json file sass added
+		"dependencies": {
+			"sass": "^1.85.0"
+		  }
+
+
+
++++++++++++++++++++++++++++++++++++++++create folder(project folder এ/root এ)+++++++++++++++++++++++++++++++++++++++
+1.create folder scss
+2.inside this folder create styles.scss file
+
+
++++++++++++++++++++++++++++++++++++++++change in package.json file+++++++++++++++++++++++++++++++++++++++
+This means you're telling Sass to compile all .scss files in the scss directory 
+and output the compiled .css files into the css directory.
+
+"scripts": {
+    "sass:build": "sass scss:css"
+  },
+  
++++++++++++++++++++++++++++++++++++++++now code scss format into styles.scss file+++++++++++++++++++++++++++++++++++++++
+$primary:#333;
+body{
+  background-color: $primary;
+}
+
++++++++++++++++++++++++++++++++++++++++now run sass compiler+++++++++++++++++++++++++++++++++++++++
+
+User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/bs5-simple-starter
+$ npm run sass:build
+
+> bs5-simple-starter@1.0.0 sass:build
+> sass --no-source-map scss:css
+
+
+**(After this command folder will be created and file also creaed css/style.css)**
+**in style.css file browser supported css file generated**
+
+
++++++++++++++++++++++++++++++++++++++++now code into html file and link with css file+++++++++++++++++++++++++++++++++++++++
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+	 <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>SASS INSTALL</h1>
+</body>
+</html>
+
+
+
++++++++++++++++++++++++++++++++++++++++if you don't want styles.css.map file will not genearted+++++++++++++++++++++++++++++++++++++++
+write in package.json file
+
+ "scripts": {
+    "sass:build": "sass --no-source-map scss:css"
+  },
+  
+  
+  
+
+
++++++++++++++++++++++++++++++++++++++++if you don't want every time build than use watch+++++++++++++++++++++++++++++++++++++++
+write in package.json file
+	"scripts": {
+	  "sass:build": "sass --no-source-map scss:css",
+	  "sass:watch": "sass --no-source-map --watch scss:css"
+	}
+  
++++++++++++++++++++++++++++++++++++++++now apply watch and further no need to build again and again+++++++++++++++++++++++++++++++++++++++
+
+User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/bs5-simple-starter
+$ npm run sass:watch
+
+> bs5-simple-starter@1.0.0 sass:watch
+> sass --no-source-map --watch scss:css
+
+Sass is watching for changes. Press Ctrl-C to stop.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------6.3 3. Install, Setup & Customize Bootstrap-------------------------------
+1.create folder js/script.js
+
+2.add this script
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1>My work</h1>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+3.install bootstrap
+User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/bs5-simple-starter
+$ npm install bootstrap
+
+
+
+4.in package.json we see bootstrap added
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.85.0"
+  }
+
+
+
+5.create file in scss/bootstrap.scss(and add this code)
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+6. (sass compiler run)
+
+User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/bs5-simple-starter
+$ npm run sass:build
+
+
+7.bootstrap.css file will be created in css/bootstrap.css file
+
+8. add css file to html file
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+  <h1 class="mt-5">My work</h1>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
+9.now change color of primary
+
+$primary:red;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+10.we can see color of primary is changed
+
+
+11.add javascript file to js
+(copy node_modules/bootstrap/dist/js/bootstrap.bundle.js to js/bootstrap.bundle.js)
+
+
+12.add this js to html file
+<script src="js/bootstrap.bundle.js.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+-------------------------------------------(6.4) 4. Install & Setup Font Awesome-----------------------------------
+
+1.Install Font Awesome via npm or yarn:(node_modules এর ভিতরে fontawesom install হবে।)
+
+npm install @fortawesome/fontawesome-free
+
+
+2. see in package.json(fontawesome added)
+
+ "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.85.0"
+  }
+  
+3.scss এর ভিতরে fontawesome.scss file create করব।
+
+4.scss/fontawesome.scss এর ভিতরে import করব।(node_modules এর ভিতরে fontawesom install হয়েছে।)
+
+@import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+
+
+5.sass run করব।
+User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/bs5-simple-starter
+$ npm run sass:build
+
+
+6.fontawesom.css file   তৈরি হবে।
+
+7.copy করতে হবে webfonts folder কে root folder এ
+(node_modules/fontawesom/fontawesom-free/webfonts  to rootfolder)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
