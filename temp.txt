@@ -1,376 +1,82 @@
--------------------------------------------------(4.1) 1. Dropdowns------------------------------------------------------------
+-----------------------------------------(4.3) 3. Carousel--------------------------------------
 
+carousel: The main container for the carousel component.(যার মধ্যে পুরো carousel থাকবে।)
 
-.dropdown: Wrapper class for creating a dropdown component.
+carousel-inner: Wraps all the slides.(সব slide কে wrap করবে।)
 
-.dropdown-toggle: Class for the button that toggles the dropdown menu.
-
-.dropdown-menu: Class for the container of dropdown items.
+carousel-item: Represents an individual slide.(individual item কে represent করবে।)
 
-.dropdown-item: Class for individual items inside the dropdown menu.
+active: Indicates the currently visible slide.(কোন slide active থাকবে তা indicate করবে।)
 
-.btn-group: Class for grouping buttons, used in split dropdowns.
+d-block and w-100: Ensure the image is displayed correctly and fills the container.
 
-.dropdown-toggle-split: Class for the split button's dropdown arrow.
-
-.dropdown-menu-dark: Class for applying a dark theme to the dropdown menu.
-
-.dropup: Class for making the dropdown open upwards instead of downwards.
-
-.visually-hidden: Class for hiding text visually while keeping it accessible to screen readers.
-
-.btn: Base class for styling buttons (e.g., primary, danger, dark).
-
-Single Button Dropdown: A basic dropdown with a single button that toggles the dropdown menu.
-
-Split Button Dropdown: A dropdown with a split button, where one part is the primary action and the other part toggles the dropdown.
-
-Dark Theme Dropdown: A dropdown with a dark-themed menu.
-
-Dropup: A dropdown that opens upwards instead of downwards.
-
-Bootstrap JavaScript bundle: The script that enables Bootstrap's interactive components, including dropdowns.
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <title>Bootstrap Sandbox | Dropdowns</title>
-</head>
-<body>
-
-<!--Explanation of Comments:
-Single Button Dropdown: A basic dropdown with a single button that toggles the dropdown menu.
-
-Split Button Dropdown: A dropdown with a split button, where one part is the primary action and the other part toggles the dropdown.
-
-Dark Theme Dropdown: A dropdown with a dark-themed menu.
-
-Dropup: A dropdown that opens upwards instead of downwards.
-
-Bootstrap JavaScript bundle: The script that enables Bootstrap's interactive components, including dropdowns.-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <title>Bootstrap Sandbox | Dropdowns</title>
-</head>
-<body>
-<div class="container">
-    <h1 class="mb-5">Dropdowns</h1>
+carousel-control-prev and carousel-control-next: Navigation buttons for moving between slides.
 
-    <!-- Single Button Dropdown -->
-    <div class="dropdown">
-        <!-- Dropdown toggle button -->
-        <button
-                class="btn btn-primary dropdown-toggle"
-                data-bs-toggle="dropdown"
-        >
-            Dropdown
-        </button>
-        <!-- Dropdown menu with items -->
-        <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item">Item 1</a></li>
-            <li><a href="#" class="dropdown-item">Item 2</a></li>
-            <li><a href="#" class="dropdown-item">Item 3</a></li>
-        </ul>
-    </div>
+carousel-control-prev-icon and carousel-control-next-icon: Icons for the navigation buttons.
 
-    <br /><br />
+visually-hidden: Makes text accessible to screen readers but hides it visually.
 
-    <!-- Split Button Dropdown -->
-    <div class="btn-group">
-        <!-- Primary action button -->
-        <button class="btn btn-danger">Action</button>
-        <!-- Dropdown toggle button (split) -->
-        <button
-                class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                data-bs-toggle="dropdown"
-        >
-            <!-- Visually hidden text for accessibility -->
-            <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
-        <!-- Dropdown menu with items -->
-        <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item">Item 1</a></li>
-            <li><a href="#" class="dropdown-item">Item 2</a></li>
-            <li><a href="#" class="dropdown-item">Item 3</a></li>
-        </ul>
-    </div>
+1. Core Carousel Classes
+	These classes are typically used to define the carousel container and its structure:
 
-    <br /><br />
+	carousel: The main container for the carousel.
 
-    <!-- Dark Theme Dropdown -->
-    <div class="dropdown">
-        <!-- Dropdown toggle button -->
-        <button
-                class="btn btn-primary dropdown-toggle"
-                data-bs-toggle="dropdown"
-        >
-            Dropdown
-        </button>
-        <!-- Dropdown menu with dark theme -->
-        <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a href="#" class="dropdown-item">Item 1</a></li>
-            <li><a href="#" class="dropdown-item">Item 2</a></li>
-            <li><a href="#" class="dropdown-item">Item 3</a></li>
-        </ul>
-    </div>
+	carousel-inner: Wraps the slides or items within the carousel.
 
-    <br /><br />
+	carousel-item: Represents an individual slide or item in the carousel.
 
-    <!-- Dropup (Dropdown that opens upwards) -->
-    <div class="btn-group dropup">
-        <!-- Dropup toggle button -->
-        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-            Dropup
-        </button>
-        <!-- Dropup menu with dark theme -->
-        <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a href="#" class="dropdown-item">Item 1</a></li>
-            <li><a href="#" class="dropdown-item">Item 2</a></li>
-            <li><a href="#" class="dropdown-item">Item 3</a></li>
-        </ul>
-    </div>
+	carousel-indicators: Container for the slide indicators (dots or bullets).
 
-    <br /><br />
+	carousel-control-prev and carousel-control-next: Classes for the previous and next navigation buttons.
+	
+2. Navigation Classes
+	These classes handle the navigation controls:
 
-    <!-- Don't go past here -->
-</div>
-<div style="margin-top: 350px"></div>
+	carousel-control-prev-icon: Styles the icon for the "previous" button.
 
-<!-- Bootstrap JavaScript bundle -->
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-<div style="margin-top: 350px"></div>
+	carousel-control-next-icon: Styles the icon for the "next" button.
 
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+	carousel-control-prev: The container for the "previous" button.
 
+	carousel-control-next: The container for the "next" button.
 
+3. Indicator Classes
+	These classes are used for the slide indicators (dots or bullets):
 
+	carousel-indicators: The container for the indicators.
 
+	active: Applied to the indicator representing the currently active slide.
 
+4. State and Animation Classes
+	These classes manage the active state and transitions:
 
+	active: Applied to the currently visible slide (carousel-item).
 
+	carousel-fade: Used to apply a fade transition instead of a slide animation.
 
+	slide: Default class for slide animation.
 
+5. Customization and Responsive Classes
+	These classes help customize the carousel for different screen sizes or styles:
 
+	carousel-caption: Used to add captions or text overlays on slides.
 
+	d-block and w-100: Often used on images within carousel items to ensure proper sizing and display.
 
+	carousel-dark: A class (in frameworks like Bootstrap) to adapt the carousel for dark themes.
 
+6. Framework-Specific Classes
+	If you're using a framework like Bootstrap, these classes are commonly used:
 
+	data-bs-ride="carousel": Enables automatic cycling of the carousel.
 
--------------------------------------------(4.2)  2. Accordions & Collapse-----------------------------------------------------
-Main Accordion Container:(এটাই parent container , এর মধ্যে মূলত সব ডাটা থাকবে।)
+	data-bs-interval="5000": Sets the delay between slides (e.g., 5000ms).
 
-	The .accordion class is the wrapper for the entire accordion component.
+	data-bs-pause="hover": Pauses the carousel on hover.
 
-	The id="accordionExample" is used to group the accordion items together.
+7. JavaScript Interaction Classes
+	These classes are often used for dynamic behavior:
 
-Accordion Item:(এটা দিয়ে individual item গুলো নিয়ে কাজ করা হয়।)
+	data-bs-target: Links navigation controls or indicators to the carousel.
 
-	Each .accordion-item represents a single section of the accordion.
-
-Accordion Header:(individual item এর header যেখানে button থাকে )
-
-	The .accordion-header contains the toggle button (.accordion-button) for expanding/collapsing the content.
-
-Toggle Button:(এর মাধ্যমে collapse/expand enable হয় এবং data-bs-target দ্বারা কি document show হবে তা select করা যায়।)
-
-	The .accordion-button is the clickable button that toggles the visibility of the associated .accordion-collapse element.
-
-	The data-bs-toggle="collapse" enables the collapse/expand functionality.
-
-	The data-bs-target links the button to the specific collapsible element (e.g., #collapseOne).
-
-Collapsible Content Area:(যে ডাটাগুলো show হবে তার container। .show class ব্যবহার করলে show/expanded থাকবে ।)
-
-	The .accordion-collapse class is used for the collapsible content area.
-
-	The .collapse class hides the content by default, and .show makes it visible (used for the first item in this example).
-
-	The data-bs-parent ensures only one accordion item is open at a time (optional).
-
-Accordion Body:(যেখানে ডাটা show হবে।)
-
-	The .accordion-body class is used for the content inside the collapsible area.
-
-কিভাবে accordion গুলো expanded রাখা যায় চাইলে।
-<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"> 
-এখান থেকে data-bs-parent উঠায় দিব।
-<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"> 
-where multiple items can stay open simultaneously), you need to remove the data-bs-parent attribute from the .accordion-collapse elements.
-
-
-
-
-
-++++++++++++++++++++++++code++++++++++++++++++++++++++++++
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-    <title>Bootstrap Sandbox | Accordion & Collapse</title>
-</head>
-<body>
-<div class="container">
-    <h1 class="mb-5">Accordion & Collapse</h1>
-    <!-- Main Accordion Container -->
-    <div class="accordion" id="accordionExample">
-
-        <!-- First Accordion Item -->
-        <div class="accordion-item">
-            <!-- Accordion Header (contains the toggle button) -->
-            <h2 class="accordion-header" id="headingOne">
-                <!-- Toggle Button for the first item -->
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                    Accordion Item #1
-                </button>
-            </h2>
-            <!-- Collapsible Content Area for the first item -->
-            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                <!-- Content inside the collapsible area -->
-                <div class="accordion-body">
-                    Content for the first accordion item.
-                </div>
-            </div>
-        </div>
-
-        <!-- Second Accordion Item -->
-        <div class="accordion-item">
-            <!-- Accordion Header (contains the toggle button) -->
-            <h2 class="accordion-header" id="headingTwo">
-                <!-- Toggle Button for the second item (initially collapsed) -->
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                    Accordion Item #2
-                </button>
-            </h2>
-            <!-- Collapsible Content Area for the second item -->
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <!-- Content inside the collapsible area -->
-                <div class="accordion-body">
-                    Content for the second accordion item.
-                </div>
-            </div>
-        </div>
-        <!-- Third Accordion Item -->
-        <div class="accordion-item">
-            <!-- Accordion Header (contains the toggle button) -->
-            <h2 class="accordion-header" id="headingThree">
-                <!-- Toggle Button for the second item (initially collapsed) -->
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                    Accordion Item #2
-                </button>
-            </h2>
-            <!-- Collapsible Content Area for the second item -->
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <!-- Content inside the collapsible area -->
-                <div class="accordion-body">
-                    Content for the third accordion item.
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <h1 class="mb-5">Always-Open Accordion</h1>
-    <!-- Main Accordion Container -->
-    <div class="accordion" id="accordionExampleAlwaysShow">
-
-        <!-- First Accordion Item -->
-        <div class="accordion-item">
-            <!-- Accordion Header (contains the toggle button) -->
-            <h2 class="accordion-header" id="heading_1">
-                <!-- Toggle Button for the first item -->
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1">
-                    Accordion Item #1
-                </button>
-            </h2>
-            <!-- Collapsible Content Area for the first item -->
-            <div id="collapse_1" class="accordion-collapse collapse show">
-                <!-- Content inside the collapsible area -->
-                <div class="accordion-body">
-                    Content for the first accordion item.
-                </div>
-            </div>
-        </div>
-
-        <!-- Second Accordion Item -->
-        <div class="accordion-item">
-            <!-- Accordion Header (contains the toggle button) -->
-            <h2 class="accordion-header" id="heading_2">
-                <!-- Toggle Button for the second item (initially collapsed) -->
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_2">
-                    Accordion Item #3
-                </button>
-            </h2>
-            <!-- Collapsible Content Area for the second item -->
-            <div id="collapse_2" class="accordion-collapse collapse">
-                <!-- Content inside the collapsible area -->
-                <div class="accordion-body">
-                    Content for the third accordion item.
-                </div>
-            </div>
-        </div>
-        <!-- Third Accordion Item -->
-        <div class="accordion-item">
-            <!-- Accordion Header (contains the toggle button) -->
-            <h2 class="accordion-header" id="heading_3">
-                <!-- Toggle Button for the second item (initially collapsed) -->
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_3">
-                    Accordion Item #3
-                </button>
-            </h2>
-            <!-- Collapsible Content Area for the second item -->
-            <div id="collapse_3" class="accordion-collapse collapse">
-                <!-- Content inside the collapsible area -->
-                <div class="accordion-body">
-                    Content for the third accordion item.
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Don't go past here -->
-</div>
-<div style="margin-top: 350px"></div>
-
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	data-bs-slide="prev" and data-bs-slide="next": Used for manual navigation controls.
