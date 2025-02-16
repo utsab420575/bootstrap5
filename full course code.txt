@@ -7979,7 +7979,7 @@ $ npm run sass:build
 
 
 
-##########################################################7. Website 1 - Ebook Website######################################
+##########################################################7. Website 1 - Ebook Website (SAAS APPLY IN WEBSITE)######################################
 
 -----------------------------------------------------(7.2) 2. Project Setup-------------------------------------------------
 how to setup boostrap,fontawesom,saas for a project
@@ -8682,6 +8682,155 @@ document.addEventListener('DOMContentLoaded', userScroll);
 </div>
 
 
+
+
+
+
+
+
+-------------------------------------------------------------(7.8) 8. Testimonials, Download Section & Footer--------------------------------
+//bootstrap.scss(enabling negetive margin)
+$enable-negative-margins:true;
+
+
+//background image for download area
+
+.download {
+  background: url('../images/download-background.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+
+<!-- Testimonials Section -->
+<div class="section testimonials mb-8"> <!-- mb-8: Adds margin-bottom (custom class, likely defined in your CSS) -->
+    <div class="container"> <!-- container: Centers content and adds padding -->
+        <div class="row"> <!-- row: Creates a horizontal row for columns -->
+            <!-- Testimonial 1 -->
+            <div class="col-md-4 text-center"> <!-- col-md-4: Takes 4 columns on medium screens, text-center: Centers text -->
+                <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                     alt="photo"
+                     class="rounded-circle mb-3"> <!-- rounded-circle: Makes the image circular, mb-3: Adds margin-bottom -->
+                <p class="lead fst-italic"> <!-- lead: Makes text larger and bolder, fst-italic: Italicizes text -->
+                    "This ebook completely transformed my blogging journey. The
+                    practical strategies and valuable insights helped me take my blog
+                    to new heights. I highly recommend it!"
+                </p>
+                <p class="fw-bold">Kenny Smith - Portland, ME</p> <!-- fw-bold: Makes text bold -->
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="col-md-4 text-center">
+                <img src="https://randomuser.me/api/portraits/men/33.jpg"
+                     alt="photo"
+                     class="rounded-circle mb-3">
+                <p class="lead fst-italic">
+                    "This ebook completely transformed my blogging journey. The
+                    practical strategies and valuable insights helped me take my blog
+                    to new heights. I highly recommend it!"
+                </p>
+                <p class="fw-bold">Kenny Smith - Portland, ME</p>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="col-md-4 text-center">
+                <img src="https://randomuser.me/api/portraits/men/31.jpg"
+                     alt="photo"
+                     class="rounded-circle mb-3">
+                <p class="lead fst-italic">
+                    "This ebook completely transformed my blogging journey. The
+                    practical strategies and valuable insights helped me take my blog
+                    to new heights. I highly recommend it!"
+                </p>
+                <p class="fw-bold">Kenny Smith - Portland, ME</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Download Section -->
+<section class="download"> <!-- download: Custom class for styling -->
+    <div class="container">
+        <div class="row">
+            <!-- Image Column -->
+            <div class="col-lg-5"> <!-- col-lg-5: Takes 5 columns on large screens -->
+                <div class="image-container mt-n6 mb-5"> <!-- mt-n6: Negative margin-top (custom class), mb-5: Adds margin-bottom -->
+                    <img src="images/download-ebook.png" alt="" class="img-fluid"/> <!-- img-fluid: Makes image responsive -->
+                </div>
+            </div>
+            <!-- Text and Form Column -->
+            <div class="col-lg-7"> <!-- col-lg-7: Takes 7 columns on large screens -->
+                <div class="text-container text-white d-flex flex-column justify-content-center h-100 mb-5">
+                    <!-- text-white: Makes text white, d-flex: Enables flexbox, flex-column: Stacks children vertically, justify-content-center: Centers content vertically, h-100: Full height, mb-5: Adds margin-bottom -->
+                    <h2 class="fw-bold">Get Your Free Ebook Now</h2> <!-- fw-bold: Makes text bold -->
+                    <p>
+                        Unlock the power of knowledge and take your blogging journey to
+                        the next level. Our ebook, "Blog Mastery: The Ultimate Guide to
+                        Blogging Success," is your key to success.
+                    </p>
+                    <!-- Form -->
+                    <form>
+                        <div class="input-group mb-3"> <!-- input-group: Groups input and button together, mb-3: Adds margin-bottom -->
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="Email Address"/> <!-- form-control: Styles the input field -->
+                            <button class="btn btn-primary text-white rounded-end"> <!-- btn-primary: Primary button style, text-white: White text, rounded-end: Rounds the right side of the button -->
+                                Download
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Section -->
+<section class="social text-bg-dark py-6 overflow-hidden"> <!-- text-bg-dark: Dark background with light text, py-6: Adds padding-top and padding-bottom, overflow-hidden: Hides overflow -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center fs-4"> <!-- offset-md-3: Offsets the column by 3 on medium screens, fs-4: Sets font size -->
+                <p>
+                    Stay connected and join our vibrant community. For any inquiries
+                    or assistance, feel free to reach out to us
+                </p>
+                <div class="social-icons d-flex justify-content-center gap-4"> <!-- d-flex: Enables flexbox, justify-content-center: Centers content horizontally, gap-4: Adds gap between items -->
+                    <i class="fab fa-facebook fa-2x"></i> <!-- fa-2x: Makes icons 2x larger -->
+                    <i class="fab fa-twitter fa-2x"></i>
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <i class="fab fa-linkedin fa-2x"></i>
+                    <i class="fab fa-pinterest fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-top border-primary text-bg-dark text-white py-4"> <!-- border-top: Adds top border, border-primary: Primary color border, text-bg-dark: Dark background with light text, py-4: Adds padding-top and padding-bottom -->
+    <div class="container">
+        <div class="row">
+            <!-- Navigation Links -->
+            <div class="col-md-8">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link link-light">Home</a> <!-- link-light: Light-colored link -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="#details" class="nav-link link-light">Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link link-light">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Copyright Text -->
+            <div class="col-md-4">
+                <p class="text-end d-none d-md-block"> <!-- text-end: Aligns text to the right, d-none d-md-block: Hides on small screens, shows on medium and larger -->
+                    Copyright &copy; Blog Mastery 2023
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
 
