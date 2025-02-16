@@ -7682,12 +7682,12 @@ Download Node.js(LTS)
 
 
 +++++++++++++++++++++++++++++++++++++++change in package.json file+++++++++++++++++++++++++++++++++++++++
-This means you're telling Sass to compile all .scss files in the scss directory 
-and output the compiled .css files into the css directory.
-
 "scripts": {
     "sass:build": "sass scss:css"
   },
+
+This means you're telling Sass to compile all .scss files in the scss directory 
+and output the compiled .css files into the css directory.
   
 +++++++++++++++++++++++++++++++++++++++now code scss format into styles.scss file+++++++++++++++++++++++++++++++++++++++
 $primary:#333;
@@ -7903,6 +7903,51 @@ $ npm run sass:build
 (node_modules/fontawesom/fontawesom-free/webfonts  to rootfolder)
 
 
+8.css add করে দিব।
+
+ <link rel="stylesheet" href="css/fontawesome.css" />
+ 
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/fontawesome.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Bootstrap 5 Simple Starter</title>
+</head>
+<body>
+<div
+        class="container d-flex flex-column align-items-center justify-content-center text-center vh-100 w-50"
+>
+  <h1 class="text-primary">
+    <i class="fa fa-star"></i> Bootstrap 5 Simple Starter
+  </h1>
+  <p>
+    This is a boilerplate for creating and customizing Bootstrap 5 projects.
+  </p>
+  <p class="bg-light p-2">
+    Look at
+    <strong>"node_modules/bootstrap/dist/scss/_variables.scss"</strong> to
+    see the variables that you can overwrite in your
+    <strong>"scss/bootstrap.scss"</strong> file. For any custom styles, add
+    them to the "scss/styles.scss" file. Do not edit the CSS files directly.
+  </p>
+
+  <p>
+    Build or watch your Sass files with the following commands:
+  <pre>npm run sass:build</pre>
+  <pre>npm run sass:watch</pre>
+  </p>
+</div>
+
+<script src="js/bootstrap.bundle.js.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
 
 
 
@@ -7915,6 +7960,726 @@ $ npm run sass:build
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##########################################################7. Website 1 - Ebook Website######################################
+
+-----------------------------------------------------(7.2) 2. Project Setup-------------------------------------------------
+how to setup boostrap,fontawesom,saas for a project
+
+
+
+option1:
+      like above , install all bootstrap,awesome following all command we done before
+
+
+
+option2:
+    we complete all of this process;you need to just copy in your project
+	
+	1.create your own project folder
+	
+	2.download this folder from github(reporsitory name: SAAS_SETUP)
+	
+	3.copy all content from this folder to your project
+	
+	4.open gitbash terminal from phpstrome
+	
+	5.npm install করব।
+	
+	User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/Ebook_Website_Bootstrap
+	$ npm install
+	
+	[npm init: Used to initialize a new Node.js project. It creates a package.json(npm init দিলে package.json install হবে।)
+	
+	npm install: Used to install packages (dependencies) for your project.(যত project dependency আছে সব install করবে।)
+	It also creates a node_modules folder and a package-lock.json file if they don't exist.(npm install মূলত)
+	If you have an existing package.json, just run npm install to install all listed dependencies.(package.json file আছে তাই npm install দিব।)]
+		
+	
+	6.set new color to bootstrap.scsc file
+	  
+	  // Font
+	$font-family-sans-serif: 'Open Sans', sans-serif;
+
+	// Colors
+	$primary: #c167ef;
+	$secondary: #10bcee;
+	$dark: #2b3041;
+	$light: #f3f6f9;
+
+
+	@import '../node_modules/bootstrap/scss/bootstrap';
+	
+	7.run npm now
+	
+	User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/Ebook_Website_Bootstrap
+	$ npm run sass:watch
+	
+	
+	7.css file create হবে scss থেকে।
+	bootstrap.css
+
+	8.add all css file to index.html file
+	
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link
+				href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+				rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/font-awesome.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="icon" href="images/favicon.png" />
+		<title>Document</title>
+
+	</head>
+	<body>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/script.js"></script>
+	</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------(7.3) 3. Navigation & Sass Variables-------------------------------------------------
+1. add navbar
+
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <div class="container">
+        <!--        left icon like image with icon-->
+        <a class="navbar-brand" href="index.html">
+            <img class="mt-0" src="images/logo.png" alt="Logo" width="225"  class="d-inline-block align-text-top">
+        </a>
+        <!--        when collapse in extra small screen(<576px) than  this button showing-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--   collapse work for small screen size(<576px;)-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!--   for navbar in left         <ul class="navbar-nav m-auto m-md-0 me-md-auto mb-2 mb-md-0 gap-1 gap-md-4">-->
+
+            <!-- navbar in right  write regarding to your need ; make navbar responsive-->
+            <!--
+            m-auto: for Small screens (< md): <ul> place in center
+            m-md-0: clear all margin; Overrides the m-auto class starting from the medium (md) breakpoint (≥ 768px), removing all margins.
+            ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+            ms-md-auto: Applies a left align from the medium (md) breakpoint(>=768px),
+            mb-2 : margin bottom for all screen size (here : for small screen(>=576px and <768px))
+            mb-md-0 : for md screen(>=768px) margin bottom 0
+            gap-1 : for all screen (here : for small screen(>=576px and <768px))
+            gap-md-4 : for md screen(>=768px) gap-4-->
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link fw-semibold">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#details" class="nav-link fw-semibold">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a
+                            href="contact.html"
+                            class="nav-link border rounded-5 btn btn-outline-light fw-semibold px-4 mx-4">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<h1 class="mt-5"></h1>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+2.add navbar, button ,navbar hover color
+// Font
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+// Colors
+$primary: #c167ef;
+$secondary: #10bcee;
+$dark: #2b3041;
+$light: #f3f6f9;
+
+//Navbar
+//Navbar text color
+$navbar-padding-y:1rem;
+$navbar-dark-color:#fff;
+$navbar-dark-hover-color:$secondary;
+
+// Buttons
+$button-radius: 50px;
+$button-padding-x: 30px;
+$button-padding-y: 10px;
+
+$btn-border-radius: $button-radius;
+$btn-border-radius-sm: $button-radius;
+$btn-border-radius-lg: $button-radius;
+$btn-padding-x: $button-padding-x;
+$btn-padding-x-sm: $button-padding-x;
+$btn-padding-x-lg: $button-padding-x;
+$btn-padding-y: $button-padding-y;
+$btn-padding-y-sm: $button-padding-y;
+$btn-padding-y-lg: $button-padding-y;
+$navbar-toggler-border-radius: 5px;
+
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+
+
+3.navbar button color
+.navbar .btn-outline-light:hover {
+  color: var(--bs-dark);
+}
+
+
+
+
+
+------------------------------------------------(7.4) 4. Header Hero Section--------------------------------------
+
+//add header and hero section
+<!-- Header -->
+<header class="header">
+    <!-- Hero -->
+    <div class="hero text-white pt-6">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="image-container mb-5 px-4">
+                        <img src="images/header-ebook.png" alt="" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div
+                            class="text-container p-4 d-flex flex-column justify-content-center h-100 mb-5"
+                    >
+                        <h1 class="display-3 fw-bold">Welcome to Blog Mastery</h1>
+                        <p class="lead">
+                            Are you ready to take your blogging journey to new heights?
+                            Blog Mastery is your ultimate guide to creating and managing a
+                            successful blog that captivates your audience and drives
+                            engagement.
+                        </p>
+
+
+                        <!-- Form -->
+                        <div class="form-container text-center">
+                            <form>
+                                <div class="my-4">
+                                    <input
+                                            type="email"
+                                            class="form-control form-control-lg rounded-5"
+                                            placeholder="Email Address"
+                                    />
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg text-white">
+                                        Free Download
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Your SVG Wave -->
+    <svg
+            class="frame-decoration"
+            data-name="Layer 2"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            viewBox="0 0 1920 192.275"
+    >
+        <defs>
+            <style>
+                .cls-1 {
+                    fill: #f3f6f9;
+                }
+            </style>
+        </defs>
+        <title>frame-decoration</title>
+        <path
+                class="cls-1"
+                d="M0,158.755s63.9,52.163,179.472,50.736c121.494-1.5,185.839-49.738,305.984-49.733,109.21,0,181.491,51.733,300.537,50.233,123.941-1.562,225.214-50.126,390.43-50.374,123.821-.185,353.982,58.374,458.976,56.373,217.907-4.153,284.6-57.236,284.6-57.236V351.03H0V158.755Z"
+                transform="translate(0 -158.755)"
+        />
+    </svg>
+</header>
+
+
+
+
+//bootstrap.scss
+// Font
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+// Colors
+$primary: #c167ef;
+$secondary: #10bcee;
+$dark: #2b3041;
+$light: #f3f6f9;
+
+//Navbar
+//Navbar text color
+$navbar-padding-y:1rem;
+$navbar-dark-color:#fff;
+$navbar-dark-hover-color:$secondary;
+
+// Buttons
+$button-radius: 50px;
+$button-padding-x: 30px;
+$button-padding-y: 10px;
+
+$btn-border-radius: $button-radius;
+$btn-border-radius-sm: $button-radius;
+$btn-border-radius-lg: $button-radius;
+$btn-padding-x: $button-padding-x;
+$btn-padding-x-sm: $button-padding-x;
+$btn-padding-x-lg: $button-padding-x;
+$btn-padding-y: $button-padding-y;
+$btn-padding-y-sm: $button-padding-y;
+$btn-padding-y-lg: $button-padding-y;
+$navbar-toggler-border-radius: 5px;
+
+
+
+// Spacers
+$spacer: 1rem !default;
+$spacers: (
+        0: 0,
+        1: $spacer * 0.25,
+        2: $spacer * 0.5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 3,
+        6: $spacer * 6,
+        7: $spacer * 8,
+        8: $spacer * 12,
+) !default;
+
+
+$line-height-base:1.7;
+$headings-margin-bottom: $spacer * 1;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+
+
+//styles.scss
+.navbar .btn-outline-light:hover {
+  color: var(--bs-dark);
+}
+
+.header{
+  background: url("../images/header-background.jpg") center center no-repeat;
+  bacground-size:cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------(7.5)  5. Icon Section---------------------------------
+//added code in scss
+@media (max-width: 1000px) {
+  .navbar {
+    background: var(--bs-dark);
+  }
+
+  .hero .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero .text-container {
+    text-align: center;
+  }
+}
+
+
+//in icon section
+<!doctype html>
+<html lang="en">
+
+//add icon section
+<section class="icons bg-light pb-5">
+    <div class="container-xl">
+        <div class="row hstack g-4">
+            <div class="col-md-4 d-flex gap-4">
+                <i class="fas fa-user fa-3x text-primary"></i>
+                <div>
+                    <h5 class="fw-bold">Unlock Your Blogging Potential</h5>
+                    <p class="text-muted">
+                        Discover the key to unleashing your true blogging potential. Our
+                        ebook provides expert guidance on creating compelling content
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex gap-4">
+                <i class="fas fa-rocket fa-3x text-primary"></i>
+                <div>
+                    <h5 class="fw-bold">Unlock Your Blogging Potential</h5>
+                    <p class="text-muted">
+                        Discover the key to unleashing your true blogging potential. Our
+                        ebook provides expert guidance on creating compelling content
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex gap-4">
+                <i class="fas fa-dollar fa-3x text-primary"></i>
+                <div>
+                    <h5 class="fw-bold">Unlock Your Blogging Potential</h5>
+                    <p class="text-muted">
+                        Discover the key to unleashing your true blogging potential. Our
+                        ebook provides expert guidance on creating compelling content
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<h1 class="mt-5"></h1>
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------(7.6) 6. Navbar Scroll Effect-----------------------------
+//add js
+function userScroll() {
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('bg-dark');
+            navbar.classList.add('navbar-sticky');
+        } else {
+            navbar.classList.remove('bg-dark');
+            navbar.classList.remove('navbar-sticky');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', userScroll);
+
+
+//add style.scss for transition effect (ease-in-ease-out)
+.navbar {
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-sticky {
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------(7.7) 7. Details Sections With Modals------------------------------------------
+//add style.scss for modal showing big
+.modal-dialog {
+  max-width: 1040px;
+}
+
+
+
+
+<!-- Details -->
+<section id="details" class="details my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div
+                        class="text-container d-flex flex-column justify-content-center h-100">
+                    <h2 class="display-6">Unlock Your Blogging Potential</h2>
+                    <p>
+                        Are you ready to unleash your true blogging potential? Our
+                        ebook, "Blog Mastery," provides you with the tools and knowledge
+                        to take your blog to the next level.
+                    </p>
+                    <ul class="list-group list-group-flush lh-lg">
+                        <li class="list-group-item">
+                            <i class="fas fa-square text-primary"></i>
+                            <strong>Unleash Your Creativity:</strong> Our ebook empowers
+                            you to unleash your creativity and express your unique voice
+                            through your blog.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-square text-primary"></i>
+                            <strong>Maximize Your Reach:</strong> Learn how to optimize
+                            your blog for search engines.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-square text-primary"></i>
+                            <strong>Monetization Strategies:</strong> Discover various
+                            monetization strategies, such as sponsored content & affiliate
+                            marketing.
+                        </li>
+                    </ul>
+                    <a
+                            class="btn btn-primary text-white mt-4 align-self-start"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal1"
+                    >Get Your Copy Now</a
+                    >
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-container p-5">
+                    <img src="images/description.png" alt="" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal 1 -->
+<div id="modal1" class="modal fade">
+    <div class="modal-dialog modal-lg mt-7">
+        <div class="modal-content p-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="images/description.png" alt="" class="img-fluid"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2 class="display-6">Unlock Your Blogging Potential</h2>
+                        <p>
+                            Are you ready to unleash your true blogging potential? Our
+                            ebook, "Blog Mastery," provides you with the tools and
+                            knowledge to take your blog to the next level.
+                        </p>
+                        <ul class="list-group list-group-flush lh-lg">
+                            <li class="list-group-item">
+                                <i class="fas fa-square text-primary"></i>
+                                <strong>Unleash Your Creativity:</strong> Our ebook empowers
+                                you to unleash your creativity and express your unique voice
+                                through your blog.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-square text-primary"></i>
+                                <strong>Maximize Your Reach:</strong> Learn how to optimize
+                                your blog for search engines.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-square text-primary"></i>
+                                <strong>Monetization Strategies:</strong> Discover various
+                                monetization strategies, such as sponsored content &
+                                affiliate marketing.
+                            </li>
+                        </ul>
+                        <a href="" class="btn btn-primary text-white">Free Download</a>
+                        <button class="btn btn-light" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Statement-->
+<section class="statement mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-container bg-light p-5 rounded-5">
+                    <h2>Master the Art of Blogging Excellence</h2>
+                    <p>
+                        Transform your blog from a mere hobby to a thriving online
+                        business with our ebook, "Blog Mastery: Monetize Your Passion."
+                        This invaluable resource is your roadmap to turning your blog
+                        into a profitable venture. Learn how to monetize your content
+                        through various strategies such as sponsored posts, affiliate
+                        marketing, and product creation. Gain insights into building a
+                        strong brand, attracting lucrative partnerships, and maximizing
+                        your earning potential. Take the leap and unlock the financial
+                        rewards of your blogging journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Details 2-->
+<section class="details my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image-containter p-5">
+                    <img src="images/author.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div
+                        class="text-container d-flex flex-column justify-content-center h-100">
+                    <h2 class="display-6">Craft Remarkable Content</h2>
+                    <p>
+                        Are you ready to unleash your true blogging potential? Our
+                        ebook, "Blog Mastery," provides you with the tools and knowledge
+                        to take your blog to the next level.
+                    </p>
+                    <ul class="list-group list-group-flush lh-lg">
+                        <li class="list-group-item">
+                            <i class="fas fa-square text-primary"></i>
+                            <strong>Unleash Your Creativity:</strong> Our ebook empowers
+                            you to unleash your creativity and express your unique voice
+                            through your blog.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-square text-primary"></i>
+                            <strong>Maximize Your Reach:</strong> Learn how to optimize
+                            your blog for search engines.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-square text-primary"></i>
+                            <strong>Monetization Strategies:</strong> Discover various
+                            monetization strategies, such as sponsored content & affiliate
+                            marketing.
+                        </li>
+                    </ul>
+                    <a
+                            class="btn btn-primary text-white mt-4 align-self-start"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal2"
+                    >Learn More</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal 2 -->
+<div id="modal2" class="modal fade">
+    <div class="modal-dialog modal-lg mt-7">
+        <div class="modal-content p-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="images/author.png" alt="" class="img-fluid"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2 class="display-6">Craft Remarkable Content</h2>
+                        <p>
+                            Are you ready to unleash your true blogging potential? Our
+                            ebook, "Blog Mastery," provides you with the tools and
+                            knowledge to take your blog to the next level.
+                        </p>
+                        <ul class="list-group list-group-flush lh-lg">
+                            <li class="list-group-item">
+                                <i class="fas fa-square text-primary"></i>
+                                <strong>Unleash Your Creativity:</strong> Our ebook empowers
+                                you to unleash your creativity and express your unique voice
+                                through your blog.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-square text-primary"></i>
+                                <strong>Maximize Your Reach:</strong> Learn how to optimize
+                                your blog for search engines.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-square text-primary"></i>
+                                <strong>Monetization Strategies:</strong> Discover various
+                                monetization strategies, such as sponsored content &
+                                affiliate marketing.
+                            </li>
+                        </ul>
+                        <a href="" class="btn btn-primary text-white">Free Download</a>
+                        <button class="btn btn-light" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
