@@ -511,19 +511,43 @@ By adding .translate-middle-x or .translate-middle-y classes, elements can be po
     <!-- Sticky Positioning -->
     <h2 class="mt-4">Sticky Positioning</h2>
     <div class="position-sticky top-0 bg-warning text-dark p-3" style="z-index: 1020;">
+        <!-- 
+            - `position-sticky`: Makes the element sticky.
+            - `top-0`: Sticks to the top of the viewport.
+            - `bg-warning`: Sets a yellow background.
+            - `text-dark`: Sets dark text color.
+            - `p-3`: Adds padding.
+            - `z-index: 1020`: Ensures the element stays on top of others.
+        -->
         <p class="mb-0">I stick to the top when scrolling!</p>
     </div>
 
     <!-- Static Positioning -->
     <h2 class="mt-5">Static Positioning</h2>
     <div class="bg-secondary text-white p-3 mb-4">
+        <!-- 
+            - `bg-secondary`: Sets a gray background.
+            - `text-white`: Sets white text color.
+            - `p-3`: Adds padding.
+            - `mb-4`: Adds margin-bottom.
+        -->
         <p class="mb-0">This box has static positioning (default behavior).</p>
     </div>
 
     <!-- Relative and Absolute Positioning -->
     <h2 class="mt-5">Relative and Absolute Positioning (1)</h2>
     <div class="position-relative bg-primary text-white p-4 mb-4" style="height: 150px;">
+        <!-- 
+            - `position-relative`: Creates a positioning context for child elements.
+            - `bg-primary`: Sets a blue background.
+            
+        -->
         <div class="position-absolute top-0 start-0 bg-danger text-white p-2">
+            <!-- 
+                - `position-absolute`: Positions the element absolutely within the relative container.
+                - `top-0 start-0`: Places the element at the top-left corner.
+              
+            -->
             I'm positioned absolutely within the relative container.
         </div>
     </div>
@@ -532,9 +556,16 @@ By adding .translate-middle-x or .translate-middle-y classes, elements can be po
     <div class="position-relative bg-primary text-white p-4 mb-4" style="height: 150px;">
         <p class="mb-0">This box is <strong>relative</strong>.</p>
         <div class="position-absolute top-0 end-0 bg-danger text-white p-2">
+            <!-- 
+                - `top-0 end-0`: Places the element at the top-right corner.
+            -->
             I'm positioned absolutely within the relative container.
         </div>
         <div class="position-absolute bottom-0 start-0 bg-warning text-dark p-2">
+            <!-- 
+                - `bottom-0 start-0`: Places the element at the bottom-left corner.
+              
+            -->
             I'm positioned at the bottom-left corner.
         </div>
     </div>
@@ -542,13 +573,26 @@ By adding .translate-middle-x or .translate-middle-y classes, elements can be po
     <!-- Fixed Positioning -->
     <h2 class="mt-5">Fixed Positioning</h2>
     <div class="position-fixed bottom-0 start-0 bg-success text-white p-3">
+        <!-- 
+            - `position-fixed`: Fixes the element relative to the viewport.
+            - `bottom-0 start-0`: Places the element at the bottom-left corner of the viewport.
+           
+        -->
         <p class="mb-0">Fixed to the top-right corner of the viewport.</p>
     </div>
 
     <!-- Centering with Translate -->
     <h2 class="mt-5">Centering with Translate</h2>
     <div class="position-relative bg-info text-white p-4" style="height: 200px;">
+        <!-- 
+            - `position-relative`: Creates a positioning context.
+        -->
         <div class="position-absolute top-50 start-50 translate-middle bg-dark text-white p-3">
+            <!-- 
+                - `top-50 start-50`: Places the element at the center of the container.
+                - `translate-middle`: Centers the element by translating it -50% on both axes.
+                
+            -->
             Centered Element
         </div>
     </div>
@@ -556,23 +600,31 @@ By adding .translate-middle-x or .translate-middle-y classes, elements can be po
     <!-- Multiple Elements with Offsets -->
     <h2 class="mt-5">Multiple Elements with Offsets</h2>
     <div class="position-relative mt-5 bg-light" style="height: 150px;">
+        <!-- 
+            - `position-relative`: Creates a positioning context.
+            - `bg-light`: Sets a light background.
+        -->
         <div class="position-absolute top-0 start-0 bg-primary text-white p-2">
-            Top-Left
+            <!-- Top-Left -->
         </div>
         <div class="position-absolute top-0 end-0 bg-danger text-white p-2">
-            Top-Right
+            <!-- Top-Right -->
         </div>
         <div class="position-absolute bottom-0 start-0 bg-success text-white p-2">
-            Bottom-Left
+            <!-- Bottom-Left -->
         </div>
         <div class="position-absolute bottom-0 end-0 bg-warning text-dark p-2">
-            Bottom-Right
+            <!-- Bottom-Right -->
         </div>
     </div>
 
     <!-- Grid of Positioned Elements -->
     <h2 class="mt-5">Grid of Positioned Elements</h2>
     <div class="position-relative bg-light mt-5 bg-secondary" style="height: 300px;">
+        <!-- 
+            - `position-relative`: Creates a positioning context.
+            - `bg-secondary`: Sets a gray background.
+        -->
         <div class="position-absolute top-0 start-0 translate-middle p-3 bg-primary">XYZ</div>
         <div class="position-absolute top-0 start-50 translate-middle p-3 bg-primary">XYZ</div>
         <div class="position-absolute top-0 start-100 translate-middle p-3 bg-primary">XYZ</div>
@@ -587,6 +639,10 @@ By adding .translate-middle-x or .translate-middle-y classes, elements can be po
     <!-- Nested Positioned Elements -->
     <h2 class="mt-5">Nested Positioned Elements</h2>
     <div class="position-relative bg-light mt-5" style="height: 300px;">
+        <!-- 
+            - `position-relative`: Creates a positioning context.
+            - `bg-light`: Sets a light background.
+        -->
         <div class="position-absolute top-0 start-0 bg-danger p-3">XYZ</div>
         <div class="position-absolute top-0 start-50 translate-middle-x  bg-danger p-3">XYZ</div>
         <div class="position-absolute top-0 end-0 bg-danger p-3">XYZ</div>
@@ -601,42 +657,52 @@ By adding .translate-middle-x or .translate-middle-y classes, elements can be po
     <!-- Aligned Positioned Elements -->
     <h2 class="mt-5">Aligned Positioned Elements</h2>
     <div class="position-relative mt-5" style="height: 300px; width: 100%; border: 1px solid black;">
+        <!-- 
+            - `position-relative`: Creates a positioning context.
+        -->
         <div class="position-absolute top-50 start-50 translate-middle bg-primary text-white p-3">
-            Centered
+            <!-- Centered -->
         </div>
         <div class="position-absolute top-50 start-0 translate-middle-y bg-success text-white p-3">
-            Center Left
+            <!-- Center Left -->
         </div>
         <div class="position-absolute top-50 end-0 translate-middle-y bg-danger text-white p-3">
-            Center Right
+            <!-- Center Right -->
         </div>
     </div>
 
     <!-- Specific Corner Elements -->
     <h2 class="mt-5">Specific Corner Elements</h2>
     <div class="position-relative mt-5" style="height: 300px; width: 100%; border: 1px solid black;">
+        <!-- 
+            - `position-relative`: Creates a positioning context.
+        -->
         <div class="position-absolute top-0 start-0  bg-primary text-white p-3">
-            Top left
+            <!-- Top left -->
         </div>
         <div class="position-absolute top-50 start-0 translate-middle-y bg-success text-white p-3">
-            Center
+            <!-- Center -->
         </div>
         <div class="position-absolute bottom-0 start-0 bg-danger text-white p-3">
-            Bottom left
+            <!-- Bottom left -->
         </div>
     </div>
 
     <!-- Centered Menu Items -->
     <h2 class="mt-5">Centered Menu Items</h2>
     <div class="position-relative bg-danger mt-5" style="height: 100px;">
+        <!-- 
+            - `position-relative`: Creates a positioning context.
+            - `bg-danger`: Sets a red background.
+        -->
         <div class="bg-primary text-white text-center rounded-1 position-absolute top-50 translate-middle" style="left: 42%;  padding: 10px 20px;">
-            Menu 1
+            <!-- Menu 1 -->
         </div>
         <div class="bg-info text-white text-center rounded-1 position-absolute top-50 translate-middle" style="left: 50%;  padding: 10px 20px;">
-            Menu 2
+            <!-- Menu 2 -->
         </div>
         <div class="bg-success text-white text-center rounded-1 position-absolute top-50 translate-middle" style="left: 58%;  padding: 10px 20px;">
-            Menu 3
+            <!-- Menu 3 -->
         </div>
     </div>
 
@@ -9403,7 +9469,7 @@ $headings-font-weight: bold;
                 <div class="col-12"> <!-- Full-width column to hold the carousel -->
 
                     <!-- Image Slider -->
-                    <div id="slider" class="carousel slide"> <!-- Bootstrap carousel with sliding transition -->
+                    <div id="slider" class="carousel slide" data-bs-ride="carousel"> <!-- Bootstrap carousel with sliding transition -->
 
                         <!-- Carousel Indicators (Dots) -->
                         <!--'active' makes this the default slide-->
@@ -9478,12 +9544,731 @@ $headings-font-weight: bold;
 
 
 
+--------------------------------------------------------------------(8.5) 5. Register Area, Nav Scroll & Details--------------------------------------------------------------------------
+//style.scss
+.navbar {
+  /* Adds a smooth transition effect to all animatable properties of the navbar */
+  transition: all 0.5s ease-in-out;
+}
+
+
+script.js
+
+// Function to handle navbar behavior on scroll
+function userScroll() {
+    // Select the navbar element using its class name
+    const navbar = document.querySelector('.navbar');
+
+    // Add a scroll event listener to the window
+    window.addEventListener('scroll', () => {
+        // Check if the user has scrolled more than 50 pixels down
+        if (window.scrollY > 50) {
+            // If scrolled more than 50px, add the 'bg-dark' class to the navbar
+            navbar.classList.add('bg-dark');
+        } else {
+            // If scrolled back to the top (less than or equal to 50px), remove the 'bg-dark' class
+            navbar.classList.remove('bg-dark');
+        }
+    });
+}
+
+// Add an event listener to execute the `userScroll` function once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', userScroll);
+
+
+
+
+
+index.html
+<!--Register Section-->
+<section class="register bg-primary py-6 overflow-hidden">
+    <!-- 'bg-primary': Sets the background color to the primary theme color -->
+    <!-- 'py-6': Adds padding on the top and bottom (6 units) -->
+    <!-- 'overflow-hidden': Prevents content from overflowing the container -->
+    <div class="container">
+        <!-- 'container': Centers the content and adds padding -->
+        <div class="row">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <div class="col-lg-6">
+                <!-- 'col-lg-6': Creates a column that takes 6 out of 12 columns on large screens -->
+                <h2>Unlock Your Potential with Engaging Content</h2>
+                <p>
+                    Our wide range of training and seminar videos are designed to
+                    empower you with valuable knowledge and skills.
+                </p>
+
+                <!-- Unordered List with Icons -->
+                <ul class="list-unstyled vstack gap-3">
+                    <!-- 'list-unstyled': Removes default list styling (bullets) -->
+                    <!-- 'vstack': Creates a vertical stack layout -->
+                    <!-- 'gap-3': Adds spacing (3 units) between list items -->
+                    <li>
+                        <i class="fas fa-square"></i> <!-- Font Awesome square icon -->
+                        <strong>Gain Expertise:</strong> Our videos provide in-depth
+                        insights and practical tips to enhance your expertise in various
+                        domains.
+                    </li>
+                    <li>
+                        <i class="fas fa-square"></i>
+                        <strong>Stay Updated:</strong> Stay up-to-date with the latest
+                        industry trends and advancements through our informative and
+                        up-to-date videos.
+                    </li>
+                    <li>
+                        <i class="fas fa-square"></i>
+                        <strong>Expand Your Network:</strong> Connect with like-minded
+                        individuals and industry experts, fostering new connections and
+                        opportunities.
+                    </li>
+                </ul>
+            </div>
+
+            <!--Form Section-->
+            <div class="col-lg-6 p-4">
+                <!-- 'col-lg-6': Creates a column that takes 6 out of 12 columns on large screens -->
+                <!-- 'p-4': Adds padding (4 units) around the form -->
+                <form>
+                    <!-- Form Input Fields -->
+                    <div class="my-4">
+                        <!-- 'my-4': Adds margin (4 units) on the top and bottom -->
+                        <input type="text"
+                               class="form-control form-control-lg rounded-0 border-0"
+                               placeholder="Enter name">
+                        <!-- 'form-control': Styles the input field -->
+                        <!-- 'form-control-lg': Makes the input field larger -->
+                        <!-- 'rounded-0': Removes rounded corners -->
+                        <!-- 'border-0': Removes the border -->
+                    </div>
+                    <div class="my-4">
+                        <input type="email"
+                               class="form-control form-control-lg rounded-0 border-0"
+                               placeholder="Enter email">
+                    </div>
+                    <div class="my-4">
+                        <input type="text"
+                               class="form-control form-control-lg rounded-0 border-0"
+                               placeholder="Enter phone number">
+                    </div>
+
+                    <!-- Checkbox for Terms and Conditions -->
+                    <div class="form-check">
+                        <!-- 'form-check': Styles the checkbox and label -->
+                        <input type="checkbox"
+                               class="form-check-input"
+                               value="">
+                        <!-- 'form-check-input': Styles the checkbox -->
+                        <label for="terms" class="form-check-label">
+                            I agree to the terms and conditions
+                        </label>
+                        <!-- 'form-check-label': Styles the label -->
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid mt-4">
+                        <!-- 'd-grid': Makes the button a block-level element that spans the full width -->
+                        <!-- 'mt-4': Adds margin (4 units) on the top -->
+                        <button class="btn btn-outline-dark">Register</button>
+                        <!-- 'btn': Styles the button -->
+                        <!-- 'btn-outline-dark': Adds an outline style with dark color -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Details 1-->
+<!--Details 1 Section-->
+<section id="discover" class="details py-6 bg-light">
+    <!-- 'id="discover"': Unique identifier for the section -->
+    <!-- 'class="details"': Custom class for styling -->
+    <!-- 'py-6': Adds padding (6 units) on the top and bottom -->
+    <!-- 'bg-light': Sets the background color to a light theme color -->
+    <div class="container">
+        <!-- 'container': Centers the content and adds responsive padding -->
+        <div class="row">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <div class="col-lg-6">
+                <!-- 'col-lg-6': Creates a column that takes 6 out of 12 columns on large screens -->
+                <img src="images/instructor.jpg" alt="" class="img-fluid rounded-5 mb-4">
+                <!-- 'img-fluid': Makes the image responsive (scales with the container) -->
+                <!-- 'rounded-5': Applies large rounded corners to the image -->
+                <!-- 'mb-4': Adds margin (4 units) at the bottom of the image -->
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <!-- 'col-lg-6': Creates a column that takes 6 out of 12 columns on large screens -->
+                <!-- 'd-flex': Enables flexbox layout -->
+                <!-- 'flex-column': Stacks child elements vertically -->
+                <!-- 'justify-content-center': Centers child elements vertically -->
+                <h2>Enhance Your Skills with Engaging Training Videos</h2>
+                <p>
+                    Our extensive collection of training videos is designed to help
+                    you enhance your skills and excel in your chosen field. Whether
+                    you're looking to improve your technical expertise or develop
+                    essential soft skills, our videos provide valuable insights and
+                    practical knowledge.
+                </p>
+                <p>
+                    With expert instructors and comprehensive content, you'll gain the
+                    confidence and competence to tackle challenges and achieve
+                    success.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------(8.6) 6. Points & Summary Sections----------------------------------------------------------
+
+<!--Points Section-->
+<section class="points pb-5">
+    <!-- 'points': Custom class for styling -->
+    <!-- 'pb-5': Adds padding (5 units) at the bottom -->
+    <div class="container">
+        <!-- 'container': Centers the content and adds responsive padding -->
+        <div class="row text-center mb-5">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <!-- 'text-center': Centers the text horizontally -->
+            <!-- 'mb-5': Adds margin (5 units) at the bottom -->
+            <div class="col-md-8 offset-md-2">
+                <!-- 'col-md-8': Creates a column that takes 8 out of 12 columns on medium screens -->
+                <!-- 'offset-md-2': Adds a left margin of 2 columns on medium screens -->
+                <h2>Unlock Your Potential with Engaging Training Videos</h2>
+            </div>
+        </div>
+        <div class="row">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <div class="col-md-6 mb-4">
+                <!-- 'col-md-6': Creates a column that takes 6 out of 12 columns on medium screens -->
+                <!-- 'mb-4': Adds margin (4 units) at the bottom -->
+                <div class="d-flex gap-3">
+                    <!-- 'd-flex': Enables flexbox layout -->
+                    <!-- 'gap-3': Adds spacing (3 units) between child elements -->
+                    <div class="number">
+                        <!-- 'number': Custom class for styling -->
+                        <span class="bg-primary py-2 px-4 fs-3 rounded-circle">
+                            <!-- 'bg-primary': Sets the background color to the primary theme color -->
+                            <!-- 'py-2': Adds padding (2 units) on the top and bottom -->
+                            <!-- 'px-4': Adds padding (4 units) on the left and right -->
+                            <!-- 'fs-3': Sets the font size to a large size -->
+                            <!-- 'rounded-circle': Makes the element a circle -->
+                            1
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="fs-4">Enhance Your Skills</h3>
+                        <!-- 'fs-4': Sets the font size to a medium size -->
+                        <p>
+                            Our training videos provide comprehensive insights and
+                            practical tips to help you enhance your skills in various
+                            domains. From technical expertise to soft skills, we've got
+                            you covered.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="d-flex gap-3">
+                    <div class="number">
+                        <span class="bg-primary py-2 px-4 fs-3 rounded-circle">2</span>
+                    </div>
+                    <div>
+                        <h3 class="fs-4">Stay Updated</h3>
+                        <p>
+                            Keep pace with the latest industry trends and advancements
+                            through our informative and up-to-date videos. Stay ahead of
+                            the curve and broaden your knowledge.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="d-flex gap-3">
+                    <div class="number">
+                        <span class="bg-primary py-2 px-4 fs-3 rounded-circle">3</span>
+                    </div>
+                    <div>
+                        <h3 class="fs-4">Connect with Experts</h3>
+                        <p>
+                            Our platform allows you to connect with like-minded
+                            individuals and industry experts. Expand your network, foster
+                            new connections, and unlock new opportunities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="d-flex gap-3">
+                    <div class="number">
+                        <span class="bg-primary py-2 px-4 fs-3 rounded-circle">4</span>
+                    </div>
+                    <div>
+                        <h3 class="fs-4">Flexible Learning</h3>
+                        <p>
+                            Our training videos are available on-demand, allowing you to
+                            learn at your own pace and convenience. Access the content
+                            anytime, anywhere, and tailor your learning experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="d-flex gap-3">
+                    <div class="number">
+                        <span class="bg-primary py-2 px-4 fs-3 rounded-circle">5</span>
+                    </div>
+                    <div>
+                        <h3 class="fs-4">Practical Knowledge</h3>
+                        <p>
+                            Gain practical knowledge and apply it directly to real-world
+                            scenarios. Our videos offer hands-on insights and practical
+                            tips to help you succeed in your professional endeavors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="d-flex gap-3">
+                    <div class="number">
+                        <span class="bg-primary py-2 px-4 fs-3 rounded-circle">6</span>
+                    </div>
+                    <div>
+                        <h3 class="fs-4">Continuous Learning</h3>
+                        <p>
+                            Lifelong learning is key to personal and professional growth.
+                            Explore a vast collection of training videos and embark on a
+                            journey of continuous learning and self-improvement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!--Course Summary-->
+<!--Course Summary Section-->
+<section id="summary" class="summary bg-light mt-5 w-75 m-auto">
+    <!-- 'id="summary"': Unique identifier for the section -->
+    <!-- 'summary': Custom class for styling -->
+    <!-- 'bg-light': Sets the background color to a light theme color -->
+    <!-- 'mt-5': Adds margin (5 units) at the top -->
+    <!-- 'w-75': Sets the width to 75% of the parent container -->
+    <!-- 'm-auto': Centers the section horizontally -->
+    <div class="container">
+        <!-- 'container': Centers the content and adds responsive padding -->
+        <div class="row">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <div class="col-12">
+                <!-- 'col-12': Creates a column that takes 12 out of 12 columns (full width) -->
+                <div class="text-center mb-5">
+                    <!-- 'text-center': Centers the text horizontally -->
+                    <!-- 'mb-5': Adds margin (5 units) at the bottom -->
+                    <h2>Course Summary</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <div class="col-12">
+                <!-- 'col-12': Creates a column that takes 12 out of 12 columns (full width) -->
+                <div class="bg-white p-5">
+                    <!-- 'bg-white': Sets the background color to white -->
+                    <!-- 'p-5': Adds padding (5 units) on all sides -->
+                    <ul class="list-unstyled">
+                        <!-- 'list-unstyled': Removes default list styling (bullets) -->
+                        <li class="border-bottom pb-3">
+                            <!-- 'border-bottom': Adds a border at the bottom -->
+                            <!-- 'pb-3': Adds padding (3 units) at the bottom -->
+                            <h5>1. Comprehensive Training</h5>
+                            <p>
+                                Our courses provide comprehensive training in a wide range
+                                of topics. From beginner-level fundamentals to advanced
+                                concepts, we offer in-depth content to cater to learners of
+                                all levels.
+                            </p>
+                        </li>
+                        <li class="border-bottom pb-3 pt-5">
+                            <h5>2. Expert Instructors</h5>
+                            <p>
+                                Learn from industry experts who bring years of experience
+                                and expertise to the table. Our instructors are passionate
+                                about sharing their knowledge and helping you succeed.
+                            </p>
+                        </li>
+                        <li class="pb-3 pt-5">
+                            <h5>3. Practical Application</h5>
+                            <p>
+                                We believe in practical learning that goes beyond theory.
+                                Our courses focus on real-world application, equipping you
+                                with the skills and knowledge needed to excel in your field.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Details-2-->
+<!--Details-2 Section-->
+<section class="details py-6 bg-light">
+    <!-- 'details': Custom class for styling -->
+    <!-- 'py-6': Adds padding (6 units) on the top and bottom -->
+    <!-- 'bg-light': Sets the background color to a light theme color -->
+    <div class="container">
+        <!-- 'container': Centers the content and adds responsive padding -->
+        <div class="row">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <div class="col-lg-6">
+                <!-- 'col-lg-6': Creates a column that takes 6 out of 12 columns on large screens -->
+                <img src="images/audience.jpg" alt="" class="img-fluid rounded-5 mb-4">
+                <!-- 'img-fluid': Makes the image responsive (scales with the container) -->
+                <!-- 'rounded-5': Applies large rounded corners to the image -->
+                <!-- 'mb-4': Adds margin (4 units) at the bottom -->
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <!-- 'col-lg-6': Creates a column that takes 6 out of 12 columns on large screens -->
+                <!-- 'd-flex': Enables flexbox layout -->
+                <!-- 'flex-column': Stacks child elements vertically -->
+                <!-- 'justify-content-center': Centers child elements vertically -->
+                <h2>Elevate Your Learning Journey with Expert Seminars</h2>
+                <p>
+                    Join our expert-led seminars and unlock new possibilities in your
+                    personal and professional development. Our seminars cover a
+                    diverse range of topics, from leadership and innovation to
+                    personal growth and productivity.
+                </p>
+                <p>
+                    Immerse yourself in engaging discussions, interactive workshops,
+                    and valuable networking opportunities.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+--------------------------------------------------(8.7) 7. Invitation & Takeaways----------------------------
+
+//add image in invitation style.scss
+.invitation-bg {
+  background: linear-gradient(
+                  to bottom right,
+                  rgba(0, 0, 0, 0.8),
+                  rgba(0, 0, 0, 0.8)
+  ),
+  url('../images/invitation-background.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+
+
+<!--Invitation Section-->
+<section class="invitation mb-5 bg-light">
+    <!-- 'mb-5': Adds margin (5 units) at the bottom -->
+    <!-- 'bg-light': Sets the background color to light -->
+    <div class="container">
+        <!-- 'container': Centers the content and adds responsive padding -->
+        <div class="row">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <div class="col-12">
+                <!-- 'col-12': Full-width column -->
+                <div class="invitation-bg text-center py-6 rounded-5">
+                    <!-- 'text-center': Centers text horizontally -->
+                    <!-- 'py-6': Adds padding (6 units) on top and bottom -->
+                    <!-- 'rounded-5': Applies large rounded corners -->
+                    <div class="text-white w-75 m-auto">
+                        <!-- 'text-white': Sets text color to white -->
+                        <!-- 'w-75': Sets width to 75% of parent -->
+                        <!-- 'm-auto': Centers the div horizontally -->
+                        <h2 class="display-5 fw-bold">Join Us On December 22nd</h2>
+                        <!-- 'display-5': Large heading size -->
+                        <!-- 'fw-bold': Makes text bold -->
+                        <p>
+                            We cordially invite you to attend a seminar on December 22nd...
+                        </p>
+                        <a href="#register" class="btn btn-primary btn-lg">
+                            <!-- 'btn': Styles the button -->
+                            <!-- 'btn-primary': Primary theme color -->
+                            <!-- 'btn-lg': Large button size -->
+                            Register Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Takeaways -->
+<!-- Takeaways Section -->
+<section id="takeaways" class="takeaways my-5 bg-light">
+    <!-- 'my-5': Adds margin (5 units) on top and bottom -->
+    <!-- 'bg-light': Sets the background color to light -->
+    <div class="container">
+        <!-- 'container': Centers the content and adds responsive padding -->
+        <div class="row text-center mb-5">
+            <!-- 'row': Creates a Bootstrap row for layout -->
+            <!-- 'text-center': Centers text horizontally -->
+            <!-- 'mb-5': Adds margin (5 units) at the bottom -->
+            <div class="col-md-8 offset-md-2">
+                <!-- 'col-md-8': Creates a column that takes 8 out of 12 columns on medium screens -->
+                <!-- 'offset-md-2': Adds a left margin of 2 columns on medium screens -->
+                <h2>Key Takeaways</h2>
+                <p class="lead">
+                    <!-- 'lead': Makes the paragraph stand out with larger font size -->
+                    Here are some of the takeaways and benefits you can expect from
+                    our programs.
+                </p>
+            </div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="row">
+            <div class="col-md-4">
+                <!-- 'col-md-4': Creates a column that takes 4 out of 12 columns on medium screens -->
+                <div class="card mb-4 rounded-0 border-0 p-3 bg-white">
+                    <!-- 'card': Bootstrap card component -->
+                    <!-- 'mb-4': Adds margin (4 units) at the bottom -->
+                    <!-- 'rounded-0': Removes rounded corners -->
+                    <!-- 'border-0': Removes the border -->
+                    <!-- 'p-3': Adds padding (3 units) on all sides -->
+                    <!-- 'bg-white': Sets the background color to white -->
+                    <div class="card-body text-center">
+                        <!-- 'card-body': Styles the card content area -->
+                        <!-- 'text-center': Centers text horizontally -->
+                        <i class="fas fa-atom fa-3x text-primary bg-light rounded-circle p-3 my-4"></i>
+                        <!-- 'fa-3x': Makes the icon 3 times larger -->
+                        <!-- 'text-primary': Sets the icon color to primary theme color -->
+                        <!-- 'bg-light': Sets the icon background to light -->
+                        <!-- 'rounded-circle': Makes the icon background circular -->
+                        <!-- 'p-3': Adds padding (3 units) on all sides -->
+                        <!-- 'my-4': Adds margin (4 units) on top and bottom -->
+                        <h5 class="card-title">Scientific Insights</h5>
+                        <!-- 'card-title': Styles the card title -->
+                        <p class="card-text">
+                            <!-- 'card-text': Styles the card text -->
+                            Explore the latest scientific research and gain valuable
+                            insights into various subjects, from physics to biology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-0 border-0 p-3 bg-white">
+                    <div class="card-body text-center">
+                        <i
+                                class="fas fa-key fa-3x text-primary bg-light rounded-circle p-3 my-4"
+                        ></i>
+                        <h5 class="card-title">Cybersecurity Awareness</h5>
+                        <p class="card-text">
+                            Discover the importance of cybersecurity and learn how to
+                            protect yourself and your digital assets from cyber threats.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-0 border-0 p-3 bg-white">
+                    <div class="card-body text-center">
+                        <i
+                                class="fas fa-newspaper fa-3x text-primary bg-light rounded-circle p-3 my-4"
+                        ></i>
+                        <h5 class="card-title">Industry Updates</h5>
+                        <p class="card-text">
+                            Stay informed about the latest news and updates in your
+                            industry, keeping you ahead of the curve and facilitating
+                            professional growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-0 border-0 p-3 bg-white">
+                    <div class="card-body text-center">
+                        <i
+                                class="fas fa-users fa-3x text-primary bg-light rounded-circle p-3 my-4"
+                        ></i>
+                        <h5 class="card-title">Collaborative Networking</h5>
+                        <p class="card-text">
+                            Connect with professionals from diverse backgrounds and
+                            industries to foster collaboration and expand your
+                            professional network.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-0 border-0 p-3 bg-white">
+                    <div class="card-body text-center">
+                        <i
+                                class="fas fa-handshake fa-3x text-primary bg-light rounded-circle p-3 my-4"
+                        ></i>
+                        <h5 class="card-title">Partnership Opportunities</h5>
+                        <p class="card-text">
+                            Discover potential partnership opportunities with like-minded
+                            individuals and organizations, opening doors to new
+                            collaborations and ventures.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-0 border-0 p-3 bg-white">
+                    <div class="card-body text-center">
+                        <i
+                                class="fas fa-chart-bar fa-3x text-primary bg-light rounded-circle p-3 my-4"
+                        ></i>
+                        <h5 class="card-title">Data-driven Insights</h5>
+                        <p class="card-text">
+                            Leverage data analytics to gain valuable insights and make
+                            informed decisions, unlocking new possibilities for growth and
+                            success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------(8.8) 8. Subscribe & Footer------------------------------------
+
+
+<!-- Subscribe Form -->
+    <section id="subscribe" class="subscribe my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3 text-center">
+            <h2>
+              Subscribe to our email list and get updates from the experts
+            </h2>
+            <form>
+              <div class="my-4">
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  placeholder="Enter email"
+                />
+                <div class="form-text">
+                  We will never share your email address
+                </div>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-primary">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer mt-4 text-bg-dark py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Lorem Ipsum</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
+              possimus aliquid omnis commodi. Dignissimos, quam obcaecati? Fugit
+              non ex repellendus?
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#discover">Discover</a></li>
+              <li><a href="#summary">Summary</a></li>
+              <li><a href="#takeaways">Takeaways</a></li>
+              <li><a href="#subscribe">Subscribe</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect</h5>
+            <div class="d-flex gap-3">
+              <a href="#"><i class="fab fa-facebook fa-3x text-white"></i></a>
+              <a href="#"><i class="fab fa-twitter fa-3x text-white"></i></a>
+              <a href="#"><i class="fab fa-linkedin fa-3x text-white"></i></a>
+              <a href="#"><i class="fab fa-instagram fa-3x text-white"></i></a>
+              <a href="#"><i class="fab fa-youtube fa-3x text-white"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 
@@ -9497,6 +10282,540 @@ $headings-font-weight: bold;
 
 
 
+*******************************************9. Website 3 - Portfolio Website*******************************************
+
+--------------------------------------(9.2) 2. Project Setup-------------------------------------------------------
+//change in bootstrap.scss
+// Font
+// Set the default sans-serif font family to Poppins across Bootstrap
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+// Color
+// Define custom theme colors for Bootstrap components
+$primary: #cc005f;       // Main brand color (pink/red)
+$secondary: #990047;     // Secondary color (darker red)
+$dark: #000;             // Black color definition
+$light: #f4f4f4;         // Light gray color definition
+
+// Buttons
+// Customize button appearance parameters
+$button-radius: 0;       // Remove border-radius for square buttons
+$button-padding-x: 30px; // Horizontal padding for buttons
+$button-padding-y: 12px; // Vertical padding for buttons
+
+// Apply button settings to all button sizes and states
+$btn-border-radius: $button-radius;        // Default button border radius
+$btn-border-radius-sm: $button-radius;    // Small button border radius
+$btn-border-radius-lg: $button-radius;    // Large button border radius
+$btn-padding-y: $button-padding-y;        // Default vertical padding
+$btn-padding-y-lg: $button-padding-y;     // Large button vertical padding
+$btn-padding-y-sm: $button-padding-y;     // Small button vertical padding
+$btn-padding-x: $button-padding-x;        // Default horizontal padding
+$btn-padding-x-lg: $button-padding-x;     // Large button horizontal padding
+$btn-padding-x-sm: $button-padding-x;     // Small button horizontal padding
+
+// Navigation
+// Customize navbar toggler appearance
+$navbar-toggler-border-radius: 5px; // Slightly rounded corners for mobile menu button
+
+// Spacing
+// Extend Bootstrap's default spacing scale
+$spacer: 1rem !default; // Base spacing unit (16px assuming default browser settings)
+$spacers: (
+        0: 0,           // 0 spacing
+        1: $spacer * 0.25,  // 0.25rem (4px)
+        2: $spacer * 0.5,   // 0.5rem (8px)
+        3: $spacer,         // 1rem (16px)
+        4: $spacer * 1.5,   // 1.5rem (24px)
+        5: $spacer * 3,     // 3rem (48px)
+        6: $spacer * 6,     // 6rem (96px) - custom size
+        7: $spacer * 8,     // 8rem (128px) - custom size
+        8: $spacer * 12,    // 12rem (192px) - custom size
+) !default;
+
+// Container
+// Customize maximum container widths for different breakpoints
+$container-max-widths: (
+        sm: 540px,   // Small screen container
+        md: 720px,   // Medium screen container
+        lg: 960px,   // Large screen container
+        xl: 980px,   // Extra large screen container (custom size)
+        xxl: 1000px, // Extra extra large screen container (custom size)
+) !default;
+
+// Import Bootstrap SCSS after customizations
+// This allows our custom variables to override Bootstrap defaults
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+
+
+	
+
+//now install lightbox2
+1.go to this site
+https://lokeshdhakar.com/projects/lightbox2/
+
+2.go to this link
+https://github.com/lokesh/lightbox2/releases
+
+3.download assets/zip file
+
+4.copy js file to
+	dist\js\lightbox-plus-jquery.min.js to my project\js folder
+	
+5.copy cs file to 
+	dist\css\lightbox.min.css to my project\css folder
+	
+6. add this in index.html
+
+<link rel="stylesheet" href="css/lightbox.min.css" />
+
+<script src="js/lightbox-plus-jquery.min.js"></script>
+
+
+
+
+
+
+
+
+--------------------------------------------------------(9.3) 3. Header With Overlay----------------------------------------
+1. Hero তে background image দিব।(position relative)
+	2. Overlay তে background-color effect দিব।(position absolute)
+		3. text-container এ (posititon relative)
+			4.social icon (position absolute)
+
+//style.scss
+/* Hero section background image with dark overlay */
+.header .hero {
+  background: #151515 url('../images/intro-bg.jpg') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
+
+/* Overlay effect to darken the hero section for better text visibility */
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+}
+
+/* Custom font styling for the roles text */
+.hero .roles {
+  font-family: 'lora-regular', serif;
+}
+
+/* Positioning the social icons at the bottom */
+.hero .social {
+  bottom: 50px;
+}
+
+/* Responsive styles for smaller screens (below 767px width) */
+@media (max-width: 767px) {
+  /* Adjusting icon size for better mobile visibility */
+  .hero .social i {
+    font-size: 30px;
+  }
+
+  /* Reducing font size of roles text for smaller screens */
+  .hero .roles {
+    font-size: 18px !important;
+  }
+}
+
+
+<header class="header">
+    <!-- this is for giving background image in hero section -->
+    <div class="hero vh-100 text-center position-relative">
+        <!-- vh-100: Full viewport height -->
+        <!-- text-center: Centers text inside -->
+        <!-- position-relative: Allows absolute positioning of child elements -->
+
+        <!-- this is for give dark overlay effect -->
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100">
+            <!-- position-absolute: Positions overlay relative to .hero -->
+            <!-- top-0 start-0: Places the overlay at the top-left corner -->
+            <!-- w-100 h-100: Ensures the overlay covers the full width and height -->
+
+            <!--this is for showing text content over dark background; text in center-->
+            <div class="text-container position-relative d-flex flex-column justify-content-center align-items-center h-100">
+                <!-- position-relative: Ensures content is positioned inside properly -->
+                <!-- d-flex: Enables flexbox -->
+                <!-- flex-column: Stacks children vertically -->
+                <!-- justify-content-center: Centers content vertically -->
+                <!-- align-items-center: Centers content horizontally -->
+                <!-- h-100: Makes text-container fill full height -->
+
+                <h1 class="text-primary fs-3 fw-bold text-uppercase">Hello, World.</h1>
+                <!-- text-primary: Applies Bootstrap primary color -->
+                <!-- fs-3: Font size 3 (large) -->
+                <!-- fw-bold: Makes text bold -->
+                <!-- text-uppercase: Converts text to uppercase -->
+
+                <h1 id="typing-text" class="display-1 fw-bold text-uppercase text-white">I am utsab roy</h1>
+                <!-- display-1: Large heading size -->
+                <!-- fw-bold: Bold text -->
+                <!-- text-uppercase: Uppercase text -->
+                <!-- text-white: White text color -->
+
+                <p class="roles text-white text-uppercase fs-4">
+                    <!-- text-white: White text color -->
+                    <!-- text-uppercase: Converts text to uppercase -->
+                    <!-- fs-4: Font size 4 (medium-large) -->
+                    <span>Full Stack Web Developer | </span>
+                    <span>Online Educator</span>
+                </p>
+
+                <a href="#about" class="btn btn-outline-light btn-lg mt-3">
+                    <!-- btn: Bootstrap button -->
+                    <!-- btn-outline-light: White outlined button -->
+                    <!-- btn-lg: Large button -->
+                    <!-- mt-3: Margin top (spacing) -->
+
+                    <div class="d-flex">
+                        <!-- d-flex: Enables flexbox -->
+                        <div class="me-3">
+                            <!-- me-3: Adds right margin (spacing) -->
+                            <i class="fas fa-chevron-down"></i>
+                            <!-- FontAwesome chevron icon -->
+                        </div>
+                        <div class="text-start">
+                            <!-- text-start: Aligns text to the left -->
+                            <span>More About Me</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!--we give text-container relative for this reason; for position it's item according to top/start/..-->
+                <div class="social d-flex gap-3 position-absolute">
+                    <!-- social: Social media icons container -->
+                    <!-- d-flex: Enables flexbox -->
+                    <!-- gap-3: Adds spacing between icons -->
+                    <!-- position-absolute: Allows positioning within .text-container -->
+
+                    <a href="#">
+                        <i class="fab fa-twitter fa-3x text-white"></i>
+                        <!-- fab: FontAwesome brand icon -->
+                        <!-- fa-twitter: Twitter icon -->
+                        <!-- fa-3x: Large icon size -->
+                        <!-- text-white: White color -->
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram fa-3x text-white"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-linkedin fa-3x text-white"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-facebook fa-3x text-white"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-youtube fa-3x text-white"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-github fa-3x text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+
+
+
+
+
+--------------------------------------------(9.4) 4. Typing Effect JavaScript------------------------------------------
+//style.scss(add cursor style )
+
+/* Blinking cursor animation */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; } /* Cursor is fully visible at the start and end of the animation */
+  50% { opacity: 0; } /* Cursor is invisible halfway through the animation */
+}
+
+/* Styling for the pseudo-element that represents the blinking cursor */
+#typing-text::after {
+  color: palevioletred; /* Color of the cursor */
+  content: "\f246"; /*this font awesom unicode we can get from website;  Unicode for the Font Awesome 'i-cursor' icon */
+  font-family: "Font Awesome 6 Free"; /* Specifies the Font Awesome font family */
+  font-weight: 900; /* Required for solid icons in Font Awesome */
+  animation: blink-cursor 0.7s infinite; /* Applies the blinking animation with a 0.7s duration, looping infinitely */
+  margin-left: 5px; /* Adds space between the text and the cursor */
+  font-size: 0.8em; /* Adjusts the size of the cursor relative to the text */
+  vertical-align: middle; /* Aligns the cursor vertically with the middle of the text */
+}
+
+
+
+
+//javascript
+// Get the element where the typing effect will be displayed
+const typingText = document.getElementById("typing-text");
+
+// Array of texts to be typed out in sequence
+const texts = [
+    "I am Utsab Roy",
+    "I am a Full Stack Developer",
+    "I am an Online Educator"
+];
+
+// Speed of typing in milliseconds (time between each character)
+const typingSpeed = 100;
+
+// Pause duration after typing completes, before deleting starts (in milliseconds)
+const pauseDuration = 2000;
+
+// Index to track the current text in the `texts` array
+let textIndex = 0;
+
+// Index to track the current character being typed or deleted
+let charIndex = 0;
+
+// Function to simulate typing text
+function typeText() {
+    // Check if there are more characters to type in the current text
+    if (charIndex < texts[textIndex].length) {
+        // Add the next character to the displayed text
+        typingText.textContent += texts[textIndex].charAt(charIndex);
+        charIndex++; // Move to the next character
+        setTimeout(typeText, typingSpeed); // Call `typeText` again after the typing speed delay
+    } else {
+        // If typing is complete, pause for `pauseDuration`, then start deleting
+        setTimeout(deleteText, pauseDuration);
+    }
+}
+
+// Function to simulate deleting text
+function deleteText() {
+    // Check if there are characters left to delete
+    if (charIndex > 0) {
+        // Remove the last character from the displayed text
+        typingText.textContent = texts[textIndex].substring(0, charIndex - 1);
+        charIndex--; // Move to the previous character
+        setTimeout(deleteText, typingSpeed / 2); // Call `deleteText` again with faster deletion speed
+    } else {
+        // If deletion is complete, move to the next text in the array
+        textIndex = (textIndex + 1) % texts.length; // Loop back to the first text if at the end
+        setTimeout(typeText, typingSpeed); // Start typing the next text
+    }
+}
+
+// Start the typing animation by calling `typeText` for the first time
+typeText();
+
+
+
+
+
+//remove text from this tag, because text in javascript
+<!--Typing Text-->
+<h1 id="typing-text" class="display-1 fw-bold text-uppercase text-white"></h1>
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------(9.5) 5. About & Skills Sections----------------------------------------
+
+//style.scss
+.about-img {
+  width: 200px;
+}
+
+
+
+<!--About-->
+<section id="about" class="about bg-light py-5">
+    <div class="container">
+        <div class="row text-center">
+            <h4 class="text-uppercase fw-bold text-primary">About Me</h4>
+            <hr class="w-25 mx-auto"> <!-- Bootstrap class: w-25 sets width to 25%, mx-auto centers the element horizontally -->
+            <h2 class="mb-4">Let me introduce myself.</h2>
+        </div>
+        <div class="row">
+            <div class="col-12 about-content d-flex align-items-center gap-5"> <!-- Bootstrap class: d-flex enables flexbox, align-items-center vertically centers content, gap-5 adds spacing between flex items -->
+                <img
+                        src="images/brad.jpg"
+                        alt=""
+                        class="about-img img-fluid rounded-circle" ><!-- Bootstrap class: img-fluid makes the image responsive, rounded-circle makes it circular -->
+
+
+                <p class="lead"> <!-- Bootstrap class: lead makes the paragraph stand out with larger font size -->
+                    I am a full stack web developer from Boston MA. I started writing
+                    code about 16 years ago. I started with Java and then moved to web
+                    technologies like HTML, CSS, JavaScript and PHP. I have worked for
+                    companies as well as ran my own. In 2016 I started creating content
+                    full-time. I love helping people learn to code and better their
+                    lives.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Profile & Skills-->
+<section class="profile my-6"> <!-- Bootstrap class: my-6 adds margin on the top and bottom -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6"> <!-- Bootstrap class: col-md-6 makes the column take up half the width on medium and larger screens -->
+                <h3 class="text-uppercase fw-bold">Profile</h3>
+                <p>Here is some more info about myself to help you get to know me
+                    better.</p>
+                <ul class="list-group list-group-flush"> <!-- Bootstrap class: list-group and list-group-flush create a styled list with no borders -->
+                    <li class="list-group-item mb-3"> <!-- Bootstrap class: mb-3 adds margin bottom -->
+                        <h5 class="text-transform">
+                            <i class="fas fa-user text-primary"></i> Full Name:
+                        </h5>
+                        <p>Brad Traversy</p>
+                    </li>
+                    <li class="list-group-item mb-3">
+                        <h5 class="text-transform">
+                            <i class="fas fa-calendar text-primary"></i> Birth Date:
+                        </h5>
+                        <p>August 10, 1981</p>
+                    </li>
+                    <li class="list-group-item mb-3">
+                        <h5 class="text-transform">
+                            <i class="fas fa-building text-primary"></i> Current Position:
+                        </h5>
+                        <p>Owner at Traversy Media</p>
+                    </li>
+                    <li class="list-group-item mb-3">
+                        <h5 class="text-transform">
+                            <i class="fas fa-home text-primary"></i> Website:
+                        </h5>
+                        <p>traversymedia.com</p>
+                    </li>
+                    <li class="list-group-item mb-3">
+                        <h5 class="text-transform">
+                            <i class="fas fa-envelope text-primary"></i> Email:
+                        </h5>
+                        <p>brad@gmail.com</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="text-uppercase fw-bold">Skills</h3>
+                <p>
+                    Here is a list of my skills with these dumb percentages that don't
+                    mean anything 😉
+                </p>
+                <h5><i class="fas fa-check"></i> HTML 5</h5>
+                <!-- Bootstrap class: progress creates a progress bar container -->
+                <div
+                        class="progress mb-4"
+                        role="progressbar"
+                        aria-valuenow="100"
+                        aria-valuemin="0"
+                        aria-valuemax="100">
+                <div class="progress-bar" style="width: 100%">100%</div> <!-- Bootstrap class: progress-bar styles the progress bar -->
+            </div>
+
+            <h5><i class="fas fa-check"></i> CSS</h5>
+            <div
+                    class="progress mb-4"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                <div class="progress-bar" style="width: 90%">90%</div>
+            </div>
+
+            <h5><i class="fas fa-check"></i> JavaScript</h5>
+            <div
+                    class="progress mb-4"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                <div class="progress-bar" style="width: 90%">90%</div>
+            </div>
+
+            <h5><i class="fas fa-check"></i> Bootstrap</h5>
+            <div
+                    class="progress mb-4"
+                    role="progressbar"
+                    aria-valuenow="100"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                <div class="progress-bar" style="width: 100%">100%</div>
+            </div>
+
+            <h5><i class="fas fa-check"></i> PHP</h5>
+            <div
+                    class="progress mb-4"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                <div class="progress-bar" style="width: 75%">75%</div>
+            </div>
+
+            <h5><i class="fas fa-check"></i> Python</h5>
+            <div
+                    class="progress mb-4"
+                    role="progressbar"
+                    aria-valuenow="70"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                <div class="progress-bar" style="width: 70%">70%</div>
+            </div>
+
+            <h5><i class="fas fa-check"></i> UI/UX</h5>
+            <div
+                    class="progress mb-4"
+                    role="progressbar"
+                    aria-valuenow="70"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                <div class="progress-bar" style="width: 70%">70%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 text-center"> <!-- Bootstrap class: mt-5 adds margin top, text-center centers the text -->
+        <div class="col-12">
+            <a href="#"
+               class="btn btn-outline-dark btn-lg text-uppercase px-5 mx-3 my-2"> <!-- px-5 adds padding on the x-axis, mx-3 adds margin on the x-axis, my-2 adds margin on the y-axis -->
+                Hire Me Now
+            </a>
+
+            <a href="#"
+               class="btn btn-dark btn-lg text-uppercase mx-3 px-5"> <!-- Bootstrap class: btn-dark styles the button with a dark background -->
+                DOWNLOAD CV
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+------------------------------------------------------------(9.6) 6. Projects & Lightbox------------------------
+//style.scss
+.project:hover {
+  /* Scale the element to 1.05 times its original size */
+  transform: scale(1.05);
+
+  /* Add a smooth transition effect for all properties over 0.5 seconds with an ease-in-out timing function */
+  transition: all 0.5s ease-in-out;
+
+  /* Reduce the opacity of the element to 0.8, making it slightly transparent */
+  opacity: 0.8;
+}
 
 
 

@@ -1,0 +1,20 @@
+//now install lightbox2
+1.go to this site
+https://lokeshdhakar.com/projects/lightbox2/
+
+2.go to this link
+https://github.com/lokesh/lightbox2/releases
+
+3.download assets/zip file
+
+4.copy js file to
+	dist\js\lightbox-plus-jquery.min.js to my project\js folder
+	
+5.copy cs file to 
+	dist\css\lightbox.min.css to my project\css folder
+	
+6. add this in index.html
+
+<link rel="stylesheet" href="css/lightbox.min.css" />
+
+<script src="js/lightbox-plus-jquery.min.js"></script>

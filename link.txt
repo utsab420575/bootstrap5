@@ -1,2 +1,11 @@
 //wave shape
 https://getwaves.io/
+
+//google font
+https://fonts.google.com/
+
+//color theme
+https://lokeshdhakar.com/projects/color-stacks
+
+//lightbox2
+https://lokeshdhakar.com/projects/lightbox2/
