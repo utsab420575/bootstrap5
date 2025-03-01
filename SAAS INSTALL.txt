@@ -1,3 +1,118 @@
+------------------------------More Shortly-----------------------
+
+1.download and install npm(only for first time)
+
+https://nodejs.org/en
+
+Download Node.js(LTS)
+
+2.create folder 
+
+ C:\xampp\htdocs\foldername
+
+3.open this folder into phpstrome
+
+4.now open terminal using gitbash
+
+
+
+5.initialization
+
+$ npm init
+(After this package.json file will be created)
+
+6.install saas
+User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/temp_folder
+	$ npm install sass
+
+7.Create Folder for scss
+	7.1 create folder scss in root folder
+		7.1.1 inside this folder create styles.scss file
+	
+	7.2 create folder for js
+		7.2.1 js এর ভিতর script.js create করব।
+
+7.update in package.json
+
+	"scripts": {
+	  "sass:build": "sass --no-source-map scss:css",
+	  "sass:watch": "sass --no-source-map --watch scss:css"
+	}
+
+8.Install Bootstrap
+	User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/bs5-simple-starter
+	$ npm install bootstrap
+	(node_module folder create হবে।)
+
+		8.1 scss এর ভিতরে bootstrap.scss create করব
+		8.2 এই ফাইল এ নিচের code add করব।     
+			@import "../node_modules/bootstrap/scss/bootstrap.scss"; 
+		
+		8.2 node_modules/bootstrap/dist/js/bootstrap.bundle.js কে কপি করব js এর ভিতর (js/bootstrap.bundle.js)
+			
+
+9.Install Fontawesom
+	
+	9.1 install fontawesom
+		npm install @fortawesome/fontawesome-free
+	
+	9.2 scss এর ভিতরে fontawesome.scss file create করব।
+	
+	9.3 scss/fontawesome.scss এর ভিতরে import করব।(node_modules এর ভিতরে fontawesom install হয়েছে।)
+
+		@import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+		@import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+		@import '../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+		
+	9.4 copy করতে হবে webfonts folder কে root folder এ
+		(node_modules/fontawesom/fontawesom-free/webfonts  to rootfolder)
+
+
+10.now convert scss file css file
+$ npm run sass:watch
+or
+$ npm run sass:build
+
+
+11. now add this js,css file into code
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link
+				href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+				rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/font-awesome.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="icon" href="images/favicon.png" />
+		<title>Document</title>
+
+	</head>
+	<body>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/script.js"></script>
+	</body>
+	</html>
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
 ----------------------------------------------(6.2) 2. SaaS Install & Setup Sass------------------------------------------------
 1.download and install npm(only for first time)
 
@@ -43,7 +158,7 @@ Download Node.js(LTS)
 																				   
 	author: utsab roy 	[write own description]
 
-	license: (ISC) MIT
+	license: (ISC) ISC
 
 	About to write to C:\xampp\htdocs\bs5-simple-starter\package.json:
 
@@ -56,7 +171,7 @@ Download Node.js(LTS)
 		"test": "echo \"Error: no test specified\" && exit 1"
 	  },
 	  "author": "utsab roy",
-	  "license": "MIT"
+	  "license": "ISC"
 	}
 
 
