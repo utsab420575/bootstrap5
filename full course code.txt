@@ -11230,6 +11230,350 @@ https://www.netlify.com/
 
 
 
+*************************************************************10. Website 4 - Yavin Office Design******************************************************************
+
+--------------------------------------------------------------2. Project Setup-------------------------------------------------------
+1.scss file(bootstrap scss file)
+// Font
+$font-family-sans-serif: 'Open Sans', sans-serif; // Default font family
+
+// Colors
+$primary: #4555d2; // Primary color
+$secondary: #cc2973; // Secondary color
+$dark: #191e47; // Dark color
+$light: #f9fafe; // Light color
+$body-color: #494c52; // Body text color
+$headings-color: $dark; // Headings color
+
+// Navbar
+$navbar-nav-link-padding-x: 0.8rem; // Navbar link horizontal padding
+$navbar-padding-y: 1rem; // Navbar vertical padding
+$nav-link-font-weight: 700; // Navbar link font weight
+
+
+
+
+//Navbar button/toogler radius
+$navbar-toggler-border-radius: 5px; // Navbar toggler border radius
+
+// Spacing Edit
+$spacer: 1rem !default; // Base spacing unit
+$spacers: (
+        0: 0, // Spacing map
+        1: $spacer * 0.25,
+        2: $spacer * 0.5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 3,
+        6: $spacer * 6,
+        7: $spacer * 8,
+        8: $spacer * 12,
+) !default;
+
+$headings-margin-bottom: $spacer * 1 !default; // Heading margin bottom
+$line-height-base: 1.7; // Base line height
+$headings-font-weight: bold; // Heading font weight
+
+// Button Radius Edit
+$button-radius: 50px; // Button border radius
+$button-padding-x: 30px; // Button horizontal padding
+$button-padding-y: 10px; // Button vertical padding
+
+$btn-border-radius: $button-radius; // Button border radius
+$btn-border-radius-sm: $button-radius; // Small button border radius
+$btn-border-radius-lg: $button-radius; // Large button border radius
+
+$button-padding-x: $button-padding-x; // Button horizontal padding
+$button-padding-x-sm: $button-padding-x; // Small button horizontal padding
+$button-padding-x-lg: $button-padding-x; // Large button horizontal padding
+
+$button-padding-y: $button-padding-y; // Button vertical padding
+$button-padding-y-sm: $button-padding-y; // Small button vertical padding
+$button-padding-y-lg: $button-padding-y; // Large button vertical padding
+
+// Inputs/Forms padding edit
+$input-radius: 30px; // Input border radius
+$input-btn-padding-y: 0.7rem; // Input vertical padding
+$input-btn-padding-x: 1rem; // Input horizontal padding
+$input-border-radius: $input-radius; // Input border radius
+$input-border-radius-sm: $input-radius; // Small input border radius
+$input-border-radius-lg: $input-radius; // Large input border radius
+
+@import '../node_modules/bootstrap/scss/bootstrap'; // Import Bootstrap
+
+
+
+
+
+
+2.import all file in index.html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/fontawesome.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Document</title>
+
+</head>
+<body>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+----------------------------------------------------------------------3. Navigation & Header--------------------------------------------------
+//used in navbar button(contact us)
+.btn-outline-secondary {
+  color: var(--bs-secondary);
+}
+//navbar hover icon
+.btn-outline-secondary:hover {
+  color: #fff;
+}
+
+//set the font size 
+.xl-text{
+  font-size:75px;
+}
+
+//now set the image position of header
+.header .decoration-star{
+  top:80px;
+  left:-200px;
+  width:500px;
+  opacity: 0.7;
+}
+
+//now set the right image position of header
+.header .decoration-star-2{
+  top:80px;
+  right:-200px;
+  width:500px;
+  opacity: 0.7;
+}
+
+
+
+
+@media (max-width: 992px) {
+
+   //font size of header reduce if width less than 992px
+  .xl-text{
+    font-size:50px;
+  }
+
+	//navbar 
+  .navbar{
+    .btn-outline-secondary{
+      margin-top:20px;
+    }
+  }
+
+	//header section margin top 0
+  .header{
+    margin-top:0px !important;
+    text-align:center;
+  }
+
+	//set image position for small screen
+  .header .decoration-star{
+    top:80px;
+    left:-100px;
+    width:250px;
+    opacity: 0.7;
+  }
+
+	//set image position for small screen
+  .header .decoration-star-2{
+    top:80px;
+    right:-100px;
+    width:250px;
+    opacity: 0.7;
+  }
+
+	//header right image
+  .header .image-container {
+    margin-top: 30px;
+  }
+
+}
+
+//navbar transition
+.navbar {
+  transition: all 0.5s ease-in-out;
+}
+
+//this is used int js file 
+.navbar-sticky {
+  background: #fff;
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 576px) {
+
+}
+
+
+
+
+//js file(scripts.js)
+function userScroll() {
+    const navbar = document.querySelector('.navbar');
+    const toTopBtn = document.querySelector('#to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-sticky');
+            toTopBtn.classList.add('show');
+        } else {
+            navbar.classList.remove('navbar-sticky');
+            toTopBtn.classList.remove('show');
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', userScroll);
+
+
+
+//Html file
+<body>
+<!--Navbar will expand when screen is large-->
+<!--navbar color is light and text-color is black-->
+<nav class="navbar navbar-expand-lg sticky-top navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.svg"
+                 alt="Logo"
+                 width="124"
+                 class="d-inline-block align-text-top">
+        </a>
+        <!--toggole button-->
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <!--toggle icon-->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--showing all of the items in navbar-->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-secondary px-4 mx-4" href="#contact">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="header  position-relative mt-6 overflow-hidden">
+    <img src="images/decoration-star.svg"
+         alt=""
+         class="decoration-star position-absolute">
+
+    <img src="images/decoration-star.svg"
+         alt=""
+         class="decoration-star-2 position-absolute">
+
+    <div class="container position-relative z-3">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mt-6">
+                    <h1 class="xl-text">
+                        The <span class="text-primary">Perfect</span> Office Space
+                    </h1>
+                    <p class="lead mb-4">
+                        We specialize in transforming office spaces into inspiring and
+                        functional environments. Let us bring your vision to life.
+                    </p>
+                    <a href="#introduction" class="btn btn-primary btn-lg m-2"> More Details</a>
+                    <a href="#contact" class="btn btn-outline-secondary btn-lg m-2">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img src="images/header.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
