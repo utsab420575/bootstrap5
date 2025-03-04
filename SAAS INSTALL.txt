@@ -100,6 +100,20 @@ $ npm run sass:build
 	</body>
 	</html>
 
+
+12.If project is uploaded into github in gitignore file 
+we used node_modules এর মানে এটা github এ স্টোর হবে না।
+
+
+13.npm install করব।
+	User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/Ebook_Website_Bootstrap
+	$ npm install
+
+
+14.saas watch করব।
+	User@DESKTOP-CF95DK1 MINGW64 /c/xampp/htdocs/Ebook_Website_Bootstrap
+	$ npm run sass:watch
+
 	
 	
 
